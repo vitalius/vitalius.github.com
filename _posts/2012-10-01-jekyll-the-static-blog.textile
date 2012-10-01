@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Jekyll, the static blog"
+---
+
+h1. {{ page.title }}
+
+p(meta). 01 October 2012
+
+Writing is good for the soul. Writing with tools such as Emacs, Ruby and GitHub is probably good for few other things as well. Finally found a simple minimalistic theme from "Jason Toy":http://www.jtoy.net to start "Jekyll":https://github.com/mojombo/jekyll with.
+
+Writing with a static site generator feels very much like writing software. First, one figures all the logic and writes a post in a simple text editor, then few Ruby scripts compile the post into proper HTML and link all images, CSS and JavaScript libraries. Now the static site is ready to be served by pretty much any web server and produce visually appealing formatting in a web browser to accompany each post.

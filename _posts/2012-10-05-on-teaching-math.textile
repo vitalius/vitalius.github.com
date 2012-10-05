@@ -7,7 +7,7 @@ h1. {{ page.title }}
 
 p(meta). 05 October 2012
 
-Excerpt by Anonymous from /sci/
+An excerpt from /sci/ by Anonymous.
 
 p((. Calculus was invented to solve problems, then it was used productively for many years before someone found a way to "prove" that it worked, and when they did, they claimed that the reasoning calculus was originally based on was flawed (limits over infinitesimals), until years later it was proved that it wasn't (infinitesimals, it turns out, can be made rigorous). Physics in particular is always out ahead of "mathematical rigour".
 

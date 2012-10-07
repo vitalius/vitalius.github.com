@@ -7,6 +7,6 @@ h1. {{ page.title }}
 
 p(meta). 01 October 2012
 
-They say, writing is good for the soul. Writing with tools such as Emacs, Ruby and GitHub is probably good for few other things as well. Finally found a simple minimalistic theme for "Jekyll":https://github.com/mojombo/jekyll.
+Writing is good for the soul, they say. Writing with tools like Emacs, Ruby and GitHub is probably good for few other things as well. Finally found a simple minimalistic theme for "Jekyll":https://github.com/mojombo/jekyll.
 
-Writing with a static site generator feels very much like writing software. First, in a simple text editor, one derives the logic and writes a post then few Ruby scripts compile the result into proper HTML and link all images, CSS and JavaScript libraries. Now the static site is ready to be served by pretty much any web server and produce visually appealing formatting in a web browser to accompany each post.
+Writing with a static site generator feels very much like writing software. First, in a simple text editor, one derives the logic and writes a post then few Ruby scripts compile the result into proper HTML and link all images, CSS and JavaScript libraries. Now, the static site is ready to be served by pretty much any web server and a web browser can accompany each post with fancy layout and visual appeal.

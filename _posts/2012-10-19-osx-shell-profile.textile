@@ -9,27 +9,23 @@ p(meta). 19 October 2012
 
 p. Setting up shell profile on OSX can get messy, especially when one has to do it only once or twice a year. Typically I start by poking the obvious @~/.profile@ with no apparent success then discover @~/.bashrc@, @~/.bash_profile@, read some stackoverflow posts and finally the shell man pages. 
 
-p. OSX runs Bash by default.
+p. OSX runs Bash by default, from @man sh@:
 
-<notextile><pre><code data-language="generic">SYNOPSIS
-       bash [options] [file]
-
-COPYRIGHT
-       Bash is Copyright (C) 1989-2005 by the Free Software Foundation, Inc.
+<notextile><pre><code data-language="generic">Bash is Copyright (C) 1989-2005 by the Free Software Foundation, Inc.
           ...
-       When  bash is invoked as an interactive login shell, or as a non-inter-
-       active shell with the --login option, it first reads and executes  com-
-       mands  from  the file /etc/profile, if that file exists.  After reading
-       that file, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile,
-       in  that order, and reads and executes commands from the first one that
-       exists and is readable.  The --noprofile option may be  used  when  the
-       shell is started to inhibit this behavior.
+When  bash is invoked as an interactive login shell, or as a non-inter-
+active shell with the --login option, it first reads and executes  com-
+mands  from  the file /etc/profile, if that file exists.  After reading
+that file, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile,
+in  that order, and reads and executes commands from the first one that
+exists and is readable.  The --noprofile option may be  used  when  the
+shell is started to inhibit this behavior.
           ...
-       When an interactive shell that is not a login shell  is  started,  bash
-       reads  and executes commands from ~/.bashrc, if that file exists.  This
-       may be inhibited by using the --norc option.  The --rcfile file  option
-       will  force  bash  to  read  and  execute commands from file instead of
-       ~/.bashrc.
+When an interactive shell that is not a login shell  is  started,  bash
+reads  and executes commands from ~/.bashrc, if that file exists.  This
+may be inhibited by using the --norc option.  The --rcfile file  option
+will  force  bash  to  read  and  execute commands from file instead of
+~/.bashrc.
           ...
 </code></pre></notextile>
 

@@ -206,3 +206,7 @@ blockquote:before {
    margin-right:.25em;
    vertical-align:-.4em;
 }
+
+blockquote p {
+  /* display:inline; */
+}

@@ -9,12 +9,12 @@ p(meta). 05 October 2012
 
 An excerpt from /sci/ by Anonymous.
 
-<notextile><blockquote></notextile>Calculus was invented to solve problems, then it was used productively for many years before someone found a way to "prove" that it worked, and when they did, they claimed that the reasoning calculus was originally based on was flawed (limits over infinitesimals), until years later it was proved that it wasn't (infinitesimals, it turns out, can be made rigorous). Physics in particular is always out ahead of "mathematical rigour".
+<notextile><blockquote>Calculus was invented to solve problems, then it was used productively for many years before someone found a way to "prove" that it worked, and when they did, they claimed that the reasoning calculus was originally based on was flawed (limits over infinitesimals), until years later it was proved that it wasn't (infinitesimals, it turns out, can be made rigorous). Physics in particular is always out ahead of "mathematical rigour".<br><br>
 
-Proofs are a matter of taste. You still have to pick your axioms, and this is a non-trivial task.
+Proofs are a matter of taste. You still have to pick your axioms, and this is a non-trivial task.<br><br>
 
-Motivation for method, method, support for validity of method is the right order to teach in, what's best for the student. People make all sorts of excuses for teaching it the other way around, but what it comes down to is our lowest monkey instincts: making students obey you on faith makes you feel dominant and powerful. Teachers don't want to serve their students, though it's really what they should be doing, they want to lead them, to command them.
+Motivation for method, method, support for validity of method is the right order to teach in, what's best for the student. People make all sorts of excuses for teaching it the other way around, but what it comes down to is our lowest monkey instincts: making students obey you on faith makes you feel dominant and powerful. Teachers don't want to serve their students, though it's really what they should be doing, they want to lead them, to command them.<br><br>
 
-It's the same reason teachers are opposed to standardized testing, the same reason we have the same people teaching and testing, doing work and judging whether the work was done well. Teachers want to feel like masters over their students.<notextile></blockquote></notextile>
+It's the same reason teachers are opposed to standardized testing, the same reason we have the same people teaching and testing, doing work and judging whether the work was done well. Teachers want to feel like masters over their students.</blockquote></notextile>
 
 This is probably the best argument I've read against standardized testing criticism.

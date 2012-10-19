@@ -34,11 +34,13 @@ COPYRIGHT
 </code></pre></notextile>
 
 p. Interestingly enough @/etc/profile@ at the very end executes @/etc/bashrc@.
+
 <notextile><pre><code data-language="bash">if [ "${BASH-no}" != "no" ]; then
 	[ -r /etc/bashrc ] && . /etc/bashrc
 fi
 </code></pre></notextile>
-But @~/.bashrc@ is ignored even when launching Terminal.app which according to the Bash manual is considered as an *interactive not a login shell*.
+
+p. But @~/.bashrc@ is ignored even when launching Terminal.app which according to the Bash manual is considered as *an interactive not a login shell*.
 
 p. Interactive means there is a person typing things into the terminal as oppose to the non-interactive command execution such as by a script. Login shell means you have to authenticate with a username and password to start the shell as oppose simply launching Terminal.app in already authenticated on environment.
 

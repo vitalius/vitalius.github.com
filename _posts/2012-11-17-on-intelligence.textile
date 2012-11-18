@@ -1,0 +1,10 @@
+---
+layout: post
+title: "On intelligence"
+---
+
+h1. {{ page.title }}
+
+p(meta). 17 November 2012
+
+<notextile><blockquote>[Intelligence] is like being a lady: if you have to tell people you are, you aren't.</blockquote></notextile> -- Margaret Thatcher

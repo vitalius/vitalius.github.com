@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Euler's formula"
+---
+
+h1. {{ page.title }}
+
+p(meta). 17 November 2012
+
+This is a famous equation that describes a relationship between trigonometric functions \( \sin\) and \( \cos \) and the complex exponential function \(e^x\), specifically: \[ e^{ix} = \cos x + i \sin x \]
+
+A more popular form of the equation is when \( x = \pi \). \[ e^{i\pi} = \cos \pi + i \sin \pi \] \[ e^{i\pi} = -1+i 0 \] \[ e^{i\pi} + 1 = 0 \]
+
+For intuition, note that \( \sin \) and \( \cos \) are "periodic functions":http://en.wikipedia.org/wiki/Sine_wave and \(i\) returns "cyclic values":http://en.wikipedia.org/wiki/Imaginary_unit#Definition that is \(i^n : n \in \mathbb{Z} = [..., 1, i, -1, -i, 1, i, ...] \), where \(i=\sqrt{-1}\). So in Euler's formula, there is basically a real number \(x\) where periodicity of \(\sin\) and \(\cos\) with \(i\) match that of an exponent function of \(i\). In other words, it turns out that within all the periodicity of trigonometric functions and \(i\) they get equivalent at some point with the help of \(e\).
+
+The proof is typically done with basic algebra operation on "Power series":http://en.wikipedia.org/wiki/Power_series of \(e^x, \sin x\) and \(\cos x\) 
+
+\[ e^x = \displaystyle\sum_{n=0}^{\infty} \frac{x^{n}}{n!} = 1+x+ \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^5}{5!} + ...\]
+
+and with \(ix\)
+
+\[ e^{ix} = 1 + ix + \frac{i^2x^2}{2!} + \frac{i^3x^3}{3!} + \frac{i^4x^4}{4!} + ... \]
+
+Since \(i\) is cyclic we can take it out of exponent and simply write the values
+
+\[ e^{ix} = 1+ix+ \frac{-1x^2}{2!} + \frac{-ix^3}{3!} + \frac{1x^4}{4!} + ... \] \[ e^{ix} = 1+ix- \frac{x^2}{2!}   - \frac{ix^3}{3!}  + \frac{x^4}{4!} + ...\]
+
+The expansion of \( \sin \) and \( \cos \) isn't much different from \( e^x \)
+
+\[ \sin x =x- \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...\] \[ \cos x =1- \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...\]
+
+multiplying the \( \sin x \) expansion by \( i \)
+
+\[ i\sin x =ix- \frac{ix^3}{3!} + \frac{ix^5}{5!} - \frac{ix^7}{7!} + ...\]
+
+with addition of \(\cos x\)
+
+\[ \cos x + i\sin x =1+ix- \frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!} - \frac{x^6}{6!} - \frac{ix^7}{7!} + ...\]
+
+the result is the expansion of \(e^{ix}\). This shows that \( e^{ix} = \cos x + i \sin x \) and Euler's fancy formula that follows when \(x=\pi\)
+
+\[ e^{i\pi} + 1 = 0 \]
+
+It's kind of fascinating how the sum of \(\sin\) and \(\cos\) functions used in solving equations with right triangles, in combination with \(i\) becomes equivalent to exponential function.

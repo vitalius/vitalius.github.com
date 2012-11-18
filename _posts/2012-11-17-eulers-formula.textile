@@ -25,7 +25,7 @@ Since $i$ is cyclic we can take it out of exponent and simply write the values.
 
 $$ e^{ix} = 1+ix+ \frac{-1x^2}{2!} + \frac{-ix^3}{3!} + \frac{1x^4}{4!} + ...$$ $$ e^{ix} = 1+ix- \frac{x^2}{2!} - \frac{ix^3}{3!}  + \frac{x^4}{4!} + ...$$
 
-The expansion of $\cos x$ and $\sin x$ isn't much different from $e^x$.
+The expansion of $\cos x$ and $\sin x$ is similar to $e^x$.
 
 $$ \cos x =1- \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...$$ $$ \sin x =x- \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$$
 
@@ -33,7 +33,7 @@ multiplying the $\sin x$ expansion by $i$
 
 $$ i\sin x =ix- \frac{ix^3}{3!} + \frac{ix^5}{5!} - \frac{ix^7}{7!} + ...$$
 
-with addition of $\cos x$
+adding $\cos x$
 
 $$ \cos x + i\sin x =1+ix- \frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!} - \frac{x^6}{6!} - \frac{ix^7}{7!} + ...$$
 

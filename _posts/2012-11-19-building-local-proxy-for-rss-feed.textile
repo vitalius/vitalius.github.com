@@ -1,0 +1,57 @@
+---
+layout: post
+title: "Building local proxy for RSS feed"
+---
+
+h1. {{ page.title }}
+
+p(meta). 19 November 2012
+
+We want to display an RSS feed (or part of it) from a remote domain but cross-domain feeds arn't allowed because then AJAX requests are submitted with users' credentials and the returned data can be logged by the caller. Also known as cross-site request forgery attack (XSRF).
+
+Being an author of "this":http://vitaliy.cloudmotion.com/atom.xml particular RSS feed, we can certainly build a nicer additional feed, such as JSON with padding ("JSONP":http://en.wikipedia.org/wiki/JSONP) or some sort of "CORS":http://www.w3.org/TR/cors/, but simple local proxy with help from PHP should suffice.
+
+The idea is to have a PHP script under the same domain that builds a local JSON feed from a remote RSS feed. Since we're loading an entire feed into PHP might as well do some filtering and remove unnecessary payload before outputting to JSON (removing header and footer, only displaying the recent post, etc). PHP is nice enough to have all the required functionality for "parsing XML":http://php.net/manual/en/class.simplexmlelement.php and "producing JSON":http://php.net/manual/en/function.json-encode.php from a simple array.
+
+<notextile><pre><code data-language="php">$atom_feed = file_get_contents('http://vitaliy.cloudmotion.com/atom.xml');
+$feed = new SimpleXMLElement($atom_feed);
+
+// Check for ?top=1 GET flag, and output only recent(1) post
+if ($_GET["top"]) {
+  $post = array(
+             'title' => $feed->entry[0]->title,
+              'link' => $feed->entry[0]->link->attributes(),
+           'content' => $feed->entry[0]->content,
+          );
+  echo json_encode($post);
+// Output entire feed 
+} else {
+  $posts = array();
+  foreach ($feed->entry as $p) {
+    array_push($posts, array(
+                  'title' => $p->title,
+                   'link' => $p->link->attributes(),
+                'content' => $p->content,
+    ));
+  }
+  echo json_encode($posts);
+}
+</code></pre></notextile>
+
+With the help of jQuery we can now load and further format the now local JSON feed on the client side.
+
+<notextile><pre><code data-language="JavaScript">$(document).ready(function () {
+     $.getJSON('json-vitaliy.php?top=1', function(data) {
+        var content  = "<h4><a href='";
+            content += data["link"]["@attributes"]["href"];
+            content += "'>";
+            content += data["title"]["0"];
+            content += "</a></h4>";
+            content += data["content"]["0"];
+
+        $("div#text-blog-vitaliy").append(content);
+     });
+});
+</code></pre></notextile>
+
+This code is used "here":http://www.cloudmotion.com/ and runs alongside "zrss":http://www.zazar.net/developers/jquery/zrssfeed/ which provides a free service for proxying and reading remote RSS feeds.

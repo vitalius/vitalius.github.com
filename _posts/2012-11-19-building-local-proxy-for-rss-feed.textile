@@ -11,7 +11,7 @@ We want to display an RSS feed (or part of it) from a remote domain but cross-do
 
 Being an author of "this":http://vitaliy.cloudmotion.com/atom.xml particular RSS feed, we can certainly build a nicer additional feed, such as JSON with padding ("JSONP":http://en.wikipedia.org/wiki/JSONP) or some sort of "CORS":http://www.w3.org/TR/cors/, but simple local proxy with help from PHP should suffice.
 
-The idea is to have a PHP script under the same domain that builds a local JSON feed from a remote RSS feed. Since we're loading an entire feed into PHP might as well do some filtering and remove unnecessary payload before outputting to JSON (removing header and footer, only displaying the recent post, etc). PHP is nice enough to have all the required functionality for "parsing XML":http://php.net/manual/en/class.simplexmlelement.php and "producing JSON":http://php.net/manual/en/function.json-encode.php from a simple array.
+The idea is to have a PHP script under the same domain that builds a local JSON feed from a remote RSS feed. Since we're loading an entire feed into PHP might as well do some filtering and remove unnecessary payload before outputting to JSON (removing header and footer, only displaying the recent post, etc). PHP is nice enough to have all the required functionality for "parsing XML":http://php.net/manual/en/class.simplexmlelement.php and "producing JSON":http://php.net/manual/en/function.json-encode.php from a simple array (or a dictionary, PHP is weird that way).
 
 <notextile><pre><code data-language="php">$atom_feed = file_get_contents('http://vitaliy.cloudmotion.com/atom.xml');
 $feed = new SimpleXMLElement($atom_feed);

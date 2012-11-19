@@ -42,7 +42,7 @@ With the help of jQuery we can now load and further format the now local JSON fe
 
 <notextile><pre><code data-language="JavaScript">$(document).ready(function () {
      $.getJSON('json-vitaliy.php?top=1', function(data) {
-            content += data["link"]["@attributes"]["href"];
+        var content  = data["link"]["@attributes"]["href"];
             content += data["title"]["0"];
             content += data["content"]["0"];
 

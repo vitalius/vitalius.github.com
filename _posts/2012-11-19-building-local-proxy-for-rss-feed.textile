@@ -51,4 +51,4 @@ With the help of jQuery we can now load and further format the now local JSON fe
 });
 </code></pre></notextile>
 
-This code is used "here":http://www.cloudmotion.com/ and runs alongside "zrss":http://www.zazar.net/developers/jquery/zrssfeed/ which provides a free service for proxying and reading remote RSS feeds.
+Similar code is used "here":http://www.cloudmotion.com/ alongside "zrss":http://www.zazar.net/developers/jquery/zrssfeed/ which provides a free service for proxying and reading remote RSS feeds.

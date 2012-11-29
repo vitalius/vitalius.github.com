@@ -15,4 +15,4 @@ When my "brother":http://avpsocialmedia.com/ showed me "Twilio":http://www.twili
 
 h3=. +1 (503) 400-7152
 
-It's the same "Guess the Number":https://github.com/vitalius/guess-game game, but over a simple phone line, using Twilio's API and with some valuable business advice as a prize ;)
+It's the same "Guess the Number":https://github.com/vitalius/guess-game game, but over a phone line, using Twilio's API and with some valuable business advice as a prize ;)

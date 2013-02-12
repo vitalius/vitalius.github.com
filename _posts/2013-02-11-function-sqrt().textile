@@ -97,4 +97,4 @@ for i in [x * 0.5 for x in range(1, 11)]:
 
 p. My_sqrt() gets pretty close to the system's approximation but look at those times, my_sqrt() is about 100,000 times slower! It turns out, there is a completely "loop less":https://github.com/vitalius/0xbeef/blob/master/glibc-sqrt.c approximation of sqrt() in "glibc":http://www.gnu.org/software/libc/ (also a very interesting Carmack's "InvSqrt":http://www.beyond3d.com/content/articles/8/ hack). 
 
-p. And while there are many magic numbers in glibc, I think we can now appreciate the standard the math library a bit more. ;)
+p. And while there are many magic numbers in glibc, I think we can now appreciate the standard math library a bit more. ;)

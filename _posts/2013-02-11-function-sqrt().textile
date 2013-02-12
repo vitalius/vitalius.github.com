@@ -7,7 +7,7 @@ h1. {{ page.title }}
 
 p(meta). 11 February 2013
 
-p. Let's say we are given a task to implement sqrt() function for a programming language that doesn't have any math libraries. Referencing a math book and using some algebraic manipulations we can state sqrt() function as such:
+p. Let's say we are given a task to implement sqrt() function for a programming language that doesn't have any math libraries. Naively referencing a math book and using some algebraic manipulations we can state sqrt() function as such:
 
 $$ \sqrt{x} = x^{\frac{1}{2}} = e^{0.5\ln{x}} $$
 

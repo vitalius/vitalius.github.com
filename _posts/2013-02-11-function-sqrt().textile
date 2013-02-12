@@ -82,7 +82,7 @@ for i in [x * 0.5 for x in range(1, 11)]:
     print '%1.5f'%(py_r), '(%1.5f ms)'%(py_dt)
 </code></pre></notextile>
 
-<notextile><pre><code data-language="text">x       my_sqrt(x)             math.sqrt(x)
+<notextile><pre><code data-language="text"> x       my_sqrt(x)             math.sqrt(x)
 0.5 -> 0.70711 (115.14497 ms) 0.70711 (0.00501 ms)
 1.0 -> 1.00000 (114.22300 ms) 1.00000 (0.00095 ms)
 1.5 -> 1.22474 (116.27412 ms) 1.22474 (0.00191 ms)
@@ -97,4 +97,4 @@ for i in [x * 0.5 for x in range(1, 11)]:
 
 p. My_sqrt() gets pretty close to the system's approximation but look at those times, my_sqrt() is about 100,000 times slower! It turns out, there is a completely "loop less":https://github.com/vitalius/0xbeef/blob/master/glibc-sqrt.c approximation of sqrt() in "glibc":http://www.gnu.org/software/libc/ (also a very interesting Carmack's "InvSqrt":http://www.beyond3d.com/content/articles/8/ hack). 
 
-p. And while there are many magic numbers in glibc, I think we can now appreciate standard the math library a bit more. ;)
+p. And while there are many magic numbers in glibc, I think we can now appreciate the standard the math library a bit more. ;)

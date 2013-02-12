@@ -40,7 +40,7 @@ p. So, let's write $e$ function (expanding to 1000 terms is probably good enough
     return r
 </code></pre></notextile>
 
-p. Natural log is bit more tricky, there are two cases but "Continued fractions":http://en.wikipedia.org/wiki/Natural_logarithm#Continued_fractions is simple enough, plus we already have a power function.
+p. Natural log is bit tricky since there are two cases, but "Continued fractions":http://en.wikipedia.org/wiki/Natural_logarithm#Continued_fractions is simple enough, plus we already have a power function.
 
 $$ \ln (1+x) = \frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\frac{x^5}{5}-\cdots \quad{\rm for}\quad \left|x\right|<1.\,\! $$
 
@@ -61,7 +61,7 @@ $$ \ln \left( 1+\frac{x}{y} \right) \quad{\rm for}\quad \left|x\right|\geq1.\,\!
     return r
 </code></pre></notextile>
 
-p. Now we have enough functions to estimate sqrt() and run some tests (complete "source":https://github.com/vitalius/0xbeef/blob/master/my_sqrt.py).
+p. Finally we have enough functions to estimate sqrt() and even run some tests (complete "source":https://github.com/vitalius/0xbeef/blob/master/my_sqrt.py).
 
 <notextile><pre><code data-language="Python">def my_sqrt(x):
     return my_e(0.5*my_ln(x))

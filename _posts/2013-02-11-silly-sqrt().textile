@@ -1,0 +1,100 @@
+---
+layout: post
+title: "Silly sqrt()"
+---
+
+h1. {{ page.title }}
+
+p(meta). 11 February 2013
+
+p. Let's say we are given a task to implement sqrt() function for a programming language that doesn't have any math libraries. Naively referencing a math book and using some algebraic manipulations we can state sqrt() function as such:
+
+$$ \sqrt{x} = x^{\frac{1}{2}} = e^{0.5\ln{x}} $$
+
+p. Math books also tell us that $e$ and $ln$ can be expanded using "Taylor series":http://en.wikipedia.org/wiki/E_(mathematical_constant)#Complex_numbers
+
+$$ e^{x} = 1 + {x \over 1!} + {x^{2} \over 2!} + {x^{3} \over 3!} + \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!} $$
+
+p. which requires a factorial and a power function, but it's fairly easy to implement those. 
+
+p. So, let's write $e$ function (expanding to 1000 terms is probably good enough approximation).
+
+<notextile><pre><code data-language="Python">def my_e(x):
+    r = 1 + x
+    for i in range(2,1000):
+        r += float(my_pow(x,i)) / my_fact(i)
+    return r
+</code></pre></notextile>
+
+<notextile><pre><code data-language="Python">def my_fact(n):
+    r = 1.0
+    for i in range(1,n+1):
+        r *= i
+    return r
+</code></pre></notextile>
+
+<notextile><pre><code data-language="Python">def my_pow(x, n):
+    r = x
+    for i in range(n-1):
+        r *= x
+    return r
+</code></pre></notextile>
+
+p. Natural log is bit tricky since there are two cases, but "Continued fractions":http://en.wikipedia.org/wiki/Natural_logarithm#Continued_fractions is simple enough, plus we already have a power function.
+
+$$ \ln (1+x) = \frac{x^1}{1}-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\frac{x^5}{5}-\cdots \quad{\rm for}\quad \left|x\right|<1.\,\! $$
+
+$$ \ln \left( 1+\frac{x}{y} \right) \quad{\rm for}\quad \left|x\right|\geq1.\,\! $$
+
+<notextile><pre><code data-language="Python">def my_ln(x):
+    if x <= 2.0:
+        return my_ln2(x)
+    else:
+        return my_ln(x/(x-1)) + my_ln(x-1)
+</code></pre></notextile>
+
+<notextile><pre><code data-language="Python">def my_ln2(x):
+    r = (x-1)
+    for i in range(2,1000,2):
+        r -= my_pow((x-1),i) / float(i)
+        r += my_pow((x-1),i+1) / float(i+1)
+    return r
+</code></pre></notextile>
+
+p. Finally we have enough functions to estimate sqrt() and even run some tests (complete "source":https://github.com/vitalius/0xbeef/blob/master/my_sqrt.py).
+
+<notextile><pre><code data-language="Python">def my_sqrt(x):
+    return my_e(0.5*my_ln(x))
+</code></pre></notextile>
+
+<notextile><pre><code data-language="Python">from math import sqrt
+from time import time
+
+print ' x       my_sqrt(x)             math.sqrt(x)'
+for i in [x * 0.5 for x in range(1, 11)]:
+    my_t  = time()
+    my_r  = my_sqrt(i)
+    my_dt = (time() - my_t)*1000.0
+    py_t  = time()
+    py_r  = sqrt(i)
+    py_dt = (time() - py_t)*1000.0
+    print '%1.1f ->'%(i), '%1.5f'%(my_r), '(%1.5f ms)'%(my_dt),
+    print '%1.5f'%(py_r), '(%1.5f ms)'%(py_dt)
+</code></pre></notextile>
+
+<notextile><pre><code data-language="text"> x       my_sqrt(x)             math.sqrt(x)
+0.5 -> 0.70711 (115.14497 ms) 0.70711 (0.00501 ms)
+1.0 -> 1.00000 (114.22300 ms) 1.00000 (0.00095 ms)
+1.5 -> 1.22474 (116.27412 ms) 1.22474 (0.00191 ms)
+2.0 -> 1.41457 (116.90187 ms) 1.41421 (0.00215 ms)
+2.5 -> 1.58114 (154.28805 ms) 1.58114 (0.00095 ms)
+3.0 -> 1.73248 (148.92006 ms) 1.73205 (0.00119 ms)
+3.5 -> 1.87083 (184.67402 ms) 1.87083 (0.00095 ms)
+4.0 -> 2.00050 (184.65114 ms) 2.00000 (0.00191 ms)
+4.5 -> 2.12132 (224.37906 ms) 2.12132 (0.00095 ms)
+5.0 -> 2.23663 (231.37093 ms) 2.23607 (0.00095 ms)
+</code></pre></notextile>
+
+p. My_sqrt() gets close to the system's approximation but look at those times, my_sqrt() is about 100,000 times slower! 
+
+p. It turns out, there is a "much better":https://github.com/vitalius/0xbeef/blob/master/glibc-sqrt.c approximation of sqrt() in "glibc":http://www.gnu.org/software/libc/ which uses a combination of "Newton's":http://en.wikipedia.org/wiki/Newton%27s_method root finding method and IEEE floating point representation trick (also a very interesting "InvSqrt":http://www.beyond3d.com/content/articles/8/ hack in Quake3).

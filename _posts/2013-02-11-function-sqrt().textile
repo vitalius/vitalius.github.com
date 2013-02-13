@@ -95,6 +95,4 @@ for i in [x * 0.5 for x in range(1, 11)]:
 5.0 -> 2.23663 (231.37093 ms) 2.23607 (0.00095 ms)
 </code></pre></notextile>
 
-p. My_sqrt() gets pretty close to the system's approximation but look at those times, my_sqrt() is about 100,000 times slower! It turns out, there is a completely "loop less":https://github.com/vitalius/0xbeef/blob/master/glibc-sqrt.c approximation of sqrt() in "glibc":http://www.gnu.org/software/libc/ (also a very interesting "InvSqrt":http://www.beyond3d.com/content/articles/8/ hack in Quake3). 
-
-p. And while there are many magic numbers in glibc, I now appreciate the standard math library a bit more. ;)
+p. My_sqrt() gets close to the system's approximation but look at those times, my_sqrt() is about 100,000 times slower! It turns out, there is a "much better":https://github.com/vitalius/0xbeef/blob/master/glibc-sqrt.c approximation of sqrt() in "glibc":http://www.gnu.org/software/libc/ which uses a combination of "Newton's":http://en.wikipedia.org/wiki/Newton%27s_method root finding method and IEEE floating point representation trick (also a very interesting "InvSqrt":http://www.beyond3d.com/content/articles/8/ hack in Quake3).

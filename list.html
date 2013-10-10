@@ -1,0 +1,24 @@
+<!-- Index list -->
+<div ng-controller="IndexCtrl"> 
+    <div ng-hide="index.error">
+        
+        <div ng-show="index.about" class="panel panel-warning">
+          <div class="panel-body">{{ index.about }}</div>
+        </div>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Blog Posts</h3>
+          </div>
+          <ul class="panel-body list-group">
+            <li class="list-group-item" ng-repeat="p in index.list | orderBy:'date':true">
+              <a href="#/post/{{ p.filename }}">{{ p.title }}</a> 
+              <span ng-if="IsNew(p.date)" class="text-muted">New!</span> 
+              <span class="pull-right">{{ p.date | date:'shortDate' }}</span>
+            </li>
+          </ul>
+        </div> 
+        
+    </div>
+    <div ng-show="index.error" class="alert alert-danger">{{ index.error }}</div>
+</div>

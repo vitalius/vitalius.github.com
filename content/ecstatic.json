@@ -1,10 +1,10 @@
 { "body": "
 
-There could be a variety of reasons for choosing to use static site generator 
-instead of using readily available social media outlet or Wordpress 
-(you think Wordpress is a Wordmess(tm), you want to host straight from S3 
-or from your own windows box by running a 
-<a href='https://code.google.com/p/mongoose/'>45Kb web server</a>, etc). 
+There could be a variety of reasons for choosing to use a static site 
+generator for a blog. Maybe you don't trust Facebook and think Wordpress is 
+a Word-mess(tm), or you want to host your blog straight from S3 or even 
+from your own windows box running a 
+<a href='https://code.google.com/p/mongoose/'>45Kb web server</a>. 
 In any case, a static site generator usually solves two problems:</p>
 <ol>
  <li>Helps with creation and management of content.</li>
@@ -12,34 +12,34 @@ In any case, a static site generator usually solves two problems:</p>
 </ol>
 
 After evaluating myriads of static site generators, looking for something 
-simple and easy to maintain. I came to a conclusion that while most of 
-them offer a flexible solution to problem 2, solving problem 1 is typically 
-done by installing a full blown SDK.</p>
+simple and easy to maintain. I came to conclusion that while most of 
+them offer a flexible solution to problem #2, solving problem #1 is typically 
+done by installing a full blown SDK bloat.</p>
 
 Let's look at <a href='http://jekyllrb.com/'>Jekyll</a> for example. 
 Want a simple blog? Start by installing ruby then gems for template engines, 
 gems for web server, gems for this and that. Additionally, while github 
 pages are on the internet, SDK must be maintained and operational on any 
 machine you want to update your blog from. It's like killing a bird with 
-a giant boulder that smashes an entire flock.
+a giant boulder and smashing an entire flock (can be useful in some 
+situation).
 </p>
-Then there is this markup/templating <em>help</em> where content creation 
-is aided by one or more templating libs which converts all the 
-<code>_hello_</code> into <code>&lt;em&gt;hello&lt;/em&gt;</code>. 
-Whoa a whooping 7 key strokes reduction! It's like I've gained an 
-extra hour in my day.
+Then there is this markup/templating <em>help</em> where writing  
+is aided by one or more template libs that convert all the 
+<code>_hellos_</code> into <code>&lt;em&gt;hellos&lt;/em&gt;</code>. 
+Whoa a whooping 7 chars reduction!
 </p>
 If users were smart enough to install a markup lib and SDK to use it, 
 they probably won't be strangers to hyper-text-<strong>markup</strong>-language, 
-HTML for short. It's easy to read. It's renders reliably on all web browsers, 
+HTML for short. It's easy to read. It renders reliably on all web browsers, 
 it's been around for decades. 
 <a href='http://en.wikipedia.org/wiki/HTML'>Look it up</a>.
 </p>
 
 So, it all came down to rolling yet another <em>simple</em> static 
-site generator.</p> There are really two options for a generator that 
-solves both problems and not relying on a SDK outside of a web browser. 
-(A web browser is a given, it's generally required to view a blog post).
+site generator.</p> There seems to be only two options for a generator 
+that solves both problems while not relying on some sort of SDK bloat 
+installed on a machine to maintain its usefulness.
 </p>
 
 <ol>
@@ -55,38 +55,39 @@ solves both problems and not relying on a SDK outside of a web browser.
       Cons:
       <ul>
         <li>Ugly!</li>
-        <li>Unnecessary copy/paste when adding a new page.</li>
+        <li>Unnecessary copy/pastes when adding a new page.</li>
       </ul>  
-  
   </li>
-  <li>Leverage powerful Javascript engine of a modern browser
+  <li>Leverage powerful Javascript engine of a modern browser.
   <br>
       Pros: 
       <ul>
         <li>Pretty!</li>
         <li>Compatibility across all modern browsers including mobile 
-        (when using vanilla AngularJS and Bootstrap).</li>
+        (with vanilla AngularJS and Bootstrap).</li>
       </ul>
       Cons:
       <ul>
-        <li>More complex than plain HTML</li>
         <li>Javascript</li>
+        <li>More complex than plain HTML (jQuery, CSS, Angular...)</li>
       </ul>    
   </li>
 </ol>
 </p>
 
-In the end, AngularJS + Bootstrap made #2 more attractive and now there exists 
+After reviewing few current UI frameworks, AngularJS + Bootstrap made second 
+option more attractive and now there exists 
 <a href='https://github.com/vitalius/ecstatic'>Ecstatic</a>!</p>
 
-Ecstatic solves static site generator problems in the following way:</p>
+Ecstatic doesn't need a programming. 
+Content can be added with just a text editor (notepad.exe, vi).</p>
 <ol>
   <li>
-    Posts reside in individual files under content/ directory. 
-    They're simple html documents wrapped with { \"body\": \" ... \" } JSON tags, 
+    Posts reside as individual files under <code>content/</code> directory. 
+    They're in a simple html format, wrapped with { \"body\": \" ... \" } JSON tags, 
     see <a href='/content/ecstatic.json'>this page</a> for example. 
     Before the JSON object is parsed, all line breaks and tabs are stripped out, 
-    converting a post into JSON valid format. HTML formatting is fairly easy 
+    converting a post into a valid JSON format. HTML formatting is fairly easy 
     to read and write. AngularJS and Bootstrap take care of the official HTTP 
     and layout business by setting all the header, footers, etc. To list a 
     post on the index page, an entry in 
@@ -100,14 +101,17 @@ Ecstatic solves static site generator problems in the following way:</p>
   </li>
 </ol>
 
-Additional functionally such as <a href='http://disqus.com/'>comments</a> 
-and <a href='http://www.mathjax.org/'>math rendering</a> 
-e.g. $ e^{ix} = \\cos x + i \\sin x $ is provided by including additional 
-javascript/HTML snippets into layout templates:</p>
+<a href='http://disqus.com/'>Comments</a> or <a href='http://www.mathjax.org/'>math 
+rendering</a> e.g. $ e^{ix} = \\cos x + i \\sin x $ can be added with additional 
+javascript/HTML snippet in layout templates:</p>
 <ul>
   <li><code>index.html</code> main template</li>
-  <li><code>list.html</code> post listing template</li>
+  <li><code>list.html</code> listing template</li>
   <li><code>post.html</code> post template</li>
 </ul>
+
+My goal is to use Ecstatic as a personal <em>simple</em> static site generator 
+on this blog and further develop/fix it as use cases arise.
+
 <script>MathJax.Hub.Queue([\"Typeset\", MathJax.Hub, \"post_body\"])</script>
 "}

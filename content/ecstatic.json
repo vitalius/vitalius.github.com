@@ -1,41 +1,51 @@
 { "body": "
 
-There could be a variety of reasons for choosing to use static site generator instead of 
-using readly available social media outlet or wordpress 
-(you think wordpress is a mess, you want to host straight from S3 or from your own windows 
-box running a <a href='https://code.google.com/p/mongoose/'>45Kb web server</a>, etc). 
+There could be a variety of reasons for choosing to use static site generator 
+instead of using readily available social media outlet or Wordpress 
+(you think Wordpress is a Wordmess(tm), you want to host straight from S3 
+or from your own windows box by running a 
+<a href='https://code.google.com/p/mongoose/'>45Kb web server</a>, etc). 
 In any case, a static site generator usually solves two problems:</p>
 <ol>
  <li>Helps with creation and management of content.</li>
  <li>Enhances and optimizes content for readers.</li>
 </ol>
 
-After evaluating myriads of static site generators, looking for something simple and easy to maintain. 
-I came to a conclusion that while most of them offer a flexible solution to problem 2, solving problem 1 is 
-typically done by installing a full blown SDK.</p>
+After evaluating myriads of static site generators, looking for something 
+simple and easy to maintain. I came to a conclusion that while most of 
+them offer a flexible solution to problem 2, solving problem 1 is typically 
+done by installing a full blown SDK.</p>
 
-Let's look at <a href='http://jekyllrb.com/'>Jekyll</a> for example. Want a simple blog? Start by installing ruby 
-then gems for template engines, gems for web server, gems for this and that. Additionally, while github pages are 
-on the internet, SDK must be maintained and operational on any machine you want to update your blog from. 
-It's like killing a bird with a giant boulder that smashes an entire flock.
+Let's look at <a href='http://jekyllrb.com/'>Jekyll</a> for example. 
+Want a simple blog? Start by installing ruby then gems for template engines, 
+gems for web server, gems for this and that. Additionally, while github 
+pages are on the internet, SDK must be maintained and operational on any 
+machine you want to update your blog from. It's like killing a bird with 
+a giant boulder that smashes an entire flock.
 </p>
-Then there is this markup/templating <em>help</em> where content creation is aided by one or more 
-templating libs which converts all the <code>_hello_</code> 
-into <code>&lt;em&gt;hello&lt;/em&gt;</code>. Whoa a whooping 7 key strokes reduction! It's like I've gained an 
+Then there is this markup/templating <em>help</em> where content creation 
+is aided by one or more templating libs which converts all the 
+<code>_hello_</code> into <code>&lt;em&gt;hello&lt;/em&gt;</code>. 
+Whoa a whooping 7 key strokes reduction! It's like I've gained an 
 extra hour in my day.
 </p>
-If users were smart enough to install a markup lib and SDK to use it, they probably won't be strangers to 
-hyper-text-<strong>markup</strong>-language, HTML for short. It's easy to read.  
-It's renders reliably on all web browsers, it's been around for dacades. <a href='http://en.wikipedia.org/wiki/HTML'>Look it up</a>.
+If users were smart enough to install a markup lib and SDK to use it, 
+they probably won't be strangers to hyper-text-<strong>markup</strong>-language, 
+HTML for short. It's easy to read. It's renders reliably on all web browsers, 
+it's been around for decades. 
+<a href='http://en.wikipedia.org/wiki/HTML'>Look it up</a>.
 </p>
 
-So, it all came down to rolling yet another <em>simple</em> static site generator.</p>
-There are really two options for a generator that solves both problems and not relying on a SDK outside of a web browser. 
+So, it all came down to rolling yet another <em>simple</em> static 
+site generator.</p> There are really two options for a generator that 
+solves both problems and not relying on a SDK outside of a web browser. 
 (A web browser is a given, it's generally required to view a blog post).
 </p>
 
 <ol>
-  <li>Keep everything in plain HTML (like the good prophet <a href='http://stallman.org/'>Stallman</a>), this option isn't really a generator at all.
+  <li>Keep everything in plain HTML (like the good prophet 
+  <a href='http://stallman.org/'>Stallman</a>), this option isn't 
+  really a generator at all.
   <br>
       Pros: 
       <ul>
@@ -54,7 +64,8 @@ There are really two options for a generator that solves both problems and not r
       Pros: 
       <ul>
         <li>Pretty!</li>
-        <li>Compatibility across all modern browsers including mobile (when using vanilla AngularJS and Bootstrap).</li>
+        <li>Compatibility across all modern browsers including mobile 
+        (when using vanilla AngularJS and Bootstrap).</li>
       </ul>
       Cons:
       <ul>
@@ -73,21 +84,30 @@ Ecstatic solves static site generator problems in the following way:</p>
   <li>
     Posts reside in individual files under content/ directory. 
     They're simple html documents wrapped with { \"body\": \" ... \" } JSON tags, 
-    see <a href='/content/ecstatic.json'>this page</a> for example. Before the JSON object is parsed, 
-    all line breaks and tabs are stripped out, converting a post into JSON valid format.
-    HTML formatting is fairly easy to read and write. AngularJS and Bootstrap take care of
-    the official HTTP and layout business by setting all the header, footers, etc. 
-    To list a post on the index page, an entry in <a href='/content/index.json'>content/index.json</a> 
+    see <a href='/content/ecstatic.json'>this page</a> for example. 
+    Before the JSON object is parsed, all line breaks and tabs are stripped out, 
+    converting a post into JSON valid format. HTML formatting is fairly easy 
+    to read and write. AngularJS and Bootstrap take care of the official HTTP 
+    and layout business by setting all the header, footers, etc. To list a 
+    post on the index page, an entry in 
+    <a href='/content/index.json'>content/index.json</a> 
     is made with at least title and date values.
   </li>
   <li>
-    Bootstrap and AngularJS allow for a pretty advanced, responsive layout. By using vanilla css 
-    and javascript (no custom css.), Ecstatic is as browser compatible as Bootstrap and AngularJS are.
+    Bootstrap and AngularJS allow for a pretty advanced, responsive layout. 
+    By using vanilla css and javascript (no custom css.), Ecstatic is as 
+    browser compatible as Bootstrap and AngularJS are.
   </li>
 </ol>
 
 Additional functionally such as <a href='http://disqus.com/'>comments</a> 
-and <a href='http://www.mathjax.org/'>math rendering</a> $ e^{ix} = \\cos x + i \\sin x $ 
-is provided by additional javascript/HTML libs. Again, all in the browser, no SDK.
-</p>
+and <a href='http://www.mathjax.org/'>math rendering</a> 
+e.g. $ e^{ix} = \\cos x + i \\sin x $ is provided by including additional 
+javascript/HTML snippets into layout templates:</p>
+<ul>
+  <li><code>index.html</code> main template</li>
+  <li><code>list.html</code> post listing template</li>
+  <li><code>post.html</code> post template</li>
+</ul>
+
 "}

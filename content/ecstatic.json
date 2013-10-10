@@ -109,5 +109,5 @@ javascript/HTML snippets into layout templates:</p>
   <li><code>list.html</code> post listing template</li>
   <li><code>post.html</code> post template</li>
 </ul>
-
+<script>MathJax.Hub.Queue([\"Typeset\", MathJax.Hub, \"post_body\"])</script>
 "}

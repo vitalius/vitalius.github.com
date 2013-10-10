@@ -1,4 +1,4 @@
-vitalius.github.com
+ecstatic
 ===================
 
 A Simple Static Site Generator.

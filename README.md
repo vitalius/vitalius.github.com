@@ -4,7 +4,7 @@ ecstatic
 A Simple Static Site Generator.
 
 ### Goals and Features ###
- * Ability to host on a basic http server with no backend, such as S3.
+ * Obviously, ability to host on a basic http server with no backend, such as S3.
   * Posts are written in JSON with linebreaks format. AngularJS allows http response filtering, where newlines are promptly removed making post a valid JSON feed.
  * Generate and edit content with a simple text editor.
   * No need for Ruby or Python environment, no "markup" either. Posts are written with HTML (Hyper Text _Markup_ Language).

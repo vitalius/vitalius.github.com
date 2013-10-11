@@ -107,7 +107,7 @@ App.controller('PostCtrl', function($scope, $routeParams, $timeout, Post) {
 
     // meh fix for MathJax
     $timeout( function() {
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById("ecstatic_post_body")]);
     }, 1000);
 });
 

@@ -12,7 +12,7 @@
           </div>
           <ul class="panel-body list-group">
             <li class="list-group-item" ng-repeat="p in index.list | orderBy:'date':true">
-              <a href="#/post/{{ p.filename }}">{{ p.title }}</a> 
+              <a href="#!/post/{{ p.filename }}">{{ p.title }}</a> 
               <span ng-if="IsNew(p.date)" class="text-muted">New!</span> 
               <span class="pull-right">{{ p.date | date:'shortDate' }}</span>
             </li>

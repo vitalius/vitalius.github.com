@@ -1,6 +1,11 @@
-var App = angular.module('ecstaticApp', []);
+var App = angular.module('ecstaticApp', ['ngDisqus']);
 
-App.config(['$routeProvider', function($routeProvider) {
+App.config(['$routeProvider', '$locationProvider', '$disqusProvider', 
+                function($routeProvider, $locationProvider, $disqusProvider) {
+                
+    $locationProvider.hashPrefix('!');
+    $disqusProvider.setShortname('vitaliy-blog');
+    
     $routeProvider
         .when('/', { templateUrl: 'list.html', controller: 'IndexCtrl' })
         .when('/post/:postFileName', { templateUrl: 'post.html', controller: 'PostCtrl' })
@@ -96,14 +101,15 @@ App.factory('Post', function($http, $q, Index) {
         function(err) {
             return Post.fail(err.data);
         });        
-    };    
+    };
     
     return Post;
 });
 
+App.controller('PostCtrl', function($scope, $routeParams, $timeout, $window, Post) {
 
-App.controller('PostCtrl', function($scope, $routeParams, $timeout, Post) {
     $scope.post = Post.get($routeParams.postFileName);
+    $window.disqus_shortname = $routeParams.postFileName;
 
     // meh fix for MathJax
     $timeout( function() { 
@@ -114,7 +120,6 @@ App.controller('PostCtrl', function($scope, $routeParams, $timeout, Post) {
                 processEscapes: true
             }
         });    
-    
         MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById("ecstatic_post_body")]); 
     }, 3000);
 });

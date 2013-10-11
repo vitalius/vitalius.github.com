@@ -103,12 +103,7 @@ Content is added with just a text editor (notepad.exe, vi).</p>
 
 <a href='http://disqus.com/'>Comments</a> or <a href='http://www.mathjax.org/'>math 
 rendering</a> e.g. $ e^{ix} = \\cos x + i \\sin x $ can be added with additional 
-javascript/HTML snippet in layout templates:</p>
-<ul>
-  <li><code>index.html</code> main template</li>
-  <li><code>list.html</code> listing template</li>
-  <li><code>post.html</code> post template</li>
-</ul>
+javascript code snippets.
 
 My goal is to use Ecstatic as a personal <em>simple</em> static site generator 
 on this blog and further develop/fix it as use cases arise.

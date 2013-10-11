@@ -1,4 +1,16 @@
-<!-- Post -->
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+        displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+        processEscapes: true
+    }
+});
+</script> 
+
+
+
+<!-- Post Template -->
 <div ng-controller="PostCtrl">
     <div ng-hide="post.error">
     
@@ -9,7 +21,7 @@
           </div>         
           
           <!-- post body -->
-          <div ng-bind-html-unsafe="post.body" class="panel-body" id="post_body"></div>
+          <div ng-bind-html-unsafe="post.body" class="panel-body"></div>
           
           <!-- post footer -->
           <div class="panel-footer">
@@ -30,31 +42,19 @@
     <div ng-show="post.error" class="alert alert-danger">{{ post.error }}</div>
 </div>
 
-<!-- MathJax -->
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-<script type='text/x-mathjax-config'>
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-        displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-        processEscapes: true
-      }
-    });
-</script> 
 
-<!-- Disqus -->
+
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
-    var disqus_shortname = 'vitaliy-blog';
-    var disqus_identifier = location.href.substr(location.href.lastIndexOf('/') + 1);
-    var disqus_title = location.href.substr(location.href.lastIndexOf('/') + 1);
-    var disqus_url = location.href;
+/* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
+var disqus_shortname = 'vitaliy-blog';
+var disqus_identifier = location.href.substr(location.href.lastIndexOf('/') + 1);
+var disqus_title = location.href.substr(location.href.lastIndexOf('/') + 1);
+var disqus_url = location.href;
     
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

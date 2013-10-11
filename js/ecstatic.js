@@ -102,8 +102,13 @@ App.factory('Post', function($http, $q, Index) {
 });
 
 
-App.controller('PostCtrl', function($scope, $routeParams, Post) {
+App.controller('PostCtrl', function($scope, $routeParams, $timeout, Post) {
     $scope.post = Post.get($routeParams.postFileName);
+
+    // meh fix for MathJax
+    $timeout( function() {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }, 1000);
 });
 
 

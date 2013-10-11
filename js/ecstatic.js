@@ -106,10 +106,17 @@ App.controller('PostCtrl', function($scope, $routeParams, $timeout, Post) {
     $scope.post = Post.get($routeParams.postFileName);
 
     // meh fix for MathJax
-    $timeout( function() {
-        console.log("$timeout for MathJax typesetting on ecstatic_post_body");
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById("ecstatic_post_body")]);
-    }, 1000);
+    $timeout( function() { 
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+                processEscapes: true
+            }
+        });    
+    
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById("ecstatic_post_body")]); 
+    }, 3000);
 });
 
 

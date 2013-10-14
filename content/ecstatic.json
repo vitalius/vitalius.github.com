@@ -77,14 +77,14 @@ installed on a machine to maintain its usefulness.
 
 After reviewing few current UI frameworks, AngularJS + Bootstrap made second 
 option more attractive and now there exists 
-<a href='https://github.com/vitalius/ecstatic'>Ecstatic</a>!</p>
+<a href='https://github.com/vitalius/vitalius.github.com/'>Ecstatic</a>!</p>
 
 Ecstatic doesn't need a programming environment or SDK.
 Content is added with just a text editor (notepad.exe, vi).</p>
 <ol>
   <li>
     Posts reside as individual files under <code>content/</code> directory, 
-    in a simple html format wrapped with { \"body\": \" ... \" } JSON tags, 
+    in a simple html format wrapped with <code>{ \"body\": \" ... \" }</code> JSON tags, 
     see <a href='/content/ecstatic.json'>this page</a> for example. 
     Before the JSON object is parsed, all line breaks and tabs are stripped out, 
     converting a post into a valid JSON feed. HTML formatting is fairly easy 

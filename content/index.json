@@ -2,5 +2,10 @@
     "ecstatic.json": {
         "date": "10/9/2013",
         "title": "Ecstatic - simple static site generator"
+    },
+    "cs_course.json": {
+        "date": "10/16/2013",
+        "title": "The skill of quickly reading code"
     }
+
 }

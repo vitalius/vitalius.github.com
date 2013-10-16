@@ -6,9 +6,9 @@ as possible, you are, by definition, not smart enough
 to debug it.\" -Brian Kernighan</blockquote></p>
 
 After getting a chance to review few applications and test 
-programs from potential hires, I have an idea of a possible 
+programs from potential hires, I have an idea of a 
 college course - 'Real-life Software Development 301.' 
-Maybe not a real course but a course project that heavily 
+Well, maybe not a real course but a course project that heavily 
 stresses the ability to quickly read other people's code.</p>
 
 First and foremost, anyone starting programming should be 
@@ -21,15 +21,18 @@ code the more value you bring to your employer.</p>
 Being able to quickly read other people's code is a required 
 skill, and it can only be taught by reading a lot of code, 
 not developing stuff from scratch. People who can write good 
-comments are rare and don't write many comments either, after 
-all, this is software engineering field not English literature.</p>
+comments are rare and don't write many comments, after 
+all, this is software engineering field not English literature. 
+There are usually plenty of bad comments and reading actual code,  
+generally is easier and faster way to understand the program 
+structure.</p>
 
 Basic idea for the course is to let students pick an open source 
 project that they love and use (maybe a single project for 
 entire class) and from the beginning of the course define 
 a reasonable set of features that could improve the project. 
 Then spend the rest of the course helping students to simply 
-read and understand as existing code as possible and teach 
+read and understand as much of the existing code as possible and teach 
 software engineering principles, such as repository system, 
 design patterns, etc.</p>
 
@@ -38,7 +41,7 @@ game engine that is used in other courses and have a list of features
 that students can improve the software with (regardless 
 if they used the game engine themselves or not) and throughout the course 
 have them implement those features. At the conclusion of the 
-course, roll back the repository to pre-features revision and 
+course, roll back repository to pre-features revision and 
 get ready for another class. If embedded engineering course  
 can require students to build elevator controller every single  
 year, having student implement same software feature every  
@@ -48,9 +51,10 @@ but simply train the skill of quickly reading and understanding code.</p>
 It would be an interesting software engineering study to 
 measure code reading performance before and after having students read 
 existing code for a month. Maybe time a control and fresh 
-student group in reading a page or two of Java code and 
-describe in English words what that code does.</p>
+student group in reading a page or two of Java and 
+describe in plain English what that code does.</p>
 
-In any case, looking back at my college years, I really wish I had a course like that.</p>
+In any case, looking back at my college years, having a course like 
+that would have been very beneficial.</p>
 
 "}

@@ -6,40 +6,40 @@ as possible, you are, by definition, not smart enough
 to debug it.\" -Brian Kernighan</blockquote></p>
 
 After getting a chance to review few applications and test 
-programs from potential hires, I have an idea of a 
-college course - 'Real-life Software Development 301.' 
+programs from potential hires, I have an idea for a 
+college course - 'Real-life Software Development.' 
 Well, maybe not a real course but a course project that heavily 
-stresses the ability to quickly read other people's code.</p>
+stresses the ability of quickly reading other people's code.</p>
 
-First and foremost, anyone starting programming should be 
+First and foremost, anyone starting a programming career should be 
 prepared to read allot of code. If you get a programming 
 job, it's very typical to have the first month on the job 
 entirely devoted to reading and getting familiar with companies 
 existing code. The faster you can read and understand that 
 code the more value you bring to your employer.</p>
 
-Being able to quickly read other people's code is a required 
-skill, and it can only be taught by reading a lot of code, 
-not developing stuff from scratch. People who can write good 
-comments are rare and don't write many comments, after 
-all, this is software engineering field not English literature. 
-There are usually plenty of bad comments and reading actual code,  
-generally is easier and faster way to understand the program 
-structure.</p>
+Being able to quickly read other people's code is a required  
+skill that can only be taught by reading a lot of code,  
+not developing stuff from scratch. Note the quote in the begining
+of thie post. But what about code comments you might ask?
+People who write good code comments are rare and don't write many comments, after  
+all, this is software engineering field not literature.  
+But there are usually plenty of bad comments which make reading code  
+a much easier and faster way to understand the program.</p>
 
-Basic idea for the course is to let students pick an open source 
+So, the basic idea for the course is to let students pick an open source 
 project that they love and use (maybe a single project for 
 entire class) and from the beginning of the course define 
 a reasonable set of features that could improve the project. 
 Then spend the rest of the course helping students to simply 
-read and understand as much of the existing code as possible and teach 
+read and understand as much of already existing code as possible and teach 
 software engineering principles, such as repository system, 
 design patterns, etc.</p>
 
-Another idea is to have an existing college project, like a 
+Another idea is to have an school college project, like a 
 game engine that is used in other courses and have a list of features 
 that students can improve the software with (regardless 
-if they used the game engine themselves or not) and throughout the course 
+if they have used the game engine themselves or not) and throughout the course 
 have them implement those features. At the conclusion of the 
 course, roll back repository to pre-features revision and 
 get ready for another class. If embedded engineering course  
@@ -48,10 +48,9 @@ year, having student implement same software feature every
 year is not that bad because the goal is not to improve software  
 but simply train the skill of quickly reading and understanding code.</p>
 
-It would be an interesting software engineering study to 
-measure code reading performance before and after having students read 
-existing code for a month. Maybe time a control and fresh 
-student group in reading a page or two of Java and 
+It would be an interesting study to measure code reading performance 
+before and after having students train to read existing code for a month. 
+Maybe time a control and fresh student group in reading a page or two of Java and 
 describe in plain English what that code does.</p>
 
 In any case, looking back at my college years, having a course like 

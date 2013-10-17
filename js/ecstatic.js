@@ -55,8 +55,8 @@ App.factory('Post', function($http, $q, Index) {
         data = data.replace(PROTECTION_PREFIX, '');
         
         // +diff from Angular's default transformResponse
-        data = data.replace(/(\r\n|\n|\r)/gm, ''); // get rid of \n
-        data = data.replace(/\t/gm, '    ');       // get rid of tabs
+        data = data.replace(/(\r\n|\n|\r)/gm, ' '); // get rid of \n
+        data = data.replace(/\t/gm, '    ');        // get rid of tabs
         
         if (JSON_START.test(data) && JSON_END.test(data))
             data = JSON.parse(data);

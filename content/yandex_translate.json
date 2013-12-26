@@ -4,16 +4,16 @@
 Yandex (Russian google) is advertising their new 
 <a href='http://translate.yandex.ru/'>translate system</a>. 
 And while it's not clear if they use <a href='http://en.wikipedia.org/wiki/SYSTRAN'>SYSTRAN</a> for 
-translation like the rest (Google, Bing, Bable Fish), or rolled out their 
+translation like the rest (Google, Bing, Bable Fish) did, or rolled out their 
 own <a href='http://en.wikipedia.org/wiki/Statistical_machine_translation'>SMT</a>, 
 they certainly merit a test drive.</p>
 
-Let's try translating a famous Russian pangram to English</br>
+Let's try translating a famous Russian pangram (not really, no <i>ж</i>) to English</br>
 &mdash; <i>Съешь ещё этих мягких французских булок, да выпей чаю.</i></p>
 
 Yandex </br>
 &mdash; <i>Eat more of these soft French rolls lazy.</i></br>
-Apparently, drinking tea is considered as lazy pastime by Yandex.</p>
+Apparently, drinking tea is considered a lazy pastime by Yandex.</p>
 
 <a href='http://www.bing.com/translator?text=%D0%A1%D1%8A%D0%B5%D1%88%D1%8C%20%D0%B5%D1%89%D1%91%20%D1%8D%D1%82%D0%B8%D1%85%20%D0%BC%D1%8F%D0%B3%D0%BA%D0%B8%D1%85%20%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D1%85%20%D0%B1%D1%83%D0%BB%D0%BE%D0%BA%2C%20%D0%B4%D0%B0%20%D0%B2%D1%8B%D0%BF%D0%B5%D0%B9%20%D1%87%D0%B0%D1%8E.&from=ru&to=en'>Bing</a> </br>
 &mdash; <i>Eat more of these soft French rolls, so drink some tea.</i></p>
@@ -24,7 +24,6 @@ Apparently, drinking tea is considered as lazy pastime by Yandex.</p>
 Correct translation </br>
 &mdash; <i>Eat more of these soft French rolls and drink tea.</i></p>
 
-It seems all these translation engines have their own SMT of some sort, 
-or same algorithm by very different training set. 
-Google being the closest to correct translation.
+It seems they all have either their own translation engines or a very different training set. 
+Google being probably the closest to correct translation.
 "}

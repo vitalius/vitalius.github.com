@@ -12,6 +12,11 @@
     "windows8_c_space.json": {
         "date": "10/30/2013",
         "title": "Windows 8 and disk space"
-    }
+    },
 
+    "yandex_translate.json": {
+        "date": "12/26/2013",
+        "title": "Yandex translate"
+    }
 }
+

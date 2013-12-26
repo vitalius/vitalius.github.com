@@ -1,0 +1,28 @@
+{ "body": "
+<a href='http://www.artlebedev.ru/everything/yandex/translate/'><img src='content/yandex-translate-poster-tomato.jpg'></a></p>
+
+Yandex (Russian google) is advertising their new 
+<a href='http://translate.yandex.ru/'>translate system</a>. 
+And while it's not clear if they use <a href='http://en.wikipedia.org/wiki/SYSTRAN'>SYSTRAN</a> for 
+translation like the rest (Google, Bing, Bable Fish), or rolled out their 
+own <a href='http://en.wikipedia.org/wiki/Statistical_machine_translation'>SMT</a>, 
+they certainly merit a test drive.</p>
+
+Let's try translating a famous Russian pangram to English</br>
+&mdash; <b>Съешь ещё этих мягких французских булок, да выпей чаю.</b></p>
+
+Yandex </br>
+&mdash; <b>Eat more of these soft French rolls lazy.</b></br>
+Apparently, drinking tea is considered as lazy pastime by Yandex.</p>
+
+Bing </br>
+&mdash; <b>Eat more of these soft French rolls, so drink some tea.</b></br>
+Eating French rolls is a prerequisite to drinking tea.</p>
+
+Google </br>
+&mdash; <b>Eat more of these soft French rolls, but drink tea.</b></br>
+Eating French rolls and not drinking tea is hazardous to your health.</p>
+
+Correct translation </br>
+&mdash; <b>Eat more of these soft French rolls and drink tea.</b></p>
+"}

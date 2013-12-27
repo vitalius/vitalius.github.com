@@ -1,5 +1,11 @@
 { "body": "
-<a href='http://www.artlebedev.ru/everything/yandex/translate/'><img src='content/yandex-translate-poster-tomato.jpg'></a></p>
+<p style='text-align: center;'>
+<a href='http://www.artlebedev.ru/everything/yandex/translate/'>
+  <img src='content/yandex-translate-poster-tomato.jpg' 
+       style='max-width: 100%;' 
+       alt='Studio ArtLebedev'>
+</a>
+</p>
 
 Yandex (Russian google) is advertising their new 
 <a href='http://translate.yandex.ru/'>translate system</a>. 

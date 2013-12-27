@@ -17,6 +17,11 @@
     "yandex_translate.json": {
         "date": "12/26/2013",
         "title": "Yandex translate"
+    },
+
+    "samsung_oled.json": {
+        "date": "12/27/2013",
+        "title": "Super AMOLED Plus"
     }
 }
 

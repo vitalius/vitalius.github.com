@@ -9,13 +9,13 @@ camera gives a bit more emphasis on the granularity. </p>
 
 <p style='text-align: center;'>
   <img src='content/samsung_keyboard.jpg' 
-       style='max-width: 100%;' 
+       style='max-width: 100%; min-width: 100%;' 
        alt='Galaxy S2 keyboard'>
 </p>
 
 It was surprising and a bit unnerving to see the same 
 apps on Nexus 5. All those smooth, gliding gradients kept bringing up 
-memories like upgrading a video card of an old 486 box 
+memories like upgrading a video card of an old 486 computer 
 and for the first time running Windows 95 in 16 bit color mode. </p>
 
 <a href='http://en.wikipedia.org/wiki/AMOLED'>Super Amoled</a> 
@@ -28,15 +28,15 @@ a consistent color or gradient across multiple pixels.</p>
  
 <p style='text-align: center;'>
   <img src='content/samsung_nexus.jpg' 
-       style='max-width: 100%;' 
+       style='max-width: 100%; min-width: 100%;' 
        alt='Galaxy S2 keyboard'>
 </p>
 
-Ignoring the difference in resolution, the grainy gradient is still 
-pretty visible on Galaxy S2 (left) vs Nexus 5 (right).</p>
+Ignoring the difference in resolution, the graininess or image noise is 
+still pretty visible on Galaxy S2 (left) vs Nexus 5 (right).</p>
 
 Nexus 5 comes with <a href='http://en.wikipedia.org/wiki/IPS_panel'>IPS</a> 
 screen and although I miss S2's black colors (when pixel is completely off 
-and no light is emitted at all), the smooth gradients, higher resolution 
-and just over all a healthy looking screen of Nexus 5 is an amazing upgrade.
+and no light emitted at all), the smooth gradients, higher resolution 
+and just overall a healthy looking screen of Nexus 5 is an amazing upgrade.
 "}

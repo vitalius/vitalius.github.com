@@ -2,10 +2,10 @@
 
 After using Samsung Galaxy S2 for about two years, 
 I was convinced that all android apps have this nice, 
-subtle, noise texture on all gradient UI elements. </p>
+subtle, noise texture on all gradient and flat UI elements. </p>
 
-Here is a picture of android keyboard, a bad iPhone 
-camera gives a bit more emphasis on the gradients granularity. </p>
+Here is a picture of android keyboard on S2, although a bad iPhone 
+camera gives a bit more emphasis on the granularity. </p>
 
 <p style='text-align: center;'>
   <img src='content/samsung_keyboard.jpg' 
@@ -15,8 +15,8 @@ camera gives a bit more emphasis on the gradients granularity. </p>
 
 It was surprising and a bit unnerving to see the same 
 apps on Nexus 5. All those smooth, gliding gradients kept bringing up 
-memories like upgrading a video card on an old 486 box 
-and running Windows 95 with 16 bit color for the first time. </p>
+memories like upgrading a video card of an old 486 box 
+and for the first time running Windows 95 in 16 bit color mode. </p>
 
 <a href='http://en.wikipedia.org/wiki/AMOLED'>Super Amoled</a> 
 display works by having each pixel represented by three light 
@@ -24,7 +24,7 @@ emitting sub-pixels (Red, Green, Blue). Those sub-pixels have
 more limited lifespan than a typical light source of traditional 
 back-lit screens. The balance between their lifespan 
 and intensity is very delicate, apparently making it very hard to display 
-a consistent gradient.</p>
+a consistent color or gradient across multiple pixels.</p>
  
 <p style='text-align: center;'>
   <img src='content/samsung_nexus.jpg' 

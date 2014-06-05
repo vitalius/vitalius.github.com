@@ -3,25 +3,24 @@
         "date": "10/9/2013",
         "title": "Ecstatic - simple static site generator"
     },
-
     "windows8_c_space.json": {
         "date": "10/30/2013",
         "title": "Windows 8 and disk space"
     },
-
     "yandex_translate.json": {
         "date": "12/26/2013",
         "title": "Yandex translate"
     },
-
     "samsung_oled.json": {
         "date": "12/27/2013",
         "title": "Super AMOLED Plus"
     },
-
     "mobile_virus.json": {
         "date": "3/18/2014",
         "title": "Received a mobile virus"
+    },
+    "c_sharp_runtime_attribute.json" : {
+        "date": "6/4/2014",
+        "title": "Modifying C# variable attribute at runtime"
     }
 }
-

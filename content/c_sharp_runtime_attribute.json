@@ -1,0 +1,60 @@
+{ "body": "
+
+C# like many other languages is not foreign to function, class, variable, 
+etc attributes. Just for fun, let's try treating a variable attribute like 
+a real variable. That is, setting and getting attribute value at run time.
+</p>
+Here is a simple attribute
+<pre>
+    [AttributeUsage(AttributeTargets.Property)]</br>
+    public class SpecialAttribute : Attribute</br>
+    {</br>
+        public int Index { get; set; }</br>
+</br>
+        public SpecialAttribute()</br>
+        {</br>
+        }</br>
+    }
+</pre>
+<a href='https://github.com/vitalius/RuntimeAttributes/blob/master/CustomAttribute/SampleAttribute.cs'>SampleAttribute.cs</a>
+</p>
+
+And a sample class with a variable decorated by the SpecialAttribute
+<pre>
+    public class SampleClass</br>
+    {</br>
+        [Special(Index=55)]</br>
+        public string Text { get; set; }</br>
+        ...</br>
+    }
+</pre>
+</p>
+
+To get attribute value, in this case 55, first query the variable property and then its attribute.
+</p>
+
+<pre>
+        public int getAttribute() {</br>
+            var textVar = TypeDescriptor.GetProperties(this.GetType())[\"Text\"];</br>
+            var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];</br>
+            return attr.Index;</br>
+        }
+</pre>
+</p>
+
+And to set attribute value, continue with getting attribute's property (property of a property of a property...) and use <a href='http://msdn.microsoft.com/en-us/library/xb5dd1f1(v=vs.110).aspx'>SetValue()</a> function. 
+<pre>
+        public void setAttribute(int index)</br>
+        {</br>
+            var textVar = TypeDescriptor.GetProperties(this.GetType())[\"Text\"];</br>
+            var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];</br>
+            var attProp = typeof(SpecialAttribute).GetProperty(\"Index\");</br>
+            attProp.SetValue(attr, index, null);</br>
+        }
+</pre>
+<a href='https://github.com/vitalius/RuntimeAttributes/blob/master/CustomAttribute/SampleClass.cs'>SampleClass.cs</a></p>
+
+Updating the attribute value is effecting only current run-time. Reinitialize the object, the value will go back to 55.</p>
+
+You can find the entire <a href='https://github.com/vitalius/RuntimeAttributes'>example on github.</a>
+"}

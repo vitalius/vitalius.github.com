@@ -1,7 +1,6 @@
 { "body": "
 
-C# like many other languages is not foreign to function, class, variable, 
-etc attributes. Just for fun, let's try treating a variable attribute like 
+Just for fun, let's try treating a variable attribute like 
 a real variable. That is, setting and getting attribute value at run time.
 </p>
 Here is a simple attribute

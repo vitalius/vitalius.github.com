@@ -1,0 +1,37 @@
+When I had 1TB hard disk drive I didn't care what amount 
+  of space it takes to install an OS. After switching to 120GB SSD 
+  however, space
+  on drive <code>C:\\</code> begins to matter. Full installation 
+  of Windows 8.1 takes about 15GB and it was very surprising
+  to see only 50GB left on 120GB SSD.
+  </p>
+  
+  Where did 60+GB go?</p>
+
+  Running Disk Cleanups didn't reveal any magical space drainage either. 
+  I started to suspect a few SSD chips gone bad and now 
+  half of the drive is simply unusable.
+  </p>
+
+  Turs out, Windows has two very-hidden files <code>C:\\pagefile.sys</code> and 
+  <code>C:\\hiberfil.sys</code>. So hidden that if you turn on the show hidden 
+  files feature in Explorer, they still remain hidden. In fact, even if you run 
+  <code>C:\\&gt;dir</code> as Administrator you still won't see them. 
+  It was only with the help of <a href='http://www.cygwin.com/'>cygwin</a>
+  that I noticed those files at all.</p>
+ 
+  <ul>
+   <li><code>pagefile.sys</code> is a Windows version of swap partition. 
+       Normally, it is equivalent in size to the amount of system's ram
+       and in my case it's a whooping 32GB file. Pagefiles can be disabled 
+       all-together moved to a different drive or modified to a custom size 
+       but by default they seem to be same size as ram and stuck on <code>C:\\</code>
+   </li>
+   <li><code>hiberfil.sys</code> The secret sauce behind Windows fast 
+       boot-up and the cache file for OS state when hibernating. 
+       Also pretty large on my system, 26GB.
+   </li>
+  </ul></p>
+  
+  With those two hidden files and OS installation, space allocation
+  is finally making sense.

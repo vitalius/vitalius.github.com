@@ -1,31 +1,25 @@
-<!-- Post Template -->
-<div ng-controller="PostCtrl">
-    <div ng-hide="post.error">
-    
-        <div class="panel panel-default">
+     <div>
+		<div class="panel panel-default">
           <!-- post header -->
           <div ng-show="post.title" class="panel-heading">
-            <h3 class="panel-title">{{ post.title }}</h3>
+            <h3 class="panel-title" id="post_title"></h3>
           </div>         
           
           <!-- post body -->
-          <div ng-bind-html-unsafe="post.body" class="panel-body" id="ecstatic_post_body"></div>
+          <div class="panel-body" id="post_body"></div>
           
           <!-- post footer -->
           <div class="panel-footer">
             <div class="clearfix">
-            <span ng-show="post.date" class="pull-left">Date: {{ post.date | date:'shortDate' }}</span>
-            <span ng-show="post.author" class="pull-right">by {{ post.author }}</span>
+            <span class="pull-left" id="post_date"></span>
             </div>
           </div>           
         </div> 
-
+		
         <div class="panel panel-default">
           <div class="panel-body">
-            <div disqus="post.title"></div>
+            <div id="disqus_thread"></div>
           </div>
-        </div>       
-        
-    </div>        
-    <div ng-show="post.error" class="alert alert-danger">{{ post.error }}</div>
-</div>
+        </div>
+	</div>      
+ 

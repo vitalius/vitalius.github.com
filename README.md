@@ -1,4 +1,4 @@
 ecstatic
 ===================
 
-A Simple Static Site
+A simple static blog

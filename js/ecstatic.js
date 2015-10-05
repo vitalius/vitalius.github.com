@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };	
 
 
-
+// the entire framework right here!
 $.getJSON("content/index.json", function(post_list) { 
     var post_file = getUrlParameter("p"); 
     if (post_file) {

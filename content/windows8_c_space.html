@@ -1,24 +1,18 @@
-When I had 1TB hard disk drive I didn't care what amount 
-  of space it takes to install an OS. After switching to 120GB SSD 
-  however, space
-  on drive <code>C:\</code> begins to matter. Full installation 
-  of Windows 8.1 takes about 15GB and it was very surprising
-  to see only 50GB left on 120GB SSD.
-  </p>
-  
-  Where did 60+GB go?</p>
+With 1TB hard disk drive, I didn't care about the amount of space taken by OS. But after switching to a much smaller drive, 120GB SSD, space on drive <code>C:\</code> becomes precious. So it was very surprising to see only 50GB left just after installing Win 8.1 on an empty drive.
+</p>
+
+Full installation of Win 8.1 takes only about 15GB. Where did 60+GB go?</p>
 
   Running Disk Cleanups didn't reveal any magical space drainage either. 
-  I started to suspect a few SSD chips gone bad and now 
+  I even suspected a few SSD chips gone bad and now 
   half of the drive is simply unusable.
   </p>
 
   Turs out, Windows has two very-hidden files <code>C:\pagefile.sys</code> and 
   <code>C:\hiberfil.sys</code>. So hidden that if you turn on the show hidden 
-  files feature in Explorer, they still remain hidden. In fact, even if you run 
+  files feature in Explorer, they still remain hidden. Even if you run 
   <code>C:\&gt;dir</code> as Administrator you still won't see them. 
-  It was only with the help of <a href='http://www.cygwin.com/'>cygwin</a>
-  that I noticed those files at all.</p>
+  I only came across them by accident with Cygwin.</p>
  
   <ul>
    <li><code>pagefile.sys</code> is a Windows version of swap partition. 
@@ -33,5 +27,4 @@ When I had 1TB hard disk drive I didn't care what amount
    </li>
   </ul></p>
   
-  With those two hidden files and OS installation, space allocation
-  is finally making sense.
+  Finally windows space allocation is making sense.

@@ -15,9 +15,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 
 
-$.getJSON("content/index.json", function(d) { 
-    var post_list = d; 
-   
+$.getJSON("content/index.json", function(post_list) { 
     var post_file = getUrlParameter("p"); 
     if (post_file) {
 	      // render a post
@@ -30,6 +28,7 @@ $.getJSON("content/index.json", function(d) {
 			      $( "#post_body" ).html( msg + xhr.status + " " + xhr.statusText );
 			    }
 				else {			  
+				  // run MathJax and code highlight processors
 			      $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
 	              MathJax.Hub.Config({
 	                 tex2jax: {
@@ -39,16 +38,6 @@ $.getJSON("content/index.json", function(d) {
 			      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 			    }				
 	         });
-			 
-		     /* * * CONFIGURATION VARIABLES * * */
-		     var disqus_shortname = 'vitaliy-blog';
-  
-		     /* * * DON'T EDIT BELOW THIS LINE * * */
-		     (function() {
-		         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		     })();
       });
     } else {
       // render post index

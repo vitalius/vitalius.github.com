@@ -13,9 +13,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };	
 
-var post_list;
+
+
 $.getJSON("content/index.json", function(d) { 
-  post_list = d; 
+    var post_list = d; 
    
     var post_file = getUrlParameter("p"); 
     if (post_file) {
@@ -55,7 +56,7 @@ $.getJSON("content/index.json", function(d) {
 	      $.each(post_list, function(k,v) { $("#post_list").append(
                 "<li class=\"list-group-item\"><a href=\"?p=" + k + "\">" + v.title +"</a>" +
                 "  <span class=\"pull-right\">" + v.date + "</span>" +
-              "</li>")
+                "</li>")
 		  });
       });
     }

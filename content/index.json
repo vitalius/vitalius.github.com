@@ -1,14 +1,14 @@
 {
-    "c_sharp_runtime_attribute.html" : {
+    "cs_attribute.html" : {
         "date": "6/4/2014",
-        "title": "Modifying C# variable attribute at runtime"
+        "title": "Using C# attribute as a variable"
     },
-    "windows8_c_space.html": {
+    "win8cdrive.html": {
         "date": "10/30/2013",
-        "title": "Windows 8 and disk space"
+        "title": "Windows 8 and low disk space"
     },
-    "ecstatic.html": {
+    "firstpost.html": {
         "date": "10/9/2013",
-        "title": "Ecstatic - simple static site generator"
+        "title": "Simple static blog"
     }
 }

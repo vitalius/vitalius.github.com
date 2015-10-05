@@ -18,25 +18,23 @@ var getUrlParameter = function getUrlParameter(sParam) {
 $.getJSON("content/index.json", function(post_list) { 
     var post_file = getUrlParameter("p"); 
     if (post_file) {
-          // render a post
-          $("#content").load("post.html", function() {
+      // render a post
+      $("#content").load("post.html", function() {
           $("#post_title").append(post_list[post_file].title);
           $("#post_date").append(post_list[post_file].date); 
           $("#post_body").load("content/" + post_file, function( response, status, xhr ) {
-          if ( status == "error" ) {
-             var msg = "Sorry but there was an error: ";
-             $( "#post_body" ).html( msg + xhr.status + " " + xhr.statusText );
-          } else {              
-             // run MathJax and code highlight processors
-             $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
-             MathJax.Hub.Config({
-                     tex2jax: {
-                        inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-                        displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-                        processEscapes: true } });  
-             MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-          }                
-        });
+              if ( status == "error" ) {
+                 var msg = "Sorry but there was an error: ";
+                 $( "#post_body" ).html( msg + xhr.status + " " + xhr.statusText );
+              } else {              
+                 // run MathJax and code highlight processors
+                 $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
+                 MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+                                                 displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+                                                 processEscapes: true } });  
+                 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+              }                
+          });
       });
     } else {
       // render post index

@@ -1,0 +1,22 @@
+body {
+    padding-top:2em;
+}
+
+div#blog_footer {
+    margin-top:2em; 
+    margin-bottom:2em;
+}
+
+p#blog_about {
+    margin-bottom:2em;
+}
+
+h2#post_title {
+    margin-top:1em; 
+    font-weight: bold;
+}
+
+div#post_body {
+    margin-top:2em; 
+    margin-bottom:2em;
+}

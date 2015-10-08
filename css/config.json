@@ -20,7 +20,7 @@
     "@font-family-serif": "Georgia, \"Times New Roman\", Times, serif",
     "@font-family-monospace": "Menlo, Monaco, Consolas, \"Courier New\", monospace",
     "@font-family-base": "@font-family-sans-serif",
-    "@font-size-base": "14px",
+    "@font-size-base": "16px",
     "@font-size-large": "ceil((@font-size-base * 1.25))",
     "@font-size-small": "ceil((@font-size-base * 0.85))",
     "@font-size-h1": "floor((@font-size-base * 2.6))",
@@ -29,7 +29,7 @@
     "@font-size-h4": "ceil((@font-size-base * 1.25))",
     "@font-size-h5": "@font-size-base",
     "@font-size-h6": "ceil((@font-size-base * 0.85))",
-    "@line-height-base": "1.428571429",
+    "@line-height-base": "1.8",
     "@line-height-computed": "floor((@font-size-base * @line-height-base))",
     "@headings-font-family": "inherit",
     "@headings-font-weight": "500",
@@ -136,7 +136,7 @@
     "@grid-float-breakpoint-max": "(@grid-float-breakpoint - 1)",
     "@container-tablet": "(600px + @grid-gutter-width)",
     "@container-sm": "@container-tablet",
-    "@container-desktop": "(600px + @grid-gutter-width)",
+    "@container-desktop": "(800px + @grid-gutter-width)",
     "@container-md": "@container-desktop",
     "@container-large-desktop": "(800px + @grid-gutter-width)",
     "@container-lg": "@container-large-desktop",
@@ -429,5 +429,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=cbcd5166b1b0f26dd895"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=c8e16fc533c27dc5657b"
 }

@@ -19,9 +19,8 @@ A bit of formatting, and we have an array of opcodes, ready for disassemble
 0x7004, 0x3040, 0x1200, 0x6000, 0x7104, 0x3120, 0x1200, 0x1218,
 0x8040, 0x2010, 0x2040, 0x8010 ];</code></pre>
 
-Checking first opcode, 0x6000, against the manual we see it corresponds to 
-6XNN - 'Sets VX to NN', setting register V0 to 0. Next opcode 0x6100 does a similar 
-thing, sets register V1 to 0.</p>
+Looking up first opcode in the manual: 6XNN - 'Sets VX to NN', means 0x6000 sets register V0 to 0. 
+Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01
 
@@ -43,7 +42,7 @@ function run(opcode) {
   return "!!! Unknown op code !!!"
 };</code></pre>
 
-And already decode 4 opcodes in the demo rom.
+And decode all of 4 opcodes in the demo rom.
 
 <pre><code id="log1" style="font-family: "Lucida Console", Monaco, monospace;"></code></pre>
 

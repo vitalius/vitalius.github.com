@@ -1,4 +1,4 @@
-/* http://getbootstrap.com/customize/?id=4be39ead1a12e6642c31 */
+/* http://getbootstrap.com/customize/?id=01de08afc7f5595ab8ed */
 
 body {
     padding-top:2em;
@@ -22,4 +22,9 @@ div#post_body {
 div#blog_footer {
     margin-top:3em; 
     margin-bottom:3em;
+}
+
+pre {
+    padding: 14px;
+    font-size: 14px;
 }

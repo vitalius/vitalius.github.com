@@ -28,7 +28,7 @@ $.getJSON("content/index.json", function(post_list) {
                  $( "#post_body" ).html( msg + xhr.status + " " + xhr.statusText );
               } else {              
                  // run MathJax and code highlight processors
-                 $('pre code').each(function(i, block) { hljs.highlightBlock(block); });
+                 //$('pre code').each(function(i, block) { hljs.highlightBlock(block); });
                  MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ],
                                                  displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
                                                  processEscapes: true } });  

@@ -2,10 +2,10 @@ Let's write a simple emulator in JavaScript.</p>
 
 Among the standard CPU stuff such as registers and program counter and stack, 
 <a href="https://en.wikipedia.org/wiki/CHIP-8#Virtual_machine_description">Chip8</a> 
-has only 35 opcodes and 4096 bytes. This very simple architecture makes Chip8 
+has only 35 opcodes and 4096 bytes of memory. This very simple architecture makes Chip8 
 a prime target for beginner emulator developers.</p>
 
-To get a sense of opcodes flow, let's disassemble a small demo ROM (<a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>)
+To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>)
 <pre><code class="shebang">$ hexdump Maze\ \(alt\)\ \[David\ Winter\,\ 199x\].ch8 
 0000000 60 00 61 00 a2 22 c2 01 32 01 a2 1e d0 14 70 04
 0000010 30 40 12 04 60 00 71 04 31 20 12 04 12 1c 80 40
@@ -13,7 +13,7 @@ To get a sense of opcodes flow, let's disassemble a small demo ROM (<a href="htt
 0000026
 </code></pre>
 
-A bit of formatting, and here is an array of opcodes, ready to disassemble
+A bit of formatting, and here is an array of opcodes, ready to emulate
 
 <pre><code class="javascript">var rom = [ 
     0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
@@ -22,7 +22,9 @@ A bit of formatting, and here is an array of opcodes, ready to disassemble
     0x7004, 0x3040, 0x1200, 0x6000, 0x7104, 0x3120, 0x1200, 0x1218,
     0x8040, 0x2010, 0x2040, 0x8010 ];</code></pre>
 
-Looking up first opcode in the reference <a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">manual</a>: 6XNN - 'Sets VX to NN', means 0x6000 sets register V0 to 0. 
+Looking up first opcode in the reference 
+<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">manual</a>: 
+6XNN - 'Sets VX to NN' means 0x6000 sets register V0 to 0. 
 Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01
@@ -46,36 +48,39 @@ function run(opcode) {
     return "Sets V" + ((opcode & 0xf00) >> 8).toString(16) + 
              " to " + (opcode & 0xff).toString(16);
   }
-  return "!!! Unknown op code !!!"
 };</code></pre>
 
-And decode all of 4 opcodes in the demo rom.
+And disassemble 4 opcodes from the rom.
 
 <pre><code id="log1" style="font-family: "Lucida Console", Monaco, monospace;"></code></pre>
-
 <script>
-pc = 0x200;
-v = new Uint8Array(16);
+// populate 'log1' code section
 function log(text) {
 	var plog = document.getElementById("log1");
-	plog.innerHTML += text + "\n";
-};
-
-function run(opcode) {
-  // 6XNN  Sets VX to NN.
-  if (opcode >> 12 == 0x6) {
-    //v[(opcode & 0xf00) >> 8)] = (opcode & 0xff);
-    return "Sets V" + ((opcode & 0xf00) >> 8).toString(16) + 
-             " to " + (opcode & 0xff).toString(16);
-  }
-  //return "!!! Unknown op code !!!";
+	plog.innerHTML += text + "</br>";
 };
 
 var rom = [ 0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
 	        0x3040, 0x1204, 0x6000, 0x7104, 0x3120, 0x1204, 0x121c, 0x8040,
             0x2010, 0x2040, 0x8010, 0xa21e, 0xc201, 0x3201, 0xa21a, 0xd014,
             0x7004, 0x3040, 0x1200, 0x6000, 0x7104, 0x3120, 0x1200, 0x1218,
-	        0x8040, 0x2010, 0x2040, 0x8010 ];
+	        0x8040, 0x2010, 0x2040, 0x8010 
+];
+
+// program-counter, roms are loaded at 0x200
+pc = 0x200; 
+
+// registers
+v = new Uint8Array(16); 
+
+function run(opcode) {
+  // 6XNN  Sets VX to NN.
+  if (opcode >> 12 == 0x6) {
+    v[(opcode & 0xf00) >> 8] = (opcode & 0xff);
+    return "Sets V" + ((opcode & 0xf00) >> 8).toString(16) + 
+             " to " + (opcode & 0xff).toString(16);
+  }
+};
 
 rom.forEach(
   function (b) {
@@ -84,5 +89,5 @@ rom.forEach(
     pc += 0x08
   });
 </script>
-  
-Next part, we'll add the rest of opcodes needed to disassemble the rom file.
+ 
+In the next part, we'll add the rest of opcodes needed that disassemble entire rom.

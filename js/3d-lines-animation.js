@@ -83,7 +83,7 @@ var mouseX = 0, mouseY = 0,
                 scene.add( line );
 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-                //document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                document.addEventListener( 'touchstart', onDocumentTouchStart, false );
                 //document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
                 //

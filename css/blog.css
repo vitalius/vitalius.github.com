@@ -1,16 +1,15 @@
-/* http://getbootstrap.com/customize/?id=01de08afc7f5595ab8ed */
+/* http://getbootstrap.com/customize/?id=28af57f0c109365c9cf6 */
 
 body {
-    padding-top:2em;
     font-family: "Open Sans", Arial;
 }
 
-p#blog_about {
-    margin-bottom:2em;
+p#post_date {
+    color:#999;
 }
 
 h2#post_title {
-    margin-top:1em; 
+    margin-top:1.9em; 
     font-weight: bold;
 }
 
@@ -27,4 +26,26 @@ div#blog_footer {
 pre {
     padding: 14px;
     font-size: 14px;
+}
+
+/* 3d lines */
+div.container {
+    padding-top: 23px;
+}
+#canvas{
+    width:100%;
+    height:100px;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: #1a1724;               
+}
+.canvas-wrap{
+    position:relative;
+    
+}
+div.canvas-content{
+    position:relative;
+    z-index:2000;
 }

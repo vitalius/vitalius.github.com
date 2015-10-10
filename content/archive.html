@@ -1,0 +1,16 @@
+<div>
+    <table id="archive" class="table">
+    </table>
+    <script type="text/javascript">
+    $.getJSON("content/index.json", function(post_list) { 
+        $.each(post_list, function(file,content) {
+            if (content.date) {
+                $("#archive").append("<tr>"+
+                                     "<td>" + content.date + "<\/td>"+
+                                     "<td><a href='?p=" + file + "'>" + content.title + "<\/a><\/td>"+
+                                     "<\/tr>");
+            }
+        });
+    });
+    </script>
+</div>

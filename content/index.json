@@ -1,7 +1,7 @@
 {
     "emu_part1.html" : {
         "date": "10/7/2015",
-        "title": "Chip8 emulator part 1"
+        "title": "Chip8 emulator &#8211; part 1"
     },
     "cs_attribute.html" : {
         "date": "6/4/2014",
@@ -14,5 +14,12 @@
     "firstpost.html": {
         "date": "10/9/2013",
         "title": "Simple static blog"
+    },
+    
+    "archive.html": {
+        "title": "Archive"
+    },
+    "about.html": {
+        "title": "About"
     }
 }

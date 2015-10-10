@@ -211,39 +211,50 @@
   
 </head>
 <body>
-  <div class="container">
-
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="?"><span title="Post index" class="glyphicon glyphicon-home"></span></a>
-		</div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://twitter.com/vitalius_">Twitter</a></li>
-            <li><a href="http://github.com/vitalius">Github</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <section class="canvas-wrap">
+        <div class="canvas-content">          
+          <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="?"><span title="Most recent post" class="glyphicon glyphicon-file"></span></a>
+        		</div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="?p=about.html"><span title="About" class="glyphicon glyphicon-user"></span></a></li>
+                    <li><a href="?p=archive.html"><span title="Archive" class="glyphicon glyphicon-list-alt"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
     
-    <div id="content"></div>
+            <div id="content"></div>
    
-    <div id="blog_footer" align="center">
-      <small><a href="https://twitter.com/vitalius_">Twitter</a> - 
-             <a href="http://github.com/vitalius">Github</a> - 
-			 <a href="mailto:vitaliy@cloudmotion.com">vitaliy@cloudmotion.com</a>
-	  </small>
-    </div>
-  </div>
-    
+            <div id="blog_footer" align="center">
+              <small><a href="https://twitter.com/vitalius_">Twitter</a> - 
+                     <a href="http://github.com/vitalius">Github</a> - 
+        			 <a href="mailto:vitaliy@cloudmotion.com">vitaliy@cloudmotion.com</a>
+        	  </small>
+            </div>
+          </div>          
+        </div>
+        <div id="canvas" class="gradient"></div>   
+    </section>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+  <script src="js/three.min.js"></script>
+  <script src="js/projector.js"></script>
+  <script src="js/canvas-renderer.js"></script>
+  <script src="js/3d-lines-animation.js"></script>
+  <script src="js/color.js"></script>
+    
   <script src="js/bootstrap.min.js"></script>
   <script src="js/blog.js">
 

@@ -59,7 +59,7 @@ var mouseX = 0, mouseY = 0,
                 /*
                  *   Number of particles
                  */
-                for ( var i = 0; i < 150; i ++ ) {
+                for ( var i = 0; i < 500; i ++ ) {
 
                     particle = new THREE.Sprite( material );
                     particle.position.x = Math.random() * 2 - 1;
@@ -79,11 +79,11 @@ var mouseX = 0, mouseY = 0,
                  *   Lines
                  */
 
-                var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: color, opacity: 0.2 } ) );
+                var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: color, opacity: 0.3 } ) );
                 scene.add( line );
 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-                document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                //document.addEventListener( 'touchstart', onDocumentTouchStart, false );
                 //document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
                 //
@@ -149,7 +149,9 @@ var mouseX = 0, mouseY = 0,
             }
 
             function render() {
-
+                mouseX = (mouseX + 0.1) % window.innerWidth;
+                mouseY = (mouseY + 0.1) % window.innerHeight;
+                
                 camera.position.x += ( mouseX - camera.position.x ) * 0.1;
                 camera.position.y += ( - mouseY + 200 - camera.position.y ) * 0.05;
                 camera.lookAt( scene.position );

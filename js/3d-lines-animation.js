@@ -6,12 +6,13 @@ var mouseX = 0, mouseY = 0,
             SEPARATION = 200,
             AMOUNTX = 1,
             AMOUNTY = 1,
-
             camera, scene, renderer;
 
+            dy = 0.01 * (Math.floor(Math.random()*2) > 0 ? 1 : -1);
+            dx = 0.03 * (Math.floor(Math.random()*2) > 0 ? 1 : -1);
+            
             init();
             animate();
-
 
 
             function init() {
@@ -149,8 +150,8 @@ var mouseX = 0, mouseY = 0,
             }
 
             function render() {
-                mouseX = (mouseX + 0.1) % window.innerWidth;
-                mouseY = (mouseY + 0.1) % window.innerHeight;
+                mouseX += dx;
+                mouseY += dy;
                 
                 camera.position.x += ( mouseX - camera.position.x ) * 0.1;
                 camera.position.y += ( - mouseY + 200 - camera.position.y ) * 0.05;

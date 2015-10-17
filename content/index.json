@@ -1,18 +1,18 @@
 {
     "emu_part1.html" : {
-        "date": "Oct 7th, 2015",
+        "date": "October 7th, 2015",
         "title": "Chip8 emulator &#8211; part 1"
     },
     "cs_attribute.html" : {
-        "date": "Jun 7th, 2014",
+        "date": "June 7th, 2014",
         "title": "Using C# attribute as a variable"
     },
     "win8cdrive.html": {
-        "date": "Oct 30th, 2013",
+        "date": "October 30th, 2013",
         "title": "Windows 8 and low disk space"
     },
     "firstpost.html": {
-        "date": "Oct 9th, 2013",
+        "date": "October 9th, 2013",
         "title": "Simple static blog"
     },
     

@@ -3,9 +3,10 @@ Let's write a simple emulator in JavaScript.</p>
 Among the standard CPU stuff such as registers and program counter and stack, 
 <a href="https://en.wikipedia.org/wiki/CHIP-8#Virtual_machine_description">Chip8</a> 
 has only 35 opcodes and 4096 bytes of memory. This very simple architecture makes Chip8 
-a prime target for beginner emulator developers.</p>
+a prime target for beginer emulator project.</p>
 
-To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>)
+To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>) and get a feel 
+for opcode flow.
 <pre><code class="shebang">$ hexdump Maze\ \(alt\)\ \[David\ Winter\,\ 199x\].ch8 
 0000000 60 00 61 00 a2 22 c2 01 32 01 a2 1e d0 14 70 04
 0000010 30 40 12 04 60 00 71 04 31 20 12 04 12 1c 80 40
@@ -13,7 +14,7 @@ To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.ne
 0000026
 </code></pre>
 
-A bit of formatting, and here is an array of opcodes, ready to emulate
+A bit of formatting, and here is an array of opcodes of the entire rom.
 
 <pre><code class="javascript">var rom = [ 
     0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
@@ -23,14 +24,14 @@ A bit of formatting, and here is an array of opcodes, ready to emulate
     0x8040, 0x2010, 0x2040, 0x8010 
 ];</code></pre>
 
-Looking up first opcode in the reference 
-<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">manual</a>: 
+Looking up first opcode in the wikipedia 
+<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">reference</a>: 
 6XNN - 'Sets VX to NN' means 0x6000 sets register V0 to 0. 
 Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01
 
-<pre><code class="javascript">// program-counter, roms are loaded at 0x200
+<pre><code class="javascript">// roms are loaded at 0x200 in the 4096 bytes of memory space
 pc = 0x200; 
 
 // registers
@@ -39,7 +40,7 @@ v = new Uint8Array(16);
 rom.forEach(
   function (b) {
     log(pc.toString(16) + ":" + b.toString(16) + " " + run(b));
-    pc += 0x08; // increment program-counter to next opcode
+    pc += 0x08; // increment program-counter to point to the next opcode
   });
 
 function run(opcode) {

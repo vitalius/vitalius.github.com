@@ -203,55 +203,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Vitaliy's blog</title>
+  <title>Thoughts and ranting of a software engineer.</title>
   
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
-  <link rel="stylesheet" href="css/blog.css">
+  <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+  <link href='css/blog.css' rel='stylesheet' type='text/css'>
   
 </head>
-<body>
-    <section class="canvas-wrap">
-        <div class="canvas-content">          
-          <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <a class="navbar-brand" href="?"><span title="Most recent post" class="glyphicon glyphicon-file"></span></a>
-        		</div>
-                <div>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="?p=about.html"><span title="About" class="glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="?p=archive.html"><span title="Archive" class="glyphicon glyphicon-list-alt"></span></a></li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-    
-            <div id="content"></div>
-   
-            <div id="blog_footer" align="center">
-              <small><a href="https://twitter.com/vitalius_">Twitter</a> - 
-                     <a href="http://github.com/vitalius">Github</a> - 
-        			 <a href="mailto:vitaliy@cloudmotion.com">vitaliy@cloudmotion.com</a>
-        	  </small>
-            </div>
-          </div>          
-        </div>
-        <div id="canvas" class="gradient"></div>   
-    </section>
+<body> 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <div class="container">
+        <div id="header">
+          <div id="header_content">
+              <a href="?p=about.html">About</a> &middot; 
+              <a href="?">Recent</a> &middot; 
+              <a href="?p=archive.html">Archive</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="header_bar"></div>
+    </div>
+    
+    <div class="container">
+        
+        <div id="content"></div>
+ 
+        <div id="blog_footer" align="center">
+          <small><a href="https://twitter.com/vitalius_">Twitter</a> &middot; 
+                 <a href="http://github.com/vitalius">Github</a> &middot; 
+    			 <a href="mailto:vitaliy@cloudmotion.com">vitaliy@cloudmotion.com</a>
+    	  </small>
+        </div>
+     </div>
+          
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-  <script src="js/three.min.js"></script>
-  <script src="js/projector.js"></script>
-  <script src="js/canvas-renderer.js"></script>
-  <script src="js/3d-lines-animation.js"></script>
-  <script src="js/color.js"></script>
-    
+  
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/blog.js">
+  <script src="js/blog.js"></script>
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

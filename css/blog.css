@@ -1,16 +1,30 @@
-/* http://getbootstrap.com/customize/?id=1317af03ffddd8dc6c8c */
+/* http://getbootstrap.com/customize/?id=080afb673ae4fc6f1abf */
 
-body {
-    font-family: "Open Sans", Arial;
+/* Header */
+div#header {
+    position: relative;
+    height: 3em;
 }
 
+div#header_content {
+    position: absolute;
+    bottom: 0.1em;
+    left: 0.2em;
+}
+
+div#header_bar {
+    height: 0.15em;
+}
+
+/* Body */
 p#post_date {
     color:#999;
 }
 
 h2#post_title {
-    margin-top:1.9em; 
+    margin-top:1.2em; 
     font-weight: bold;
+    text-shadow: -2px 2px 0.1px #eee;
 }
 
 div#post_body {
@@ -18,35 +32,16 @@ div#post_body {
     margin-bottom:5em;
 }
 
+
+/* Footer */
 div#blog_footer {
     margin-top:3em; 
     margin-bottom:3em;
 }
 
 pre {
+    background-color: #F3F3F3;
+    border: 0;
     margin: 16px;
     font-size: 14px;
-}
-
-
-/* 3d lines */
-div.container {
-    padding-top: 23px;
-}
-#canvas{
-    width:100%;
-    height:100px;
-    overflow: hidden;
-    position:absolute;
-    top:0;
-    left:0;
-    background-color: #1a1724;               
-}
-.canvas-wrap{
-    position:relative;
-    
-}
-div.canvas-content{
-    position:relative;
-    z-index:2000;
 }

@@ -52,5 +52,19 @@ $.getJSON("content/index.json", function(post_list) {
     $("#content").load("post.html", function() {
         renderPost(post_list[post_file].title, post_list[post_file].date, post_file);
     });
+    
+    
+    var color = [  
+        [62,35,255],
+        [60,255,60],
+        [255,35,98],
+        [45,175,230],
+        [255,0,255],
+        [255,128,0]
+    ];
+    var i = Math.floor(Math.random() * 5);    
+    $("#header_bar").css("background", "-webkit-linear-gradient(left, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
+    $("#header_bar").css("background", "-o-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
+    $("#header_bar").css("background", "-moz-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
+    $("#header_bar").css("background", "linear-gradient(to right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
 });
-

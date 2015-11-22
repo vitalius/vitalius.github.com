@@ -3,18 +3,19 @@
 /* Header */
 div#header {
     position: relative;
-    height: 2em;
+    height: 3.5em;
 }
 
 div#header_content {
     position: absolute;
+    text-align: left;
     text-shadow: -1px 1px 0.2px #eee;
     width: 100%;
-    bottom: 0px;
+    bottom: 10px;
 }
 
 div#header_bar {
-    height: 0.15em;
+    height: 0.1em;
 }
 
 /* Body */

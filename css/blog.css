@@ -3,14 +3,13 @@
 /* Header */
 div#header {
     position: relative;
-    height: 3em;
+    height: 2em;
 }
 
 div#header_content {
     position: absolute;
-    width: 100%;
-    text-align: left;
     text-shadow: -1px 1px 0.2px #eee;
+    width: 100%;
     bottom: 0px;
 }
 

@@ -6,16 +6,28 @@ div#header {
     height: 3.5em;
 }
 
+p#header_logo {
+    position:relative;
+    float:left;
+    font-size:1.5em;
+    color:rgb(0,1,244);
+}
+
 div#header_content {
     position: absolute;
-    text-align: left;
-    text-shadow: -1px 1px 0.2px #eee;
+    text-align: right;
     width: 100%;
     bottom: 0px;
 }
 
 div#header_bar {
-    height: 0.2em;
+    height: 2px;
+}
+
+.header_links li {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 1em;
 }
 
 /* Body */
@@ -26,7 +38,7 @@ p#post_date {
 h2#post_title {
     margin-top:1.2em; 
     font-weight: bold;
-    text-shadow: -3px 3px 0.5px #ddd;
+    text-shadow: -3px 3px 1px #ddd;
 }
 
 div#post_body {

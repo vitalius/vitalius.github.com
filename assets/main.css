@@ -6,6 +6,10 @@
     font-family: "Roboto Regular"; src: url(Roboto-Regular.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: "Roboto Mono"; src: url(RobotoMono-Regular.ttf) format("truetype");
+}
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
@@ -108,7 +112,7 @@ dl.archive dd {
 
 
 pre {
-  font-family: monospace;
+  font-family: "Roboto Mono", monospace;
   background-color: #F1F1F1;
   margin: 10px;
   padding: 10px;
@@ -118,7 +122,7 @@ pre {
 }
 
 code {
-  font-family: monospace;
+  font-family: "Roboto Mono", monospace;
   background-color: #F1F1F1;
   overflow: auto;
   width: auto;

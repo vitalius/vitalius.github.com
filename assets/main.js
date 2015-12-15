@@ -30,10 +30,12 @@ function renderPost(title, date, file) {
            var msg = "Sorry but there was an error: ";
            $( "#post_body" ).html( msg + xhr.status + " " + xhr.statusText );
         } else {              
+            /*
            MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ],
                                            displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
                                            processEscapes: true } });  
            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+           */
         }                
     });
 }

@@ -1,20 +1,12 @@
 <div>
-    <style>
-    .table th, .table td { 
-         border-top: none !important; 
-         font-size: 20px;
-     }
-    </style>
-    <table id="archive" class="table">
-    </table>
+    
+    <dl class="archive" id="arch"></dl>
     <script type="text/javascript">
     $.getJSON("content/index.json", function(post_list) { 
         $.each(post_list, function(file, content) {
             if (content.date) {
-                $("#archive").append("<tr>"+
-                                     "<td class='text-right'>" + content.date + "<\/td>"+
-                                     "<td><a href='?p=" + file + "'>" + content.title + "<\/a><\/td>"+
-                                     "<\/tr>");
+                $("#arch").append("<dt>" + content.date + "<\/dt>"+
+                                  "<dd><a href='?p=" + file + "'>" + content.title + "<\/a><\/dd>");
             }
         });
     });

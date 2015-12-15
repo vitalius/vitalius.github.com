@@ -31,7 +31,7 @@ Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01
 
-<pre><code class="javascript">// roms are loaded at 0x200 in the 4096 bytes of memory space
+<pre>// roms are loaded at 0x200 in the 4096 bytes of memory space
 pc = 0x200; 
 
 // registers
@@ -50,7 +50,7 @@ function run(opcode) {
     return "Sets V" + ((opcode & 0xf00) >> 8).toString(16) + 
              " to " + (opcode & 0xff).toString(16);
   }
-};</code></pre>
+};</pre>
 
 And disassemble 4 opcodes from the rom.
 

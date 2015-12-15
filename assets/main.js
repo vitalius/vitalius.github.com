@@ -64,7 +64,7 @@ $.getJSON("content/index.json", function(post_list) {
         [255,128,0]
     ];
     var i = Math.floor(Math.random() * (color.length - 1));    
-    $("#header_logo").css("color", "rgb(" + color[i] + ")");
+    //$("#header_logo").css("color", "rgb(" + color[i] + ")");
     $("#header_bar").css("background", "-webkit-linear-gradient(left, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
     $("#header_bar").css("background", "-o-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
     $("#header_bar").css("background", "-moz-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");

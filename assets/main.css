@@ -34,16 +34,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
   background-color: #fefefe;
-  color: #222;
+  color: #333;
   overflow-x: hidden;
   font-size: 1em;
   line-height: 1.44em;
 }
 
 
-:link { color: #23527C; text-decoration: none; }
-:visited { color: #23527C; }
-:hover { color: #23527C; text-decoration: underline; }
+:link { color: #3277b3; text-decoration: none; }
+:visited { color: #3277b3; }
+:hover { color: #3277b3; text-decoration: underline; }
 
 p {
     margin-bottom: 20px;
@@ -109,23 +109,21 @@ dl.archive dd {
 
 pre {
   font-family: monospace;
-  background-color: #F3F3F3;
-  border: 0;
+  background-color: #F1F1F1;
   margin: 10px;
+  padding: 10px;
   overflow: auto;
   width: auto;
-  padding: 10px;
-  font-size: 1.1em;
+  overflow: scroll;
 }
 
 code {
   font-family: monospace;
-  background-color: #F3F3F3;
-  border: 0;
+  background-color: #F1F1F1;
   overflow: auto;
   width: auto;
-  padding: 5px;
-  font-size: 1.1em;
+  padding: 3px;
+  overflow: scroll;
 }
 
 
@@ -150,13 +148,10 @@ h2#post_title {
 }
 
 
-
 div#footer {
     margin-top:3em; 
     margin-bottom:3em;
 }
-
-
 
 
 @media screen and (max-width: 760px) {

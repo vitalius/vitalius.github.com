@@ -66,12 +66,6 @@ header .container {
     padding-bottom: 20px;
     position: relative;
 }
-    
-h1#brand {
-   background: transparent url(s.svg) no-repeat;
-   width:130px;
-   height:32px  
-}
               
 header .site-nav {
     position: absolute;
@@ -118,7 +112,6 @@ pre {
   padding: 10px;
   overflow: auto;
   width: auto;
-  overflow: scroll;
 }
 
 code {
@@ -127,7 +120,6 @@ code {
   overflow: auto;
   width: auto;
   padding: 3px;
-  overflow: scroll;
 }
 
 
@@ -147,14 +139,14 @@ h2#post_title {
 }
 
 .page_body {
-    margin-top:2em; 
-    margin-bottom:5em;
+    margin-top: 2em; 
+    margin-bottom: 5em;
 }
 
 
-div#footer {
-    margin-top:3em; 
-    margin-bottom:3em;
+footer {
+    margin-top: 3em; 
+    margin-bottom: 3em;
 }
 
 
@@ -168,9 +160,7 @@ div#footer {
     margin: 0 auto;
     width: 140px;
     text-align: center;
-  }
-  header h1 svg {
-    width: 140px;
+    transform: scale(0.5);
   }
   header .site-nav {
     position: static;

@@ -45,9 +45,9 @@ body {
 }
 
 
-:link { color: #3277b3; text-decoration: none; }
-:visited { color: #3277b3; }
-:hover { color: #3277b3; text-decoration: underline; }
+:link { color: #0015FF; text-decoration: none; }
+:visited { color: #0015FF; }
+:hover { color: #0015FF; text-decoration: underline; }
 
 p {
     margin-bottom: 20px;
@@ -70,7 +70,7 @@ header .container {
 header .site-nav {
     position: absolute;
     right: 20px;
-    bottom: 25px;
+    bottom: 28px;
 }
 
 ol, ul .site-nav {
@@ -135,7 +135,7 @@ h2#post_title {
     line-height: 1em;
     font-weight: bold;
     font-size: 2.5em;
-    text-shadow: -3px 3px 1px #ddd;
+    text-shadow: -1px 1px 0px #ddd;
 }
 
 .page_body {
@@ -160,7 +160,9 @@ footer {
     margin: 0 auto;
     width: 140px;
     text-align: center;
-    transform: scale(0.5);
+  }
+  header svg {
+    transform: scale(0.8);
   }
   header .site-nav {
     position: static;

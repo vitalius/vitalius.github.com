@@ -6,7 +6,7 @@
         $.each(post_list, function(file, content) {
             if (content.date) {
                 $("#arch").append("<dt>" + content.date + "<\/dt>"+
-                                  "<dd><a href='?p=" + file + "'>" + content.title + "<\/a><\/dd>");
+                                  "<dd><a href='?" + file + "'>" + content.title + "<\/a><\/dd>");
             }
         });
     });

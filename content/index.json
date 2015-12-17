@@ -1,9 +1,9 @@
 {
-    "emu_part1.html" : {
+    "emupart1.html" : {
         "date": "October 7th, 2015",
         "title": "Chip8 emulator &#8211; part 1"
     },
-    "cs_attribute.html" : {
+    "csattribute.html" : {
         "date": "June 7th, 2014",
         "title": "Using C# attribute as a variable"
     },

@@ -1,29 +1,28 @@
-<p>With 1TB hard disk drive, I didn't care about the amount of space taken by OS. But after switching to a much smaller drive, 120GB SSD, space on drive <code>C:\</code> becomes precious. So it was very surprising to see only 50GB left just after installing Win 8.1 on an empty drive.
+<p>With 1TB hard disk drive, no one really cares about the amount of space taken by OS. But after switching to a much smaller drive, 120GB SSD, space on drive <code>C:\</code> becomes precious. So it was very surprising to me to see only 50GB free just after installing Win 8.1 on an empty drive.
 </p>
 
-<p>Full installation of Win 8.1 takes only about 15GB. Where did 60+GB go?</p>
+<p>Full installation of Win 8.1 takes only about 15GB. Where did the rest 50GB go?</p>
 
   <p>Running Disk Cleanups didn't reveal any magical space drainage either. 
-  I even suspected a few SSD chips gone bad and now 
-  half of the drive is simply unusable.
+  I even suspected a few SSD chips gone bad and now half of the drive is simply unusable.
   </p>
 
-  <p>Turns out, Windows has two very-hidden files <code>C:\pagefile.sys</code> and 
+  <p>Turns out, Windows has two very hidden files <code>C:\pagefile.sys</code> and 
   <code>C:\hiberfil.sys</code>. So hidden that if you turn on the show hidden 
-  files feature in Explorer, they still remain hidden. Even if you run 
-  <code>C:\&gt;dir</code> as Administrator you still won't see them. 
+  files feature in windows explorer, they still remain hidden. Even if you run 
+  <code>C:\&gt;dir</code> as Administrator you won't see them. 
   I only came across them by accident with Cygwin.</p>
  
   <p><ul>
    <li><code>pagefile.sys</code> is a Windows version of swap partition. 
-       Normally, it is equivalent in size to the amount of system's ram
+       It is typically the size equal to the amount of system's ram
        and in my case it's a whooping 32GB file. Pagefiles can be disabled 
        all-together, moved to a different drive or modified to a custom size 
        but by default they seem to be same size as ram on <code>C:\</code>
    </li>
    <li><code>hiberfil.sys</code> The secret sauce behind Windows fast 
        boot-up and the cache file for OS state when hibernating. 
-       Also pretty large on my system, 26GB.
+       Also typically large, on my system - 26GB.
    </li>
   </ul></p>
   

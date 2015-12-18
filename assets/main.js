@@ -49,25 +49,6 @@ function renderPage(title, date, file) {
 }
 
 
-/**
- * Add color zaz
- */
-function mouseActive(o) {   
-    var r = Math.floor(Math.random()*color.length);
-
-    o.on('mouseover', function() { 
-        o.attr("fill", "rgb(" + color[r] + ")" );
-        o.attr("stroke-width", "3" );
-        o.attr("stroke", "rgb(" + color[r] + ")" ); 
-    });
-    
-    o.on('mouseout', function() { 
-        o.attr("fill", "#000" );
-        o.attr("stroke", "0" );  
-    });  
-}
-
-
 
 /**
  * On load
@@ -87,8 +68,4 @@ $.getJSON("content/index.json", function(post_list) {
     $("#header_bar").css("background", "-o-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
     $("#header_bar").css("background", "-moz-linear-gradient(right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
     $("#header_bar").css("background", "linear-gradient(to right, rgb(" + color[i] + "), rgb(" + color[i + 1] + "))");
-
-    /* logo colors */
-    for(var i=0; i<9; i++)
-        mouseActive($('#'+i));
 });

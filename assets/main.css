@@ -82,6 +82,25 @@ ol, ul .site-nav {
     padding-left: 35px;
 }
 
+path {
+    stroke-dasharray: 20,10;
+    stroke-dashoffset: 100;
+    stroke-width: 0;
+    stroke: #000;
+    fill: #333;
+}
+
+:hover path {
+    stroke-width: 3;
+    stroke-dashoffset: 0;
+    fill: #fff;
+    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
+}
+
+nav :link { color: #0015ff; text-decoration: none; }
+nav :visited { color: #0015ff; text-decoration: none; }
+nav :hover { color: #0015ff; text-decoration: none; border-bottom: solid #3055ff; }
+
 div#header_bar {
     height: 2px;
 }
@@ -126,7 +145,6 @@ code {
 
 p#post_date {
     margin-top: 1em;
-    color:#444;
     font-family: 'Roboto Thin', sans-serif;
 }
 

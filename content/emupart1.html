@@ -1,12 +1,21 @@
 Let's write a simple emulator in JavaScript.</p>
 
-Among the standard CPU stuff such as registers and program counter and stack, 
+Among the standard CPU stuff such as registers, program counter and stack, 
 <a href="https://en.wikipedia.org/wiki/CHIP-8#Virtual_machine_description">Chip8</a> 
-has only 35 opcodes and 4096 bytes of memory. This very simple architecture makes Chip8 
-a prime target for beginer emulator project.</p>
+has only 35 opcodes (operation codes) and 4096 bytes of memory. 
+This very simple architecture makes Chip8 a great emulation project for beginners.</p>
+
+<p>So, here are the basic hardware stats:
+<ul>
+    <li>4096 bytes of memory</li>
+    <li>35 opcodes</li>
+    <li>16 registers: V0, V1, ..., VF</li>
+    <li>Address register, I is 16 bits wide</li>
+</ul>
+</p>
 
 To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>) and get a feel 
-for opcode flow.
+for what opcodes look like and general flow of programs.
 <pre>$ hexdump Maze.ch8 
 0000000 60 00 61 00 a2 22 c2 01 32 01 a2 1e d0 14 70 04
 0000010 30 40 12 04 60 00 71 04 31 20 12 04 12 1c 80 40
@@ -14,7 +23,7 @@ for opcode flow.
 0000026
 </pre>
 
-A bit of formatting, and here is an array of opcodes of the entire rom.
+A bit of formatting, and we have an array of opcodes of the entire rom.
 
 <pre>var rom = [ 
     0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
@@ -24,9 +33,9 @@ A bit of formatting, and here is an array of opcodes of the entire rom.
     0x8040, 0x2010, 0x2040, 0x8010 
 ];</pre>
 
-Looking up first opcode in the 
-<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">reference</a>: 
-6XNN - 'Sets VX to NN' means 0x6000 sets register V0 to 0. 
+Looking up first opcode in one of the 
+<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">references</a>: 
+6XNN - 'Sets VX to NN' means first opcode in the rom, 0x6000, sets register V0 to 0. 
 Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01

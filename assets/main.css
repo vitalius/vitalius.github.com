@@ -60,7 +60,6 @@ p {
     padding: 0px 20px;
 }
 
-
 header .container {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -85,15 +84,15 @@ ol, ul .site-nav {
 path {
     stroke-width: 2;
     stroke: #000;
-    fill: #333;
+    fill: #000;
 }
 
 :hover path {
     stroke-dasharray: 20,10;
     stroke-dashoffset: 300;
     stroke-width: 2;
-    fill: #fff;
-    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
+    fill: #ff0;
+    transition: stroke-dashoffset 2s ease-out; /*, fill 1s ease-out; */
 }
 
 nav :link { color: #0015ff; text-decoration: none; }
@@ -121,12 +120,15 @@ dl.archive dd {
   padding: 0 0 1em;
 }
 
-
+ol, ul {
+    list-style: outside;
+    padding-left: 5%;
+}
 
 pre {
   font-family: "Roboto Mono", monospace;
   background-color: #F1F1F1;
-  margin: 10px;
+  margin: 20px 10px 20px 10px;
   padding: 10px;
   overflow: auto;
   width: auto;
@@ -153,7 +155,6 @@ h2#post_title {
     line-height: 1em;
     font-weight: bold;
     font-size: 2.5em;
-    text-shadow: -2px 2px 0px #ddd;
 }
 
 .page_body {
@@ -174,10 +175,11 @@ footer {
 
 @media screen and (max-width: 760px) {
   header .container {
+    margin-top: 10px;
     height: auto;
     padding: 10px 10px 20px;
   }
-  header h1 {
+  header h1 { 
     float: none;
     margin: 0 auto;
     width: 140px;
@@ -204,6 +206,7 @@ footer {
     line-height: 18px;
   }
   dl.archive dt {
+    margin-left: 15%;
     float: none;
     clear: none;
     text-align: left;
@@ -211,6 +214,7 @@ footer {
     padding: 0;
   }
   dl.archive dd {
+    margin-left: 15%;
     padding: 0 0 1em;
   }
 }

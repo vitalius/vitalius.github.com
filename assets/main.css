@@ -83,16 +83,15 @@ ol, ul .site-nav {
 }
 
 path {
-    stroke-dasharray: 20,10;
-    stroke-dashoffset: 100;
-    stroke-width: 0;
+    stroke-width: 2;
     stroke: #000;
     fill: #333;
 }
 
 :hover path {
-    stroke-width: 3;
-    stroke-dashoffset: 0;
+    stroke-dasharray: 20,10;
+    stroke-dashoffset: 300;
+    stroke-width: 2;
     fill: #fff;
     transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
 }
@@ -145,6 +144,7 @@ code {
 
 p#post_date {
     margin-top: 1em;
+    font-size: 1.25em;
     font-family: 'Roboto Thin', sans-serif;
 }
 

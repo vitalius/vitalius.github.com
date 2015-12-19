@@ -120,7 +120,7 @@ dl.archive dd {
   padding: 0 0 1em;
 }
 
-ol, ul {
+.page_body ul, .page_body ol {
     list-style: outside;
     padding-left: 5%;
 }

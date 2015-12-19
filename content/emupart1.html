@@ -14,7 +14,7 @@ This very simple architecture makes Chip8 a great emulation project for beginner
 </ul>
 </p>
 
-To start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>) and get a feel 
+And to start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>) and get a feel 
 for what opcodes look like and general flow of programs.
 <pre>$ hexdump Maze.ch8 
 0000000 60 00 61 00 a2 22 c2 01 32 01 a2 1e d0 14 70 04
@@ -23,7 +23,7 @@ for what opcodes look like and general flow of programs.
 0000026
 </pre>
 
-A bit of formatting, and we have an array of opcodes of the entire rom.
+A bit of formatting.
 
 <pre>var rom = [ 
     0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
@@ -33,9 +33,8 @@ A bit of formatting, and we have an array of opcodes of the entire rom.
     0x8040, 0x2010, 0x2040, 0x8010 
 ];</pre>
 
-Looking up first opcode in one of the 
-<a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">references</a>: 
-6XNN - 'Sets VX to NN' means first opcode in the rom, 0x6000, sets register V0 to 0. 
+Looking up first opcode in the <a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">reference</a>: 
+6XNN - 'Sets VX to NN' which means first opcode in the rom, 0x6000, sets register V0 to 0. 
 Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01

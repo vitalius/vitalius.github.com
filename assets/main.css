@@ -206,7 +206,7 @@ footer {
     line-height: 18px;
   }
   dl.archive dt {
-    margin-left: 15%;
+    margin-left: 10%;
     float: none;
     clear: none;
     text-align: left;
@@ -214,7 +214,7 @@ footer {
     padding: 0;
   }
   dl.archive dd {
-    margin-left: 15%;
+    margin-left: 10%;
     padding: 0 0 1em;
   }
 }

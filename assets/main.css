@@ -92,7 +92,7 @@ path {
     stroke-dashoffset: 300;
     stroke-width: 2;
     fill: #ff0;
-    transition: stroke-dashoffset 2s ease-out; /*, fill 1s ease-out; */
+    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
 }
 
 nav :link { color: #0015ff; text-decoration: none; }

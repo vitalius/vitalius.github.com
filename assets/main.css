@@ -91,7 +91,7 @@ path {
     stroke-dasharray: 10, 5;
     stroke-dashoffset: 300;
     stroke-width: 2;
-    fill: #ff0;
+    fill: #0ff;
     transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
 }
 

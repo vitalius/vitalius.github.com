@@ -100,7 +100,7 @@ nav :visited { color: #0015ff; text-decoration: none; }
 nav :hover { color: #0015ff; text-decoration: none; border-bottom: solid #3055ff; }
 
 div#header_bar {
-    height: 2px;
+    height: 20px;
 }
 
 

@@ -60,11 +60,14 @@ p {
     padding: 0px 20px;
 }
 
+header {
+    background-color: rgba(255, 255, 0, 0.10);
+}
+
 header .container {
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
-    background-color: rgba(255, 255, 0, 0.10);
 }
               
 header .site-nav {

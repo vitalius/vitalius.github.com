@@ -61,7 +61,7 @@ p {
 }
 
 header {
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: #000;
 }
 
 header .container {
@@ -73,7 +73,7 @@ header .container {
 header .site-nav {
     position: absolute;
     right: 20px;
-    bottom: 28px;
+    bottom: 30px;
 }
 
 ol, ul .site-nav {
@@ -87,24 +87,26 @@ ol, ul .site-nav {
 
 path {
     stroke-width: 2;
-    stroke: #000;
+    stroke: #fff;
     fill: #000;
 }
 
 :hover path {
-    stroke-dasharray: 10, 5;
-    stroke-dashoffset: 300;
-    stroke-width: 2;
-    fill: #0ff;
+    stroke-dasharray: 3, 3;
+    stroke-dashoffset: 40;
+    stroke-width: 3;
+    stroke: #fff;
+    fill: #5ff;
     transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
 }
 
-nav :link { color: #0015ff; text-decoration: none; }
-nav :visited { color: #0015ff; text-decoration: none; }
-nav :hover { color: #0015ff; text-decoration: none; border-bottom: solid #3055ff; }
+nav :link { color: #5ff; text-decoration: none; }
+nav :visited { color: #5ff; text-decoration: none; }
+nav :hover { color: #5ff; text-decoration: none; border-bottom: solid #5ff; }
 
 div#header_bar {
-    height: 3px;
+    height: 5px;
+    box-shadow: 0px 2px 2px #aaa;
 }
 
 
@@ -179,7 +181,7 @@ footer {
 
 @media screen and (max-width: 760px) {
   header .container {
-    margin-top: 10px;
+    margin-top: 0px;
     height: auto;
     padding: 10px 10px 20px;
   }

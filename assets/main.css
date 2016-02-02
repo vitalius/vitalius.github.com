@@ -86,9 +86,9 @@ ol, ul .site-nav {
 }
 
 path {
-    stroke-width: 2;
-    stroke: #fff;
-    fill: #000;
+    stroke-width: 1;
+    stroke: #000;
+    fill: #fff;
 }
 
 :hover path {
@@ -96,17 +96,17 @@ path {
     stroke-dashoffset: 40;
     stroke-width: 3;
     stroke: #fff;
-    fill: #5ff;
-    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out;
+    fill: #000;
+    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out, stroke 1s ease-out;
 }
 
-nav :link { color: #5ff; text-decoration: none; }
-nav :visited { color: #5ff; text-decoration: none; }
-nav :hover { color: #5ff; text-decoration: none; border-bottom: solid #5ff; }
+nav :link { color: #2ff; text-decoration: none; }
+nav :visited { color: #2ff; text-decoration: none; }
+nav :hover { color: #2ff; text-decoration: none; border-bottom: solid #2ff; }
 
 div#header_bar {
     height: 5px;
-    box-shadow: 0px 2px 2px #aaa;
+    box-shadow: 0px 1px 2px #aaa;
 }
 
 

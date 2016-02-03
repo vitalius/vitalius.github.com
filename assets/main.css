@@ -57,7 +57,7 @@ p {
 .container {
     max-width: 760px;
     margin: 0px auto;
-    padding: 0px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 header {
@@ -65,15 +65,15 @@ header {
 }
 
 header .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 15px;
     position: relative;
 }
-              
+ 
 header .site-nav {
     position: absolute;
-    right: 20px;
-    bottom: 29px;
+    right: 30px;
+    bottom: 25px;
 }
 
 ol, ul .site-nav {
@@ -106,7 +106,7 @@ nav :hover { color: #2ff; text-decoration: none; border-bottom: solid #2ff; }
 
 div#header_bar {
     height: 5px;
-    box-shadow: 0px 0px 30px #aaa;
+    box-shadow: 0px 0px 30px #ccc;
 }
 
 
@@ -183,12 +183,11 @@ footer {
   header .container {
     margin-top: 0px;
     height: auto;
-    padding: 10px 10px 20px;
+    padding: 30px 10px 20px;
   }
   header h1 { 
     float: none;
     margin: 0 auto;
-    width: 140px;
     text-align: center;
   }
   header svg {

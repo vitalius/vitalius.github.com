@@ -103,7 +103,15 @@ path {
 
 nav :link { color: #2ff; text-decoration: none; }
 nav :visited { color: #2ff; text-decoration: none; }
-nav :hover { color: #2ff; text-decoration: none; border-bottom: solid #2ff; }
+nav :hover { 
+  color: #2ff; 
+  text-decoration: none; 
+  border-bottom: solid #2ff;
+  transition-property: border-bottom;
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;  
+}
 
 div#header_bar {
     height: 5px;

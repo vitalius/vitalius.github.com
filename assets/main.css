@@ -64,6 +64,7 @@ header {
     background-color: #1f1f1f;
 }
 
+
 header .container {
     padding-top: 25px;
     padding-bottom: 15px;
@@ -88,7 +89,7 @@ ol, ul .site-nav {
 path {
     stroke-width: 1;
     stroke: #000;
-    fill: #fff;
+    fill: #defefe;
 }
 
 :hover path {
@@ -157,7 +158,7 @@ p#post_date {
 }
 
 h2#post_title {
-    margin-top: 1em;
+    margin-top: 1.1em;
     line-height: 1em;
     font-weight: bold;
     font-size: 2.5em;

@@ -95,10 +95,10 @@ path {
 :hover path {
     stroke-dasharray: 3, 3;
     stroke-dashoffset: 40;
-    stroke-width: 3;
+    stroke-width: 1;
     stroke: #fff;
     fill: #000;
-    transition: stroke-dashoffset 2s ease-out, fill 1s ease-out, stroke 1s ease-out;
+    transition: stroke-dashoffset 2s ease-out, fill 2.5s ease-out, stroke 1s ease-out;
 }
 
 nav :link { color: #2ff; text-decoration: none; }
@@ -115,7 +115,7 @@ nav :hover {
 
 div#header_bar {
     height: 5px;
-    box-shadow: 0px 0px 20px #aaa;
+    box-shadow: 0px 0px 5px #aaa;
 }
 
 

@@ -93,12 +93,12 @@ path {
 }
 
 :hover path {
-    stroke-dasharray: 3, 3;
+    stroke-dasharray: 2, 2;
     stroke-dashoffset: 40;
-    stroke-width: 1;
-    stroke: #fff;
-    fill: #000;
-    transition: stroke-dashoffset 2s ease-out, fill 2.5s ease-out, stroke 1s ease-out;
+    stroke-width: 1.4;
+    stroke: #aaa;
+    fill: #333;
+    transition: stroke-dashoffset 2s ease-out, fill 2s ease-out, stroke 2s ease-out;
 }
 
 nav :link { color: #2ff; text-decoration: none; }

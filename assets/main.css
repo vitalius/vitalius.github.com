@@ -160,16 +160,16 @@ code {
 
 
 p#post_date {
-    margin-top: 1em;
+    margin-top: 1.25em;
     font-size: 1.25em;
     font-family: 'Roboto Thin', sans-serif;
 }
 
 h2#post_title {
-    margin-top: 1.1em;
+    margin-top: 1.2em;
     line-height: 1em;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 3em;
 }
 
 .page_body {

@@ -96,9 +96,9 @@ path {
     stroke-dasharray: 2, 2;
     stroke-dashoffset: 40;
     stroke-width: 1.4;
-    stroke: #aaa;
+    stroke: #ccc;
     fill: #333;
-    transition: stroke-dashoffset 2s ease-out, fill 2s ease-out, stroke 2s ease-out;
+    transition: stroke-dashoffset 3s ease-out, fill 2s ease-out, stroke 2s ease-out;
 }
 
 nav :link { color: #2ff; text-decoration: none; }
@@ -108,8 +108,8 @@ nav :hover {
   text-decoration: none; 
   border-bottom: solid #2ff;
   transition-property: border-bottom;
-  transition-duration: 0.1s;
-  transition-delay: 0.1s;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
   transition-timing-function: ease-in-out;  
 }
 

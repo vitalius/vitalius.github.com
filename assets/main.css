@@ -135,7 +135,7 @@ pre {
 
 
 p#post_date {
-    margin-top: 1em;
+    margin-top: 1.2em;
     color: #aaa;
     font-family: 'Roboto Regular', sans-serif;
 }
@@ -167,15 +167,13 @@ footer {
   header .container {
     margin-top: 0px;
     height: auto;
-    padding: 30px 10px 20px;
+    padding: 17px 10px 15px;
   }
   header h1 { 
     float: none;
     margin: 0 auto;
     text-align: center;
-  }
-  header svg {
-    transform: scale(0.8);
+    padding-bottom: 5px;
   }
   header .site-nav {
     position: static;
@@ -208,6 +206,6 @@ footer {
   }
   pre {
     font-size: 0.6em;
-    line-height: 1.2em;
+    line-height: 1.5em;
   }
 }

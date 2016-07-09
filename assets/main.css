@@ -104,16 +104,6 @@ nav :hover {
   transition-timing-function: ease-in-out;  
 }
 
-<<<<<<< HEAD
-=======
-div#header_bar {
-    height: 5px;
-    box-shadow: 0px 0px 5px #555;
-}
-
-
->>>>>>> 2df56369b9dfb25f3af4760c8a1324fe5f1baa52
-
 dl.archive {
   width: 100%;
 }
@@ -215,5 +205,9 @@ footer {
   dl.archive dd {
     margin-left: 10%;
     padding: 0 0 1em;
+  }
+  pre {
+    font-size: 0.6em;
+    line-height: 1.1em;
   }
 }

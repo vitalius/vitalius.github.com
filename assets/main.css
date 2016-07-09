@@ -61,21 +61,27 @@ p {
 }
 
 header {
-    background-color: #1f1f1f;
+    background-color: #2f2f2f;
 }
 
 
 header .container {
-    padding-top: 25px;
-    padding-bottom: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
     position: relative;
 }
  
 header .site-nav {
     position: absolute;
     right: 25px;
-    bottom: 25px;
+    bottom: 35px;
 }
+
+header .logo {
+    font-size: 2em;
+    bottom: 1px;
+}
+
 
 ol, ul .site-nav {
     list-style: outside none none;
@@ -86,38 +92,17 @@ ol, ul .site-nav {
     padding-left: 35px;
 }
 
-path {
-    stroke-width: 1;
-    stroke: #000;
-    fill: #defefe;
-}
-
-:hover path {
-    stroke-dasharray: 2, 2;
-    stroke-dashoffset: 40;
-    stroke-width: 1.4;
-    stroke: #ccc;
-    fill: #333;
-    transition: stroke-dashoffset 3s ease-out, fill 2s ease-out, stroke 2s ease-out;
-}
-
-nav :link { color: #2ff; text-decoration: none; }
-nav :visited { color: #2ff; text-decoration: none; }
+header :link { color: #2ff; text-decoration: none; }
+header :visited { color: #2ff; text-decoration: none; }
 nav :hover { 
   color: #2ff; 
   text-decoration: none; 
   border-bottom: solid #2ff;
   transition-property: border-bottom;
-  transition-duration: 0.5s;
-  transition-delay: 0.2s;
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
   transition-timing-function: ease-in-out;  
 }
-
-div#header_bar {
-    height: 5px;
-    box-shadow: 0px 0px 5px #ccc;
-}
-
 
 
 dl.archive {
@@ -149,20 +134,11 @@ pre {
   width: auto;
 }
 
-code {
-  font-family: "Roboto Mono", monospace;
-  background-color: #F1F1F1;
-  overflow: auto;
-  width: auto;
-  padding: 3px;
-}
-
-
 
 p#post_date {
-    margin-top: 1.25em;
-    font-size: 1.25em;
-    font-family: 'Roboto Thin', sans-serif;
+    margin-top: 1em;
+    color: #aaa;
+    font-family: 'Roboto Regular', sans-serif;
 }
 
 h2#post_title {

@@ -38,24 +38,3 @@ $.getJSON("content/index.json", function(post_list) {
         renderPage(post_list[page_file].title, post_list[page_file].date, page_file);
     });    
 });
-
-
-
-/**
- * I like these colors
- */
-var color = [  
-    [62,35,255],
-    [60,255,60],
-    [255,35,98],
-    [45,175,230],
-    [255,0,255],
-    [255,128,0]
-];
-
-var c = Math.floor(Math.random() * (color.length - 1));
-
-$("#header_bar").css("background", "-webkit-linear-gradient(left, rgb(" + color[c] + "), rgb(" + color[c + 1] + "))");
-$("#header_bar").css("background", "-o-linear-gradient(right, rgb(" + color[c] + "), rgb(" + color[c + 1] + "))");
-$("#header_bar").css("background", "-moz-linear-gradient(right, rgb(" + color[c] + "), rgb(" + color[c + 1] + "))");
-$("#header_bar").css("background", "linear-gradient(to right, rgb(" + color[c] + "), rgb(" + color[c + 1] + "))");

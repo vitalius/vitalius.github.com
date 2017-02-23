@@ -64,8 +64,6 @@ header .site-nav {
 }
 
 header .logo {
-    font-size: 2em;
-    bottom: 1px;
 }
 
 
@@ -122,7 +120,6 @@ pre {
 code {
     font-weight: 700;
     font-family: monospace;
-    font-size: 1.3em;
 }
 
 h2#post_title {

@@ -16,7 +16,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-kerning: inherit;
     font-synthesis: inherit;
     font-variant: inherit;
-    font-family: 'Roboto Regular', sans-serif;
+    font-family: sans-serif;
     font-weight: 400;
     outline: medium none;
     vertical-align: baseline;
@@ -119,6 +119,11 @@ pre {
   width: auto;
 }
 
+code {
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 1.3em;
+}
 
 h2#post_title {
     margin-top: 1.2em;

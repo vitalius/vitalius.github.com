@@ -1,16 +1,3 @@
-@font-face { 
-    font-family: "Roboto Thin"; src: url(Roboto-Thin.ttf) format("truetype");
-}
-
-@font-face { 
-    font-family: "Roboto Regular"; src: url(Roboto-Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "Roboto Mono"; src: url(RobotoMono-Regular.ttf) format("truetype");
-}
-
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -18,7 +5,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0px;
     padding: 0px;
     border: 0px none;
-    color: #333;
+    color: #111;
     font-style: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -37,17 +24,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 } 
 
 body {
-  background-color: #fefefe;
-  color: #333;
+  background-color: #fff;
   overflow-x: hidden;
   font-size: 1em;
   line-height: 1.44em;
 }
 
 
-:link { color: #0015FF; text-decoration: none; }
-:visited { color: #0015FF; }
-:hover { color: #0015FF; text-decoration: underline; }
+:link { color: #E84855; text-decoration: none; font-weight: 600; }
+:visited { color: #FF9B71; text-decoration: none; font-weight: 600; }
+:hover { color: #FF9B71; text-decoration: underline; font-weight: 600; }
 
 p {
     margin-bottom: 20px;
@@ -61,20 +47,20 @@ p {
 }
 
 header {
-    background-color: #2f2f2f;
+    background-color: #243055;
 }
 
 
 header .container {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     position: relative;
 }
  
 header .site-nav {
     position: absolute;
     right: 25px;
-    bottom: 35px;
+    bottom: 20px;
 }
 
 header .logo {
@@ -92,12 +78,12 @@ ol, ul .site-nav {
     padding-left: 35px;
 }
 
-header :link { color: #2ff; text-decoration: none; }
-header :visited { color: #2ff; text-decoration: none; }
+header :link { color: #FFFD82; text-decoration: none; }
+header :visited { color: #FFFD82; text-decoration: none; }
 nav :hover { 
-  color: #2ff; 
+  color: #FFFD82; 
   text-decoration: none; 
-  border-bottom: solid #2ff;
+  border-bottom: solid #FFFD82;
   transition-property: border-bottom;
   transition-duration: 0.1s;
   transition-delay: 0.1s;
@@ -125,7 +111,7 @@ dl.archive dd {
 }
 
 pre {
-  font-family: "Roboto Mono", monospace;
+  font-family: monospace;
   background-color: #F1F1F1;
   margin: 20px 10px 20px 10px;
   padding: 10px;
@@ -134,17 +120,15 @@ pre {
 }
 
 
-p#post_date {
-    margin-top: 1.2em;
-    color: #aaa;
-    font-family: 'Roboto Regular', sans-serif;
-}
-
 h2#post_title {
     margin-top: 1.2em;
     line-height: 1em;
     font-weight: bold;
     font-size: 3em;
+}
+
+p#post_date {
+    margin-top: 1em;
 }
 
 .page_body {
@@ -203,9 +187,5 @@ footer {
   dl.archive dd {
     margin-left: 10%;
     padding: 0 0 1em;
-  }
-  pre {
-    font-size: 0.6em;
-    line-height: 1.5em;
   }
 }

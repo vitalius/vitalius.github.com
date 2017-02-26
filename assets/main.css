@@ -76,8 +76,8 @@ ol, ul .site-nav {
     padding-left: 35px;
 }
 
-header :link { color: #FFFD82; text-decoration: none; }
-header :visited { color: #FFFD82; text-decoration: none; }
+header :link { color: #FFFD82; text-decoration: none; font-weight: 400; }
+header :visited { color: #FFFD82; text-decoration: none; font-weight: 400; }
 nav :hover { 
   color: #FFFD82; 
   text-decoration: none; 
@@ -85,7 +85,8 @@ nav :hover {
   transition-property: border-bottom;
   transition-duration: 0.1s;
   transition-delay: 0.1s;
-  transition-timing-function: ease-in-out;  
+  transition-timing-function: ease-in-out;
+  font-weight: 400;
 }
 
 dl.archive {

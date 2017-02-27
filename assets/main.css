@@ -131,6 +131,7 @@ h2#post_title {
 }
 
 p#post_date {
+    color: #aaa;
     margin-top: 1em;
 }
 

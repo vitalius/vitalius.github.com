@@ -33,7 +33,16 @@ body {
 
 :link { color: #E84855; text-decoration: none; font-weight: 600; }
 :visited { color: #FF9B71; text-decoration: none; font-weight: 600; }
-:hover { color: #FF9B71; text-decoration: underline; font-weight: 600; }
+:hover { 
+  color: #FF9B71; 
+  text-decoration: none; 
+  border-bottom: solid #FF9B71;
+  transition-property: border-bottom;
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
+  font-weight: 600;
+}
 
 p {
     margin-bottom: 20px;

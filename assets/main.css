@@ -32,7 +32,7 @@ body {
 
 
 :link { color: #FF4B21; text-decoration: none; font-weight: 500; }
-:visited { color: #E84855; text-decoration: none; font-weight: 500; }
+:visited { color: #A80815; text-decoration: none; font-weight: 500; }
 :hover { 
   color: #FF4B21; 
   text-decoration: none; 
@@ -82,7 +82,7 @@ ol, ul .site-nav {
 }
 
 header :link { color: #FFFD82; text-decoration: none; font-weight: 400; }
-header :visited { color: #A80815; text-decoration: none; font-weight: 400; }
+header :visited { color: #FFFD82; text-decoration: none; font-weight: 400; }
 nav :hover { 
   color: #FFFD82; 
   text-decoration: none; 

@@ -38,8 +38,8 @@ body {
   text-decoration: none; 
   border-bottom: solid #FF9B71;
   transition-property: border-bottom;
-  transition-duration: 0.2s;
-  transition-delay: 0.2s;
+  transition-duration: 0.1s;
+  transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
   font-weight: 500;
 }

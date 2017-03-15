@@ -39,7 +39,7 @@ body {
   border-bottom: solid #FF4B21;
   transition-property: border-bottom;
   transition-duration: 0.1s;
-  transition-delay: 0.0s;
+  transition-delay: 0.05s;
   transition-timing-function: ease-in-out;
   font-weight: 500;
 }

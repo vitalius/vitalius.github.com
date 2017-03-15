@@ -72,10 +72,10 @@ header .site-nav {
     bottom: 37px;
 }
 
-header .logo {}
-header .logo :link { text-decoration: none; }
-header .logo :visited { text-decoration: none; }
-header .logo :hover { text-decoration: none; }
+.logo {}
+.logo :link { text-decoration: none; }
+.logo :visited { text-decoration: none; }
+.logo :hover { text-decoration: none; }
 
 
 ol, ul .site-nav {

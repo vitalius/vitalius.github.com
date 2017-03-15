@@ -31,17 +31,17 @@ body {
 }
 
 
-:link { color: #E84855; text-decoration: none; font-weight: 600; }
-:visited { color: #FF9B71; text-decoration: none; font-weight: 600; }
+:link { color: #E84855; text-decoration: none; font-weight: 500; }
+:visited { color: #FF9B71; text-decoration: none; font-weight: 500; }
 :hover { 
   color: #FF9B71; 
   text-decoration: none; 
   border-bottom: solid #FF9B71;
   transition-property: border-bottom;
-  transition-duration: 0.1s;
-  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s;
   transition-timing-function: ease-in-out;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 p {
@@ -69,7 +69,7 @@ header .container {
 header .site-nav {
     position: absolute;
     right: 25px;
-    bottom: 35px;
+    bottom: 37px;
 }
 
 header .logo {

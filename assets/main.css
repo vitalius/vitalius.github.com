@@ -72,12 +72,6 @@ header .site-nav {
     bottom: 37px;
 }
 
-.logo {}
-.logo :link { text-decoration: none; }
-.logo :visited { text-decoration: none; }
-.logo :hover { text-decoration: none; }
-
-
 ol, ul .site-nav {
     list-style: outside none none;
 }
@@ -99,6 +93,13 @@ nav :hover {
   transition-timing-function: ease-in-out;
   font-weight: 400;
 }
+
+
+header .logo {}
+header .logo :link { text-decoration: none; }
+header .logo :visited { text-decoration: none; }
+header .logo :hover { text-decoration: none; border-width: 0px;}
+
 
 dl.archive {
   width: 100%;
@@ -127,6 +128,7 @@ pre {
   padding: 10px;
   overflow: auto;
   width: auto;
+  font-size: 1.1em;
 }
 
 code {

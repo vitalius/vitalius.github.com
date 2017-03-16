@@ -144,9 +144,8 @@ h2#post_title {
 }
 
 p#post_date {
-    color: #aaa;
+    color: #777;
     margin-top: 1em;
-    font-size: 0.8em;
 }
 
 .page_body {

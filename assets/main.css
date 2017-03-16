@@ -146,6 +146,7 @@ h2#post_title {
 p#post_date {
     color: #aaa;
     margin-top: 1em;
+    font-size: 0.8em;
 }
 
 .page_body {

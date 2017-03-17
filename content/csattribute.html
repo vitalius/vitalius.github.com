@@ -1,42 +1,42 @@
 Just for fun, let's try treating a variable attribute like 
 a normal variable. That is, setting and getting values at will. Here is a simple attribute class in a C#
-<pre>[AttributeUsage(AttributeTargets.Property)]
+<pre><code class="cs">[AttributeUsage(AttributeTargets.Property)]
 public class SpecialAttribute : Attribute
 {
     public int Index { get; set; }	
     public SpecialAttribute()
     {
     }
-}</pre>
+}</code></pre>
 
 And a class with a variable decorated by the SpecialAttribute
-<pre>public class SampleClass
+<pre><code class="cs">public class SampleClass
 {
     [Special(Index=55)]
     public string Text { get; set; }
       ...
-}</pre>
+}</code></pre>
 
 To get attribute value, in this case 55, we first query the variable property 
 and then its attribute.
-<pre>public int getAttribute()
+<pre><code class="cs">public int getAttribute()
 {
     var textVar = TypeDescriptor.GetProperties(this.GetType())["Text"];
     var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];
     return attr.Index;
-}</pre>
+}</code></pre>
 
 And to set attribute value, first get attribute's property. Then using <a href="http://msdn.microsoft.com/en-us/library/xb5dd1f1(v=vs.110).aspx">SetValue()</a> function, update 
 the attribute to a new value. 
 </p>
 
-<pre>public void setAttribute(int index)
+<pre><code class="cs">public void setAttribute(int index)
 {
     var textVar = TypeDescriptor.GetProperties(this.GetType())["Text"];
     var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];
     var attProp = typeof(SpecialAttribute).GetProperty("Index");
     attProp.SetValue(attr, index, null);
-}</pre>
+}</code></pre>
 
 Updating attribute value effects only current run-time. Reinitializing the object resets the value back to 55.
 </p>

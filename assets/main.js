@@ -3,7 +3,8 @@
  */
 function routePage() {
     var page = RegExp('\\?\\w+\\.\\w+', 'i').exec(window.location)
-    if (page) return page[0].replace('?', '');
+    if (page) 
+        return page[0].replace('?', '');
 }
 
 
@@ -13,11 +14,16 @@ function routePage() {
 function renderPage(title, date, file) {  
     $("#post_title").append(title);
     
-    if (date) $("#post_date").append(date); 
+    if (date) 
+        $("#post_date").append(date); 
     
     $("#post_body").load("content/" + file, function( response, status, xhr ) {
         if ( status == "error" )
-           $( "#post_body" ).html( "Error: " + xhr.status + " " + xhr.statusText );           
+           $( "#post_body" ).html( "Error: " + xhr.status + " " + xhr.statusText );
+           
+        $('pre code').each(function(i, block) { 
+            hljs.highlightBlock(block);
+        });           
     });
 }
 

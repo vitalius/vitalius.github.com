@@ -12,22 +12,22 @@ has a very minimal architecture which makes it a great emulation project for beg
 
 And to start, let's disassemble a small demo ROM (from <a href="http://www.zophar.net/pdroms/chip8/chip-8-games-pack.html">Chip8-rom-pack</a>) and get a feel 
 for what opcodes look like and general flow of programs.
-<pre>$ hexdump Maze.ch8 
+<pre><code class="bash">$ hexdump Maze.ch8 
 0000000 60 00 61 00 a2 22 c2 01 32 01 a2 1e d0 14 70 04
 0000010 30 40 12 04 60 00 71 04 31 20 12 04 12 1c 80 40
 0000020 20 10 20 40 80 10                              
 0000026
-</pre>
+</code></pre>
 
 A bit of formatting.
 
-<pre>var rom = [ 
+<pre><code class="javascript">var rom = [ 
     0x6000, 0x6100, 0xa222, 0xc201, 0x3201, 0xa21e, 0xd014, 0x7004,
     0x3040, 0x1204, 0x6000, 0x7104, 0x3120, 0x1204, 0x121c, 0x8040,
     0x2010, 0x2040, 0x8010, 0xa21e, 0xc201, 0x3201, 0xa21a, 0xd014,
     0x7004, 0x3040, 0x1200, 0x6000, 0x7104, 0x3120, 0x1200, 0x1218,
     0x8040, 0x2010, 0x2040, 0x8010 
-];</pre>
+];</code></pre>
 
 Looking up first opcode in the <a href="https://en.wikipedia.org/wiki/CHIP-8#Opcode_table">reference</a>: 
 6XNN - 'Sets VX to NN' which means first opcode in the rom, 0x6000, sets register V0 to 0. 
@@ -35,7 +35,7 @@ Next opcode 0x6100 does a similar thing, setting register V1 to 0.</p>
 
 This is already enough to setup a quick disassembler v0.01
 
-<pre>// roms are loaded at 0x200 in the 4096 bytes of memory space
+<pre><code class="javascript">// roms are loaded at 0x200 in the 4096 bytes of memory space
 pc = 0x200; 
 
 // registers
@@ -54,7 +54,7 @@ function run(opcode) {
     return "Sets V" + ((opcode & 0xf00) >> 8).toString(16) + 
              " to " + (opcode & 0xff).toString(16);
   }
-};</pre>
+};</code></pre>
 
 And disassemble 4 opcodes from the rom.
 

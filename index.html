@@ -65,7 +65,7 @@ var position = view.center;
 function onFrame(event) {
 	position += (mousePos - position) / 10;
 	var vector = (view.center - position) / 10;
-	moveStars(vector * 3);
+	moveStars(vector * 0.5);
 	moveRainbow(vector, event);
 }
 
@@ -86,10 +86,9 @@ var moveStars = new function() {
 	var path = new Path.Star({
 		center: [0, 0],
 		points: 6,
-		radius1: 3,
-		radius2: 7,
-		fillColor: 'white',
-		strokeColor: 'black'
+		radius1: 2,
+		radius2: 5,
+		fillColor: 'white'
 	});
 
 	var symbol = new Symbol(path);

@@ -56,14 +56,15 @@ p {
 }
 
 header {
-    background-color: #fff; /* #2d2d2d; */
+    background-color: #2d2d2d;
+    height: 100px;
 }
 
 #funkycanvas {
     background: black; 
     position: absolute; 
     width: 100%;
-    height: 110px;
+    height: 100px;
     margin: 0px;
     padding: 0px;
 }
@@ -178,6 +179,9 @@ footer {
     height: 150px;
     margin: 0px;
     padding: 0px;
+  }
+  header {
+      height: 150px;
   }
   header .container {
     margin-top: 0px;

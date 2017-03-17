@@ -59,7 +59,6 @@
   
 <script type="text/paperscript" canvas="funkycanvas">
 // Paper.js http://paperjs.org/examples/nyan-rainbow/
-// A tribute to Nyan Cat http://www.youtube.com/watch?v=QH2-TGUlwu4
 
 var mousePos = view.center + [view.bounds.width / 3, 100];
 var position = view.center;
@@ -68,7 +67,6 @@ function onFrame(event) {
 	position += (mousePos - position) / 10;
 	var vector = (view.center - position) / 10;
 	moveStars(vector * 0.5);
-	moveRainbow(vector, event);
 }
 
 function onMouseMove(event) {
@@ -149,88 +147,7 @@ var moveStars = new function() {
 			keepInView(item);
 		}
 	};
-};
-
-var moveRainbow = new function() {
-	var paths = [];
-	var colors = ['red', 'orange', 'yellow', 'lime', 'cyan', 'blue', 'purple'];
-
-	for (var i = 0; i < colors.length; i++) {
-		var path = new Path({
-			fillColor: colors[i]
-		});
-		paths.push(path);
-	}
-
-	var count = 30;
-	var group = new Group(paths);
-	var headGroup;
-	var eyePosition = new Point();
-	var eyeFollow = (Point.random() - 0.5);
-	var blinkTime = 200;
-
-	function createHead(vector, count) {
-		var eyeVector = (eyePosition - eyeFollow);
-		eyePosition -= eyeVector / 4;
-		if (eyeVector.length < 0.00001)
-			eyeFollow = (Point.random() - 0.5);
-		if (headGroup)
-			headGroup.remove();
-		var top = paths[0].lastSegment.point;
-		var bottom = paths[paths.length - 1].firstSegment.point;
-		var radius = (bottom - top).length / 2;
-		var circle = new Path.Circle({
-			center: top + (bottom - top) / 2,
-			radius: radius,
-			fillColor: 'black'
-		});
-		circle.scale(vector.length / 20, 1);
-		circle.rotate(vector.angle, circle.center);
-
-		innerCircle = circle.clone();
-		innerCircle.scale(0.5);
-		innerCircle.fillColor = (count % blinkTime < 3)
-			|| (count % (blinkTime + 5) < 3) ? 'black' : 'white';
-		if (count % (blinkTime + 40) == 0)
-			blinkTime = Math.round(Math.random() * 40) + 200;
-		var eye = circle.clone();
-		eye.position += eyePosition * radius;
-		eye.scale(0.15, innerCircle.position);
-		eye.fillColor = 'black';
-		headGroup = new Group(circle, innerCircle, eye);
-	}
-
-	return function(vector, event) {
-		var vector = (view.center - position) / 40;
-
-		if (vector.length < 5)
-			vector.length = 5;
-
-		count += vector.length / 100;
-		group.translate(vector);
-		var rotated = vector.rotate(90);
-		var middle = paths.length / 2;
-
-		for (var j = 0; j < paths.length; j++) {
-			var path = paths[j];
-			var nyanSwing = 1;
-			var unitLength = vector.length * (2 + Math.sin(event.count / 10)) / 2;
-			var length = (j - middle) * unitLength + nyanSwing;
-			var top = view.center + rotated.normalize(length);
-			var bottom = view.center + rotated.normalize(length + unitLength);
-			path.add(top);
-			path.insert(0, bottom);
-
-			if (path.segments.length > 300) {
-				var index = Math.round(path.segments.length / 2);
-				path.segments[index].remove();
-				path.segments[index - 1].remove();
-			}
-			path.smooth();
-		}
-		createHead(vector, event.count);
-	}
-}    
+}   
 </script>
 </body>
 </html>

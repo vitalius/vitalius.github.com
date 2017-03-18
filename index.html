@@ -63,11 +63,17 @@
 
 var mousePos = view.center + [view.bounds.width / 3, 100];
 var position = view.center;
+var count = 0;
 
 function onFrame(event) {
-	position += (mousePos - position) / 10;
-	var vector = (view.center - position) / 10;
-	moveStars(vector * 0.5, event);
+  count++;
+  if (count % 2 === 0) {
+    return;
+  }
+  
+  position += (mousePos - position) / 10;
+  var vector = (view.center - position) / 10;
+  moveStars(vector * 0.5, event);
 }
 
 function onMouseMove(event) {

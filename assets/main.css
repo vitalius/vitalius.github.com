@@ -16,7 +16,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     font-kerning: inherit;
     font-synthesis: inherit;
     font-variant: inherit;
-    font-family: 'Merriweather', serif;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
     font-weight: 400;
     outline: medium none;
     vertical-align: baseline;
@@ -146,6 +146,7 @@ h2#post_title {
     line-height: 1em;
     font-weight: bold;
     font-size: 2em;
+    font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
 }
 
 p#post_date {

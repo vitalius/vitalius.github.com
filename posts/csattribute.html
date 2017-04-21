@@ -111,6 +111,9 @@ var position = view.center;
 var count = 0;
 
 function onFrame(event) {
+  if ((event.count % 2) != 0)
+  	return;
+
   position += (mousePos - position) / 10;
   var vector = (view.center - position) / 10;
   moveStars(vector * 0.5, event.time);
@@ -127,7 +130,7 @@ function onKeyDown(event) {
 
 var moveStars = new function() {
 	// The amount of symbol we want to place;
-	var count = 50;
+	var count = 100;
 
 	// Create a symbol, which we will use to place instances of later:
 	var path = new Path.Star({
@@ -190,7 +193,7 @@ var moveStars = new function() {
 			var item = layer.children[i];
 			var size = item.bounds.size;
 			var length = vector.length / 10 * size.width / 10;
-			item.opacity = Math.sin(time * 0.5 + i);
+			item.opacity = Math.sin(time * 0.1 + i);
 			item.position += vector.normalize(length) + item.data.vector;
 			keepInView(item);
 		}

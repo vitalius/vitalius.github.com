@@ -1,12 +1,7 @@
 import json
 import os
-import datetime
+from datetime import datetime
 from collections import OrderedDict
-
-MAINTEMPLATE = 'assets/template.html'
-INDEXJSON = 'content/index.json'
-PREF = 'content/'
-RESULT_PREF = 'posts/'
 
 
 def read_json(fname):
@@ -48,12 +43,26 @@ def render_archive(fname, posts):
 def render_about(fname):
     render_post('About', '', read_file(PREF + 'about.html'), fname)
 
+def rw_replace(fname, old, new):
+    c = read_file(fname)
+    delete_file(fname)
+    c = c.replace(old, new)
+    write_file(fname, c);
+
+
+
+MAINTEMPLATE = 'assets/template.html'
+INDEXJSON = 'content/index.json'
+PREF = 'content/'
+RESULT_PREF = 'posts/'
 
 TEMPLATE = read_file(MAINTEMPLATE)
 
 posts = {k:v for k,v in read_json(INDEXJSON).iteritems() if 'date' in v.keys()}
-posts = OrderedDict(sorted(posts.items(), key=lambda t:  datetime.datetime.strptime(t[1]['date'], '%B %d, %Y'), reverse=True))
+posts = OrderedDict(sorted(posts.items(), key=lambda t: datetime.strptime(t[1]['date'], '%B %d, %Y'), reverse=True))
 
+rw_replace('index.html', '???', posts.items()[0][0])
+rw_replace('assets/template.html', '???', posts.items()[0][0])
 render_archive(RESULT_PREF + 'archive.html', posts)
 render_about(RESULT_PREF + 'about.html')
 

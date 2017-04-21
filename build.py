@@ -67,6 +67,4 @@ render_archive(RESULT_PREF + 'archive.html', posts)
 render_about(RESULT_PREF + 'about.html')
 
 for f in posts:
-    if ('date' not in posts[f]):
-        continue
     render_post(posts[f]['title'], posts[f]['date'], read_file(PREF + f), RESULT_PREF + f)

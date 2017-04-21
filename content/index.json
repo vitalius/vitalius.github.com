@@ -1,25 +1,24 @@
 {
     "courseRa.html" : {
-        "date": "March 13th, 2016",
+        "date": "March 13, 2016",
         "title": "Intro to R"
     },
     "emupart1.html" : {
-        "date": "October 7th, 2015",
+        "date": "October 7, 2015",
         "title": "Chip8 emulator &#8211; part 1"
     },
     "csattribute.html" : {
-        "date": "June 7th, 2014",
+        "date": "June 7, 2014",
         "title": "Using C# attribute as a variable"
     },
     "win8cdrive.html": {
-        "date": "October 30th, 2013",
+        "date": "October 30, 2013",
         "title": "Windows 8 and low disk space"
     },
     "firstpost.html": {
-        "date": "October 9th, 2013",
+        "date": "October 9, 2013",
         "title": "Simple static blog"
     },
-    
     "archive.html": {
         "title": "Archive"
     },

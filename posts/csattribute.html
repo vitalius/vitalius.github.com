@@ -17,7 +17,7 @@
 	<canvas resize="true" hidpi="off" id="funkycanvas"></canvas>
         <div class="container">
             <h1 class="logo">
-               <a href="courseRa.html"><img src="https://s.gravatar.com/avatar/3c844e4ff6088ba56ad3e28d7816e48c?s=60" style="border-radius: 50%;"></a>
+               <a href="pythongreat.html"><img src="https://s.gravatar.com/avatar/3c844e4ff6088ba56ad3e28d7816e48c?s=60" style="border-radius: 50%;"></a>
             </h1>
             <nav class="site-nav">
                 <ul>
@@ -52,9 +52,11 @@ To get attribute value, in this case 55, we first query the variable property
 and then its attribute.
 <pre><code class="cs">public int getAttribute()
 {
-    var textVar = TypeDescriptor.GetProperties(this.GetType())["Text"];
-    var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];
-    return attr.Index;
+    var textVar = TypeDescriptor
+                  .GetProperties(this.GetType())["Text"];
+    var attr = (SpecialAttribute)textVar
+               .Attributes[typeof(SpecialAttribute)];
+    return attr.Index; 
 }</code></pre>
 
 And to set attribute value, first get attribute's property. Then using <a href="http://msdn.microsoft.com/en-us/library/xb5dd1f1(v=vs.110).aspx">SetValue()</a> function, update 
@@ -63,9 +65,12 @@ the attribute to a new value.
 
 <pre><code class="cs">public void setAttribute(int index)
 {
-    var textVar = TypeDescriptor.GetProperties(this.GetType())["Text"];
-    var attr = (SpecialAttribute)textVar.Attributes[typeof(SpecialAttribute)];
-    var attProp = typeof(SpecialAttribute).GetProperty("Index");
+    var textVar = TypeDescriptor
+                  .GetProperties(this.GetType())["Text"];
+    var attr = (SpecialAttribute)textVar
+               .Attributes[typeof(SpecialAttribute)];
+    var attProp = typeof(SpecialAttribute)
+                  .GetProperty("Index");
     attProp.SetValue(attr, index, null);
 }</code></pre>
 

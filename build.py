@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from datetime import datetime
 from collections import OrderedDict
 
@@ -46,7 +47,7 @@ def render_about(fname):
 def rw_replace(fname, old, new):
     c = read_file(fname)
     delete_file(fname)
-    c = c.replace(old, new)
+    c = re.sub(old, new, c)
     write_file(fname, c);
 
 
@@ -56,13 +57,13 @@ INDEXJSON = 'content/index.json'
 PREF = 'content/'
 RESULT_PREF = 'posts/'
 
-TEMPLATE = read_file(MAINTEMPLATE)
-
 posts = {k:v for k,v in read_json(INDEXJSON).iteritems() if 'date' in v.keys()}
 posts = OrderedDict(sorted(posts.items(), key=lambda t: datetime.strptime(t[1]['date'], '%B %d, %Y'), reverse=True))
 
-rw_replace('index.html', '???', posts.items()[0][0])
-rw_replace('assets/template.html', '???', posts.items()[0][0])
+rw_replace('assets/template.html', '<a href="(.*).html"><img src=', '<a href="' + posts.items()[0][0] + '"><img src=')
+rw_replace('index.html', '/(.*).html', '/' + posts.items()[0][0])
+
+TEMPLATE = read_file(MAINTEMPLATE)
 render_archive(RESULT_PREF + 'archive.html', posts)
 render_about(RESULT_PREF + 'about.html')
 

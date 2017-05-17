@@ -56,23 +56,23 @@ def render_about(template, source, target):
     render_post(template, 'About', '', read_file(source), target)
 
 
-MAINTEMPLATEFILE = 'assets/template.html'
-INDEXJSONFILE = 'content/index.json'
-PREF = 'content/'
+MAINTEMPLATE_FILE = 'assets/template.html'
+INDEXJSON_FILE = 'content/index.json'
+CONTENT_PREF = 'content/'
 RESULT_PREF = 'posts/'
 
-posts = {k:v for k,v in read_json(INDEXJSONFILE).iteritems() if 'date' in v.keys()}
+# set most recent post as the home link in main template and default redirect in index.html
+posts = {k:v for k,v in read_json(INDEXJSON_FILE).iteritems() if 'date' in v.keys()}
 posts = OrderedDict(sorted(posts.items(), key=lambda t: datetime.strptime(t[1]['date'], '%B %d, %Y'), reverse=True))
+rw_replace(MAINTEMPLATE_FILE, '<a href="(.*).html"><img src=', '<a href="' + posts.items()[0][0] + '"><img src=')
+rw_replace('index.html', '/(.*).html', '/' + posts.items()[0][0]) # used for redirection
 
-rw_replace('assets/template.html', '<a href="(.*).html"><img src=', '<a href="' + posts.items()[0][0] + '"><img src=')
-rw_replace('index.html', '/(.*).html', '/' + posts.items()[0][0])
-
-TEMPLATE = read_file(MAINTEMPLATEFILE)
+TEMPLATE = read_file(MAINTEMPLATE_FILE)
 render_archive(TEMPLATE, RESULT_PREF + 'archive.html', posts)
-render_about(TEMPLATE, PREF + 'about.html', RESULT_PREF + 'about.html')
+render_about(TEMPLATE, CONTENT_PREF + 'about.html', RESULT_PREF + 'about.html')
 
 for f in posts:
     render_post(TEMPLATE, 
                 posts[f]['title'], 
                 posts[f]['date'], 
-                read_file(PREF + f), RESULT_PREF + f)
+                read_file(CONTENT_PREF + f), RESULT_PREF + f)

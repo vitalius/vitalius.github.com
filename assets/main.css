@@ -30,6 +30,9 @@ body {
   line-height: 1.5em;
 }
 
+strong, b { 
+  font-weight: 800;
+}
 
 :link { color: #FF4B21; text-decoration: none; font-weight: 500; }
 :visited { color: #A80815; text-decoration: none; font-weight: 500; }

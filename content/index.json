@@ -1,4 +1,8 @@
 {
+    "pfsensenvidia.html" : {
+        "date": "February 9, 2018",
+        "title": "Securing home network with pfSense"
+    }, 
     "pythongreat.html" : {
         "date": "April 21, 2017",
         "title": "Python"

@@ -5,8 +5,8 @@ out-of-the-box setup.
 </p>
 
 While checking firewall logs, and reviewing the usual scans for open ports 23/22 on my network, 
-I decided to start blocking certain geolocations. That's when I noticed that every minute or so, 
-my smart TV is sending data to two IPs in China. 
+I decided to start blocking certain geolocations. That's when I noticed my smart TV is sending data 
+to two IPs in China, about every other minute.
 </p>
 <p style="text-align: center">
         <a href="../assets/ping-to-china.png">
@@ -111,7 +111,7 @@ and make sure it's above the blocking rule. In the end it should look something 
 </p>
 
 <h3>3. Testing</h3>
-When all is done, and logging is enabled, you can check for blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
+If logging is enabled, you can check for blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">
@@ -120,4 +120,4 @@ When all is done, and logging is enabled, you can check for blocked traffic on <
 </p>
 
 Another way to test is to block a different device on your network, like a smart phone, and verify that 
-you can still reach youtube and amazon on that device but nothing else.
+you can still reach youtube and amazon on that device and nothing else.

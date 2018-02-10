@@ -63,6 +63,7 @@ there is Adobe and Facebook broadcasts. Neither of which I care about.
 With help from pfBlockerNG package, however, we can easily silence this chatter down.
 </p>
 
+<h3>Strategy</h3>
 First, we need to decided which traffic we care about. 
 I only care about youtube and amazon at this point. And while those two also broadcast a ton of telemetry data 
 we'll just have to take the bad with the good here. So outside of those two services, 
@@ -77,10 +78,11 @@ To make firewall rules easier, first we build a rule that blocks traffic to goog
 and then inverse the source/destination (effectively blocking all other traffic instead).
 </p>
 
+<h3>Adding firewall rules</h3>
 Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click Add. Set List Action: Deny Both, on 
-<b>Advanced Inbound</b> add IP of your smart TV to Custom Destination, and similarly on 
-<b>Advanced Outbound</b> to Custom Source. In <b>IPv4 Custom List</b> tab, check <b>Enable Domain/AS</b> 
-and paste following ASNs.
+Advanced Inbound add IP of your smart TV to Custom Destination, and similarly on 
+Advanced Outbound to Custom Source. In IPv4 Custom List tab, check Enable Domain/AS 
+and paste following ASNs into Custom Address(es).
 
 <pre>
 AS15169
@@ -108,7 +110,7 @@ On WAN and LAN rules ( <b>Firewall / Rules / WAN</b> ) edit the rule created by 
 the Source. And similarly on LAN page, modify the rule to Invert match on Destination.</p>
 
 If you still want your smart TV to communicate to other devices on LAN, like Android debugging over WiFi or DNS 
-then add a new rule on LAN page, set Action to Pass, Source: smart TV IP, Destination: <b>LAN net</b>, 
+then add a new rule on LAN page, set Action to Pass, Source: smart TV IP, Destination: LAN net, 
 and make sure it's above the pfBlockerNG rule. In the end it should look something like this:
 </p>
 <p style="text-align: center">
@@ -117,7 +119,8 @@ and make sure it's above the pfBlockerNG rule. In the end it should look somethi
 </a>
 </p>
 
-When all is done, you can check successful traffic blocks by looking at <b>Firewall / pfBlockerNG / Alerts</b>
+<h3>Testing</h3>
+When all is done, you can see successful traffic blocks by checking <b>Firewall / pfBlockerNG / Alerts</b>
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">
@@ -125,8 +128,8 @@ When all is done, you can check successful traffic blocks by looking at <b>Firew
 </a>
 </p>
 
-Another way to test this is to block a different device on your network, like a smart phone and verify that 
-you can still reach youtube and amazon, but nothing else. Also see the blocks logged on pfBlockerNG Alerts page.</div></div></div>
+Another way to test is to block a different device on your network, like a smart phone, and verify that 
+you can still reach youtube and amazon but nothing else.</div></div></div>
         <footer>
           <div align="center">
             <small><a href="https://twitter.com/vitalius_">twitter</a> &middot; 

@@ -67,13 +67,13 @@ With help from pfBlockerNG package, however, we can easily silence this chatter 
 First, we need to decided which traffic we care about. 
 I only care about youtube and amazon at this point. And while those two also broadcast a ton of telemetry data 
 we'll just have to take the bad with the good here. So outside of those two services, 
-the smart tv box should be completely silent and invisible to the outside world.
+the smart TV box should be completely silent and invisible to the outside world.
 </p>
 
-To start blocking WAN traffic, we will build a pfBlockerNG rule and isolate  
+To start blocking WAN traffic, we will build a pfBlockerNG rule to isolate  
 <a href="https://bgp.he.net/search?search%5Bsearch%5D=google&commit=Search">google</a>/<a href="https://bgp.he.net/search?search%5Bsearch%5D=amazon&commit=Search">amazon</a> 
 using <a href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)">ASN</a>s. 
-Upon feed updates, pfBlockerNG will resolve those ASNs to lots of IP addresses belonging to those organizations. 
+Upon feed updates, pfBlockerNG will resolve those ASNs to lots of IP addresses. 
 To make firewall rules easier, first we build a rule that blocks traffic to google/amazon 
 and then inverse the source/destination (effectively blocking all other traffic instead).
 </p>
@@ -120,7 +120,7 @@ and make sure it's above the pfBlockerNG rule. In the end it should look somethi
 </p>
 
 <h3>Testing</h3>
-When all is done, you can see successful traffic blocks by checking <b>Firewall / pfBlockerNG / Alerts</b>
+When all is done, you can see traffic being blocked on <b>Firewall / pfBlockerNG / Alerts</b> page.
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">
@@ -129,7 +129,7 @@ When all is done, you can see successful traffic blocks by checking <b>Firewall 
 </p>
 
 Another way to test is to block a different device on your network, like a smart phone, and verify that 
-you can still reach youtube and amazon but nothing else.</div></div></div>
+you can still reach youtube and amazon on that device but nothing else.</div></div></div>
         <footer>
           <div align="center">
             <small><a href="https://twitter.com/vitalius_">twitter</a> &middot; 

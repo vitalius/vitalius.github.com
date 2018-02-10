@@ -4,9 +4,9 @@ I also like to run <a href="https://www.pfsense.org/">pfSense</a> firewall, with
 out-of-the-box setup.
 </p>
 
-While checking firewall logs, and reviewing the usual scans for ports 23/22, from all over the world, 
-I decided to start blocking certain geolocations and noticed that every minute or so my smart TV was 
-pinging two IPs in China. 
+While checking firewall logs, and reviewing the usual scans for open ports 23/22 on my network, 
+I decided to start blocking certain geolocations. That's when I noticed that every minute or so, 
+my smart TV is sending data to two IPs in China. 
 </p>
 <p style="text-align: center">
         <a href="../assets/ping-to-china.png">
@@ -14,14 +14,14 @@ pinging two IPs in China.
         </a>
 </p>
         
-Launching adb, android debugger and digging deeper -- the app responsible for those pings was 
+Launching adb, android debugger and digging deeper -- the app responsible for those pings is 
 <a href="https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr2&hl=en">com.waxrain.airplaydmr2</a>, 
 one of only 3 custom apps installed on the device.
 </p>
 
-This got me curious of what other traffic this android box is leaking. Among the 
+This got me curious of what other traffic this smart TV is leaking. Among the 
 usual Nvidia telemetry (even though it was explicitly disabled in the OS setttings), 
-there are Adobe, Facebook and other broadcasts.
+there is chatter to Adobe, Facebook and a bit of others.
 </p>
 <p style="text-align: center">
 <a href="../assets/other-unknown-traffic.png">
@@ -29,7 +29,7 @@ there are Adobe, Facebook and other broadcasts.
 </a>
 </p>
 
-With pfSense, we can easily quiet this chatter down a bit.
+With pfSense however, we can easily quiet this chatter down a bit.
 </p>
 
 <h3>0. Strategy</h3>
@@ -43,14 +43,14 @@ In order to block WAN traffic, we will use a pfBlockerNG to isolate
 <a href="https://bgp.he.net/search?search%5Bsearch%5D=google&commit=Search">google</a>, 
 <a href="https://bgp.he.net/search?search%5Bsearch%5D=amazon&commit=Search">amazon</a>, 
 and <a href="https://bgp.he.net/search?search%5Bsearch%5D=akamai&commit=Search">akamai</a> 
-(because that's where most amazon content is delivered from) using 
+(content delivery service for amazon video) using 
 <a href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)">ASN</a>s. 
 Upon feed updates, pfBlockerNG will resolve those ASNs to IP addresses which we can reference in 
 firewall rules.
 </p>
 
 <h3>1. pfBlockerNG alias</h3>
-Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click Add. Come up with name (tv_whitelist), set List 
+Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click Add. Come up with a cool name (tv_whitelist), set List 
 Action: Alias Native, which means pfBlockerNG will only create firewall alias (<b>Firewall / Aliases / URLs</b>), 
 and won't be adding any firewall rules. 
 In IPv4 Custom List tab, check Enable Domain/AS and paste following ASNs into Custom Address(es).
@@ -89,16 +89,16 @@ AS12222
 </pre>
 
 Once this alias is saved, run pfBlockerNG update and reload steps on <b>Firewall / pfBlockerNG / Update</b> page. 
-The log should state that a few hundred IPs have been added, about 19000 as of this writting.</p>
+The log should state that a few thousands of IPs have been added, about 19000 as of this writting.</p>
 
 <h3>2. Firewall rules</h3>
 With pfBlockerNG alias in place, on WAN firewall page (<b>Firewall / Rules / WAN</b>) add a new rule, 
 with Action: Block, set Destination to 
 the IP of smart TV, and set Source referencing pfBlockerNG alias (in my case pfB_tv_whitelist) and check Invert 
-match. Since this rule is blocking, Invert match will treat those IPs as a whitelist.</p>
+match option. Since this rule is blocking, Invert match will treat those IPs as a whitelist.</p>
 
-Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to Invert match on Destination, while listing 
-Source as Single host -- IP of the smart TV. It helps with testing and debugging to set Loging in Extra Options.</p>
+Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to Invert match on Destination, set Source as 
+Single host with IP of the smart TV. It helps with testing to enable Log in Extra Options tab.</p>
 
 If you still want your smart TV to communicate with other devices on LAN, like DNS/DHCP or debugging over WiFi, 
 then add another rule on LAN page, set Action to Pass, Source: smart TV IP, Destination: LAN net, 
@@ -110,8 +110,8 @@ and make sure it's above the blocking rule. In the end it should look something 
 </a>
 </p>
 
-<h3>Testing</h3>
-When all is done, and logging is enabled, you can see traffic being blocked on <b>Firewall / pfBlockerNG / Alerts</b> page.
+<h3>3. Testing</h3>
+When all is done, and logging is enabled, you can check for blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">

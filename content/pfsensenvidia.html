@@ -29,9 +29,10 @@ there is Adobe and Facebook broadcasts. Neither of which I care about.
 </a>
 </p>
 
-With a bit of research, and help from pfBlockerNG package, we can easily silence this chatter down.
+With help from pfBlockerNG package, however, we can easily silence this chatter down.
 </p>
 
+<h2>Strategy</h2>
 First, we need to decided which traffic we care about. 
 I only care about youtube and amazon at this point. And while those two also broadcast a ton of telemetry data 
 we'll just have to take the bad with the good here. So outside of those two services, 
@@ -46,6 +47,7 @@ To make firewall rules easier, first we build a rule that blocks traffic to goog
 and then inverse the source/destination (effectively blocking all other traffic instead).
 </p>
 
+<h2>Set up</h2>
 Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click Add. Set List Action: Deny Both, on 
 <b>Advanced Inbound</b> add IP of your smart TV to Custom Destination, and similarly on 
 <b>Advanced Outbound</b> to Custom Source. In <b>IPv4 Custom List</b> tab, check <b>Enable Domain/AS</b> 

@@ -14,7 +14,7 @@ to two IPs in China, about every other minute.
         </a>
 </p>
         
-Launching adb, android debugger and digging deeper -- the app responsible for those pings is 
+Launching adb server, android shell and few minutes later -- the app responsible for those pings is 
 <a href="https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr2&hl=en">com.waxrain.airplaydmr2</a>, 
 one of only 3 custom apps installed on the device.
 </p>
@@ -29,7 +29,7 @@ there is chatter to Adobe, Facebook and a bit of others.
 </a>
 </p>
 
-With pfSense however, we can easily quiet this chatter down a bit.
+With pfSense however, we can easily quiet this chatter down.
 </p>
 
 <h3>0. Strategy</h3>
@@ -39,21 +39,22 @@ we'll just have to take the bad with the good here. But outside of those two ser
 the smart TV should be completely silent and invisible to the outside world.
 </p>
 
-In order to block WAN traffic, we will use a pfBlockerNG to isolate  
+In order to block other traffic, we will create a pfBlockerNG alias to isolate  
 <a href="https://bgp.he.net/search?search%5Bsearch%5D=google&commit=Search">google</a>, 
 <a href="https://bgp.he.net/search?search%5Bsearch%5D=amazon&commit=Search">amazon</a>, 
 and <a href="https://bgp.he.net/search?search%5Bsearch%5D=akamai&commit=Search">akamai</a> 
 (content delivery service for amazon video) using 
 <a href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)">ASN</a>s. 
-Upon feed updates, pfBlockerNG will resolve those ASNs to IP addresses which we can reference in 
+Upon alias update, pfBlockerNG will resolve those ASNs to IP addresses that we can reference in 
 firewall rules.
 </p>
 
 <h3>1. pfBlockerNG alias</h3>
-Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click Add. Come up with a cool name (tv_whitelist), set List 
-Action: Alias Native, which means pfBlockerNG will only create firewall alias (<b>Firewall / Aliases / URLs</b>), 
-and won't be adding any firewall rules. 
-In IPv4 Custom List tab, check Enable Domain/AS and paste following ASNs into Custom Address(es).
+Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click <b>Add</b>. Now pick a cool alias name 
+(such as tv_whitelist), set <b>List Action</b>: Alias Native, which means pfBlockerNG will only create an alias 
+(in <b>Firewall / Aliases / URLs</b>), and won't add actual firewall rules. 
+Further down in <b>IPv4 Custom List</b> tab, check <b>Enable Domain/AS</b> and paste following ASNs 
+into <b>Custom Address(es)</b>.
 
 <pre>
 AS15169
@@ -88,21 +89,22 @@ AS16625
 AS12222
 </pre>
 
-Once this alias is saved, run pfBlockerNG update and reload steps on <b>Firewall / pfBlockerNG / Update</b> page. 
+Once alias is saved, run pfBlockerNG update and reload steps on <b>Firewall / pfBlockerNG / Update</b> page. 
 The log should state that a few thousands of IPs have been added, about 19000 as of this writting.</p>
 
 <h3>2. Firewall rules</h3>
 With pfBlockerNG alias in place, on WAN firewall page (<b>Firewall / Rules / WAN</b>) add a new rule, 
-with Action: Block, set Destination to 
-the IP of smart TV, and set Source referencing pfBlockerNG alias (in my case pfB_tv_whitelist) and check Invert 
-match option. Since this rule is blocking, Invert match will treat those IPs as a whitelist.</p>
+with <b>Action</b>: Block, set <b>Destination</b> to the IP of smart TV, and <b>Source</b> to pfBlockerNG alias 
+(in my case pfB_tv_whitelist), and check <b>Invert match</b> option. Since this rule is blocking, 
+<b>Invert match</b> will treat those IPs as a whitelist.</p>
 
-Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to Invert match on Destination, set Source as 
-Single host with IP of the smart TV. It helps with testing to enable Log in Extra Options tab.</p>
+Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to <b>Invert match</b> on <b>Destination</b>, 
+set <b>Source</b> as <b>Single host or alias</b> with IP of the smart TV. It helps with testing to enable <b>Log</b> 
+in <b>Extra Options</b> tab.</p>
 
 If you still want your smart TV to communicate with other devices on LAN, like DNS/DHCP or debugging over WiFi, 
-then add another rule on LAN page, set Action to Pass, Source: smart TV IP, Destination: LAN net, 
-and make sure it's above the blocking rule. In the end it should look something like this:
+then add another rule on LAN page, set <b>Action</b> to Pass, <b>Source</b>: smart TV IP, <b>Destination</b>: 
+LAN net, and make sure it's above the blocking rule. In the end it should look something like this:
 </p>
 <p style="text-align: center">
 <a href="../assets/lan-rules-pfsense.png">

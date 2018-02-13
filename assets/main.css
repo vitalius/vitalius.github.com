@@ -148,13 +148,14 @@ pre {
 
 h2#post_title {
     margin-top: 0.7em;
-    line-height: 1.7em;
+    line-height: 1.4em;
     font-weight: bold;
     font-size: 2em;
     font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
 }
 
 p#post_date {
+    margin-top: 0.7em;
 }
 
 .page_body {

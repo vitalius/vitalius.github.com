@@ -5,7 +5,7 @@ out-of-the-box setup.
 </p>
 
 While checking firewall logs, and reviewing the usual scans for open ports 23/22 on my network, 
-I decided to start blocking certain geolocations. That's when I noticed my smart TV is sending data 
+I decided to start blocking certain geo-locations. That's when I noticed my smart TV sending data 
 to two IPs in China, about every other minute.
 </p>
 <p style="text-align: center">
@@ -50,7 +50,8 @@ firewall rules.
 </p>
 
 <h3>1. pfBlockerNG alias</h3>
-Navigate to <b>Firewall / pfBlockerNG / IPv4</b>, click <b>Add</b>. Now pick a cool alias name 
+If you haven't already, install pfBlockgerNG package, then navigate to <b>Firewall / pfBlockerNG / IPv4</b>, 
+click <b>Add</b>. Now pick a cool alias name 
 (such as tv_whitelist), set <b>List Action</b>: Alias Native, which means pfBlockerNG will only create an alias 
 (in <b>Firewall / Aliases / URLs</b>), and won't add actual firewall rules. 
 Further down in <b>IPv4 Custom List</b> tab, check <b>Enable Domain/AS</b> and paste following ASNs 
@@ -98,9 +99,9 @@ with <b>Action</b>: Block, set <b>Destination</b> to the IP of smart TV, and <b>
 (in my case pfB_tv_whitelist), and check <b>Invert match</b> option. Since this rule is blocking, 
 <b>Invert match</b> will treat those IPs as a whitelist.</p>
 
-Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to <b>Invert match</b> on <b>Destination</b>, 
-set <b>Source</b> as <b>Single host or alias</b> with IP of the smart TV. It helps with testing to enable <b>Log</b> 
-in <b>Extra Options</b> tab.</p>
+Similarly on LAN (<b>Firewall / Rules / LAN</b>), add a rule to <b>Action</b>: Block, <b>Invert match</b> 
+on <b>Destination</b>: pfBlockerNG alias and set <b>Source</b> as <b>Single host or alias</b> with IP of 
+the smart TV. It helps to enable <b>Log</b> in <b>Extra Options</b> tab, when testig.</p>
 
 If you still want your smart TV to communicate with other devices on LAN, like DNS/DHCP or debugging over WiFi, 
 then add another rule on LAN page, set <b>Action</b> to Pass, <b>Source</b>: smart TV IP, <b>Destination</b>: 
@@ -113,7 +114,7 @@ LAN net, and make sure it's above the blocking rule. In the end it should look s
 </p>
 
 <h3>3. Testing</h3>
-If logging is enabled, you can check for blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
+If logging is enabled, you will see blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">

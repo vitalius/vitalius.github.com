@@ -52,7 +52,7 @@ one of only 3 custom apps installed on the device.
 
 This got me curious of what other traffic this smart TV is leaking. Among the 
 usual Nvidia telemetry (even though it was explicitly disabled in the OS setttings), 
-there is chatter to Adobe, Facebook and others.
+there is chatter to Adobe, Facebook and a bit of others.
 </p>
 <p style="text-align: center">
 <a href="../assets/other-unknown-traffic.png">
@@ -81,8 +81,7 @@ firewall rules.
 </p>
 
 <h3>1. pfBlockerNG alias</h3>
-If you haven't already, install pfBlockgerNG package, then navigate to <b>Firewall / pfBlockerNG / IPv4</b>, 
-click <b>Add</b>. Now pick a cool alias name 
+Navigate to <b>Firewall / pfBlockerNG / IPv4</b> and click <b>Add</b>. Now pick a cool alias name 
 (such as tv_whitelist), set <b>List Action</b>: Alias Native, which means pfBlockerNG will only create an alias 
 (in <b>Firewall / Aliases / URLs</b>), and won't add actual firewall rules. 
 Further down in <b>IPv4 Custom List</b> tab, check <b>Enable Domain/AS</b> and paste following ASNs 
@@ -145,7 +144,7 @@ LAN net, and make sure it's above the blocking rule. In the end it should look s
 </p>
 
 <h3>3. Testing</h3>
-If logging is enabled, you will see blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
+If logging is enabled, you see blocked traffic on <b>Firewall / pfBlockerNG / Alerts</b> page.
 </p>
 <p style="text-align: center">
 <a href="../assets/pfsense-block-results.png">

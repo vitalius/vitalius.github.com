@@ -24,9 +24,9 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 } 
 
 body {
-  background-color: #fff;
+  background-color: #fffff8;
   overflow-x: hidden;
-  font-size: 1em;
+  font-size: 1.0em;
   line-height: 1.5em;
 }
 
@@ -91,10 +91,10 @@ ol, ul .site-nav {
     padding-left: 35px;
 }
 
-header :link { color: #FFFD82; text-decoration: none; font-weight: 400; }
-header :visited { color: #FFFD82; text-decoration: none; font-weight: 400; }
+header :link { color: #fffff8; text-decoration: none; font-weight: 400; }
+header :visited { color: #fffff8; text-decoration: none; font-weight: 400; }
 nav :hover { 
-  color: #FFFD82; 
+  color: #fffff8; 
   text-decoration: none; 
   border-bottom: solid #FFFD82;
   transition-property: border-bottom;
@@ -135,7 +135,8 @@ pre {
   padding: 10px;
   overflow: auto;
   width: auto;
-  background-color: #efefef;
+  line-height: 1.3em; 
+  border-left: 2px solid #cecece;
 }
 
 h2#post_title {

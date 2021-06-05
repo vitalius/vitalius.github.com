@@ -30,7 +30,7 @@ def rw_replace(fname, old, new):
     c = read_file(fname)
     delete_file(fname)
     c = re.sub(old, new, c)
-    write_file(fname, c);
+    write_file(fname, c)
 
 
 
@@ -56,16 +56,18 @@ def render_about(template, source, target):
     render_post(template, 'About', '', read_file(source), target)
 
 
+
 CONTENT_PREF = 'content/'
 RESULT_PREF = 'posts/'
 MAINTEMPLATE_FILE = 'assets/template.html'
 INDEXJSON_FILE = CONTENT_PREF + 'index.json'
 
 # set most recent post as the home link in main template and default redirect in index.html
-posts = {k:v for k,v in read_json(INDEXJSON_FILE).iteritems() if 'date' in v.keys()}
-posts = OrderedDict(sorted(posts.items(), key=lambda t: datetime.strptime(t[1]['date'], '%B %d, %Y'), reverse=True))
-rw_replace(MAINTEMPLATE_FILE, '<a href="(.*).html"><img src=', '<a href="' + posts.items()[0][0] + '"><img src=')
-rw_replace('index.html', '/(.*).html', '/' + posts.items()[0][0]) # used for redirection
+posts = {k:v for k,v in read_json(INDEXJSON_FILE).items() if 'date' in v.keys()}
+posts = dict(sorted(posts.items(), key=lambda i:  datetime.strptime(i[1]['date'], '%B %d, %Y'), reverse=True))
+
+rw_replace(MAINTEMPLATE_FILE, '<a href="(.*).html"><img src=', '<a href="' + list(posts.keys())[0] + '"><img src=')
+rw_replace('index.html', '/(.*).html', '/' + list(posts.keys())[0]) # used for redirection
 
 TEMPLATE = read_file(MAINTEMPLATE_FILE)
 render_archive(TEMPLATE, RESULT_PREF + 'archive.html', posts)

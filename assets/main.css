@@ -16,7 +16,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     font-kerning: inherit;
     font-synthesis: inherit;
     font-variant: inherit;
-    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-family: sans-serif;
     font-weight: 400;
     outline: medium none;
     vertical-align: baseline;
@@ -31,13 +31,13 @@ body {
 }
 
 strong, b { 
-  font-weight: 800;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.4em;
   line-height: 2em;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 
@@ -60,7 +60,7 @@ p {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0px auto;
     padding: 0px 20px 0px 20px;
 }
@@ -68,15 +68,6 @@ p {
 header {
     background-color: #2d2d2d;
     height: 100px;
-}
-
-#funkycanvas {
-    background: #2d2d2d; 
-    position: absolute; 
-    width: 100%;
-    height: 100px;
-    margin: 0px;
-    padding: 0px;
 }
 
 header .container {
@@ -144,18 +135,19 @@ pre {
   padding: 10px;
   overflow: auto;
   width: auto;
+  background-color: #efefef;
 }
 
 h2#post_title {
-    margin-top: 0.7em;
+    margin-top: 1.2em;
     line-height: 1.4em;
     font-weight: bold;
     font-size: 2em;
-    font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+    font-family: sans-serif;
 }
 
 p#post_date {
-    margin-top: 0.7em;
+    margin-top: 2.7em;
 }
 
 .page_body {

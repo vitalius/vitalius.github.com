@@ -1,30 +1,30 @@
-Install autofs and cifs utils
+<a href='https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs'>AutoFS</a> is a nice little utility for managing automounting of network (and local) storage in Linux. The syntax and the amount of "--" needed in config files is tricky. This post captures basics of my working configuration, auto-mounting Samba network shares on Linux.<br><br>
 
+I'm using Debian, to setup autofs for mounting network shares, two packages are needed. Server and folder names are text between <code>{}</code>, those should be your own.
 <pre>
 <code class="bash">
 apt-get install autofs cifs-utils
 </code>
 </pre>
 
-In the <code>/etc/auto.master</code> at the end add 
+Next, in the <code>/etc/auto.master</code> at the bottom add 
 <pre>
 <code>
-/opt/<share-folder> /etc/auto.cifs --timeout=60 --ghost
+/opt/{your-share-folder} /etc/auto.cifs --timeout=60 --ghost
 </code>
 </pre>
 
-Then create file <code>/etc/auto.cifs</code> with 600 and following content
+Then create the above mentioned file <code>/etc/auto.cifs</code> with chmod 600 and following content
 <pre><code>
-<share-subfolder-name> -fstype=cifs,rw,username=<username>,password=<password>,uid=<username>,gid=<username> ://<samba-server>/<samba-share>
+{share-sub-folder} -fstype=cifs,rw,username={username},password={password},uid={username},gid={username} ://{samba-server}/{samba-share}
 </code></pre>
 
-In this file, list more share sub folders if you have them.
+Additional network shares can be listed per line in the same <code>/etc/auto.cifs</code> file.<br><br>
 
-To test automount, use <code>sudo automount -f -v</code>
+To test automount, use <code>automount -f -v</code> command, the Samba shared folder should be mounted under <code>/opt/{your-share-folder}/{share-sub-folder}</code><br><br>
 
 Then use systemd to auto run it
-<pre><code>
-sudo systemctl enable autofs
-sudo systemctl start autofs
+<pre><code>systemctl enable autofs
+systemctl start autofs
 </code></pre>
 

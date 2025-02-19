@@ -26,9 +26,9 @@
     </header>
     
     <div class="container">      
-        <div id="content"><div><h2 id="post_title">Using AutoFS utility on Debian</h2><p id="post_date">February 18, 2025</p><div id="post_body" class="page_body"><a href='https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs'>AutoFS</a> is a nice little utility for managing automounting of network (and local) storage in Linux. The syntax and the amount of "--" needed in config files is tricky. This post captures basics of my working configuration, auto-mounting Samba network shares on Linux.<br><br>
+        <div id="content"><div><h2 id="post_title">Using AutoFS utility on Debian</h2><p id="post_date">February 18, 2025</p><div id="post_body" class="page_body"><a href='https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs'>AutoFS</a> is a nice little utility for managing automounting of network (and local) storage in Linux. The syntax and the amount of "--" needed in config files is tricky. This post captures the basics of my working configuration, auto-mounting Samba network shares on Linux.<br><br>
 
-I'm using Debian, to setup autofs for mounting network shares, two packages are needed. Server and folder names are text between <code>{}</code>, those should be your own.
+I'm using Debian, to setup autofs for mounting network shares, two packages are needed. Server, folder names and the text between <code>{}</code>, those should be your own.
 <pre>
 <code class="bash">
 apt-get install autofs cifs-utils
@@ -49,7 +49,7 @@ Then create the above mentioned file <code>/etc/auto.cifs</code> with chmod 600 
 
 Additional network shares can be listed per line in the same <code>/etc/auto.cifs</code> file.<br><br>
 
-To test automount, use <code>automount -f -v</code> command, the Samba shared folder should be mounted under <code>/opt/{your-share-folder}/{share-sub-folder}</code><br><br>
+To test, use <code>automount -f -v</code> command, the Samba shared folder should be mounted under <code>/opt/{your-share-folder}/{share-sub-folder}</code><br><br>
 
 Then use systemd to auto run it
 <pre><code>systemctl enable autofs

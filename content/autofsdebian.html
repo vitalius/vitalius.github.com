@@ -1,0 +1,30 @@
+Install autofs and cifs utils
+
+<pre>
+<code class="bash">
+apt-get install autofs cifs-utils
+</code>
+</pre>
+
+In the <code>/etc/auto.master</code> at the end add 
+<pre>
+<code>
+/opt/<share-folder> /etc/auto.cifs --timeout=60 --ghost
+</code>
+</pre>
+
+Then create file <code>/etc/auto.cifs</code> with 600 and following content
+<pre><code>
+<share-subfolder-name> -fstype=cifs,rw,username=<username>,password=<password>,uid=<username>,gid=<username> ://<samba-server>/<samba-share>
+</code></pre>
+
+In this file, list more share sub folders if you have them.
+
+To test automount, use <code>sudo automount -f -v</code>
+
+Then use systemd to auto run it
+<pre><code>
+sudo systemctl enable autofs
+sudo systemctl start autofs
+</code></pre>
+

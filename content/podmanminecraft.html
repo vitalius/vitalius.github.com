@@ -1,0 +1,55 @@
+There is a <a href="https://www.minecraft.net/en-us/download/server/bedrock">minecraft bedrock server</a> image over at github <a href='https://github.com/itzg/docker-minecraft-bedrock-server'>https://github.com/itzg/docker-minecraft-bedrock-server</a> maintained by Geoff Bourne. Here is how to run it with podman.
+<br><br>
+
+First, install podman if you haven't already.
+<pre>
+<code class="bash">
+apt-get install podman
+</code>
+</pre>
+
+Pull the latest image of minecraft-bedrock-server from docker.io
+<pre>
+<code class="bash">
+podman pull docker.io/itzg/minecraft-bedrock-server
+</code>
+</pre>
+
+Create a 'pod' with port forwarding. This is like a grouping of 'pods' or pod containers. We'll call it 'minecraft' and setup default minecraft tcp/upd port forwarding.
+<pre>
+<code class="bash">
+podman pod create --name minecraft -p 19132:19132 -p 19132:19132/udp
+</code>
+</pre>
+
+We're now ready to run the container
+<pre>
+<code class="bash">
+podman run -d                        `# run in the background` \
+           -it                       `# keep stdout interactive` \
+           --name=minecraft_creative `# name this container` \
+           --restart=unless-stopped  `# restart when container hangs` \
+           --pod=minecraft           `# using the pod grouping created above` \
+           -v ./minecraftdata:/data  `# expose local folder with minecraft world and configs` \
+           -e EULA=TRUE              `# accept EULA` \
+           itzg/minecraft-bedrock-server  `# the minecraft docker image we're running`
+</code>
+</pre>
+And thats it! Our very own, local minecraft server with podman, try joining the world from a client.
+<br><br>
+
+Other useful commands with podman, to stop and start or remove the container
+<pre>
+<code class="bash">
+podman stop minecraft_creative
+podmat stats minecraft_creative        
+podman rm minecraft_creative
+</code>
+</pre>
+
+To connect to the tty of the container and examine the logs or stdout
+<pre>
+<code class="bash">
+podman attach minecraft_creative  
+</cod>
+</pre>

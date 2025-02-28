@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Thoughts and ranting of a software developer.</title>
+
+  <link href='../assets/main.css' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body> 
+    <header>
+        <div class="container">
+            <h1 class="logo">
+               <a href="podmanminecraft.html"><img src="https://s.gravatar.com/avatar/3c844e4ff6088ba56ad3e28d7816e48c?s=60" style="border-radius: 50%;"></a>
+            </h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">      
+        <div id="content"><div><h2 id="post_title">Minecraft Bedrock Server with Podman</h2><p id="post_date">February 27, 2025</p><div id="post_body" class="page_body">There is a <a href="https://www.minecraft.net/en-us/download/server/bedrock">minecraft bedrock server</a> image over at github <a href='https://github.com/itzg/docker-minecraft-bedrock-server'>https://github.com/itzg/docker-minecraft-bedrock-server</a> maintained by Geoff Bourne. Here is how to run it with podman.
+<br><br>
+
+First, install podman if you haven't already.
+<pre>
+<code class="bash">
+apt-get install podman
+</code>
+</pre>
+
+Pull the latest image of minecraft-bedrock-server from docker.io
+<pre>
+<code class="bash">
+podman pull docker.io/itzg/minecraft-bedrock-server
+</code>
+</pre>
+
+Create a 'pod' with port forwarding. This is like a grouping of 'pods' or pod containers. We'll call it 'minecraft' and setup default minecraft tcp/upd port forwarding.
+<pre>
+<code class="bash">
+podman pod create --name minecraft -p 19132:19132 -p 19132:19132/udp
+</code>
+</pre>
+
+We're now ready to run the container
+<pre>
+<code class="bash">
+podman run -d                        `# run in the background` \
+           -it                       `# keep stdout interactive` \
+           --name=minecraft_creative `# name this container` \
+           --restart=unless-stopped  `# restart when container hangs` \
+           --pod=minecraft           `# using the pod grouping created above` \
+           -v ./minecraftdata:/data  `# expose local folder with minecraft world and configs` \
+           -e EULA=TRUE              `# accept EULA` \
+           itzg/minecraft-bedrock-server  `# the minecraft docker image we're running`
+</code>
+</pre>
+And thats it! Our very own, local minecraft server with podman, try joining the world from a client.
+<br><br>
+
+Other useful commands with podman, to stop and start or remove the container
+<pre>
+<code class="bash">
+podman stop minecraft_creative
+podmat stats minecraft_creative        
+podman rm minecraft_creative
+</code>
+</pre>
+
+To connect to the tty of the container and examine the logs or stdout
+<pre>
+<code class="bash">
+podman attach minecraft_creative  
+</cod>
+</pre>
+</div></div></div>
+        <footer>
+          <div text-align="center">
+            <small><a href="https://twitter.com/vitalius_">twitter</a> &middot; 
+                   <a href="http://github.com/vitalius">github</a> &middot; 
+                   <a href="mailto:vitaliy@cloudmotion.com">vitaliy@cloudmotion.com</a>
+            </small>
+          </div>
+       </footer>
+     </div>
+  
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35379573-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>  
+    
+</body>
+</html>

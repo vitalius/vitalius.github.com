@@ -55,23 +55,24 @@ We're now ready to run the container
 <code class="bash">
 podman run -d                        `# run in the background` \
            -it                       `# keep stdout interactive` \
-           --name=minecraft_creative `# name this container` \
-           --restart=unless-stopped  `# restart when container hangs` \
-           --pod=minecraft           `# using the pod grouping created above` \
            -v ./minecraftdata:/data  `# expose local folder with minecraft world and configs` \
            -e EULA=TRUE              `# accept EULA` \
+           --pod=minecraft           `# using the pod grouping created above` \
+           --name=minecraft_creative `# name this container` \
+           --restart=unless-stopped  `# restart when container hangs` \
            itzg/minecraft-bedrock-server  `# the minecraft docker image we're running`
 </code>
 </pre>
 And thats it! Our very own, local minecraft server with podman, try joining the world from a client.
 <br><br>
 
-Other useful commands with podman, to stop and start or remove the container
+Other useful commands with podman, to stop and start or remove the container, or to look up running statistics.
 <pre>
 <code class="bash">
 podman stop minecraft_creative
-podmat stats minecraft_creative        
+podman start minecraft_creative       
 podman rm minecraft_creative
+podman stats minecraft_creative 
 </code>
 </pre>
 

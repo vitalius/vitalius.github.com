@@ -30,22 +30,16 @@
 
 I'm using Debian, to setup autofs for mounting network shares, two packages are needed. Server, folder names and the text between <code>{}</code>, those should be your own.
 <pre>
-<code class="bash">
-apt-get install autofs cifs-utils
-</code>
+<code class="bash">apt-get install autofs cifs-utils</code>
 </pre>
 
 Next, in the <code>/etc/auto.master</code> at the bottom add 
 <pre>
-<code>
-/opt/{your-share-folder} /etc/auto.cifs --timeout=60 --ghost
-</code>
+<code>/opt/{your-share-folder} /etc/auto.cifs --timeout=60 --ghost</code>
 </pre>
 
 Then create the above mentioned file <code>/etc/auto.cifs</code> with chmod 600 and following content
-<pre><code>
-{share-sub-folder} -fstype=cifs,rw,username={username},password={password},uid={username},gid={username} ://{samba-server}/{samba-share}
-</code></pre>
+<pre><code>{share-sub-folder} -fstype=cifs,rw,username={username},password={password},uid={username},gid={username} ://{samba-server}/{samba-share}</code></pre>
 
 Additional network shares can be listed per line in the same <code>/etc/auto.cifs</code> file.<br><br>
 

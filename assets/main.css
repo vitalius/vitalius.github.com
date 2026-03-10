@@ -24,7 +24,7 @@ html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 } 
 
 body {
-  background-color: #fffff8;
+  background-color: #ddddd8;
   overflow-x: hidden;
   font-size: 1.0em;
   line-height: 1.5em;
@@ -39,7 +39,6 @@ h3 {
   line-height: 2em;
   font-weight: 600;
 }
-
 
 :link { color: #FF4B21; text-decoration: none; font-weight: 500; }
 :visited { color: #A80815; text-decoration: none; font-weight: 500; }
@@ -66,7 +65,8 @@ p {
 }
 
 header {
-    background-color: #2d2d2d;
+    //background-color: #2d2d2d;
+    background-color: #000;
     height: 100px;
 }
 
@@ -136,6 +136,7 @@ pre {
   overflow: auto;
   width: auto;
   line-height: 1.3em; 
+  font-size: 1.1em;
   border-left: 2px solid #cecece;
 }
 
@@ -144,11 +145,12 @@ h2#post_title {
     line-height: 1.4em;
     font-weight: bold;
     font-size: 2em;
-    font-family: sans-serif;
+    font-family: serif;
 }
 
 p#post_date {
     margin-top: 2.7em;
+    font-size:0.8em;
 }
 
 .page_body {

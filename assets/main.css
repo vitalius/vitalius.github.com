@@ -136,9 +136,18 @@ pre {
   overflow: auto;
   width: auto;
   line-height: 1.3em; 
-  font-size: 1.1em;
-  border-left: 2px solid #cecece;
+  font-size: 1.3em;
+  border-left: 2px solid #FF4B21;
+  code {
+    font-size: 1em;
+  }
 }
+
+
+code {
+  font-size: 1.3em;
+}
+
 
 h2#post_title {
     margin-top: 1.2em;
